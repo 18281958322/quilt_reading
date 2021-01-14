@@ -1,0 +1,39 @@
+.user-cell{
+    .index-cell{
+        width: 200px;
+        height: 100vh;
+        margin-top: 66px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: #fff;
+        border-right: 1px #dadada solid;
+        .row{
+            padding: 10px 10px;
+            .layout{
+                display: flex;
+                justify-content: center;
+                height: 40px;
+                font-weight: bold;
+                .box{
+                    padding: 0px 10px;
+                    color: #343434;
+                    line-height: 40px;
+                    display: flex;
+                    text-decoration: none;
+                    i{
+                        padding: 0 5px;
+                        font-size: 20px;
+                        line-height: 40px;
+                    }
+                    p{
+                        font-size: 14px;
+                    }
+                }
+                .router-link-active{
+                    color: #00a5ff;
+                }
+            }
+        }
+    }
+}

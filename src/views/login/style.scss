@@ -1,0 +1,116 @@
+.login{
+    width: 100%;
+    height: 100vh;
+    background: url('../../assets/download.jpg') repeat;
+    position: relative;
+    .login-all{
+        position: absolute;
+        width: 100%;
+        height: 237px;
+        opacity: .6;
+        top: calc(50vh - 118.5px);
+        background: #347ebc;
+    }
+    .login-cell{
+        width: 510px;
+        height: 355px;
+        position: absolute;
+        left: 15%;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        z-index: 1;
+        p{
+            color: #fff;
+            font-size: 72px;
+        }
+    }
+    .login-pull{
+        width: 355px;
+        position: absolute;
+        top: 0;
+        right: 10%;
+        bottom: 0;
+        margin: auto;
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .layout{
+            width: 100%;
+            background: #fff;
+            box-shadow: 0 0 50px rgba(0,0,0,.4);
+            border-radius: 5px;
+            padding: 10%;
+            .layout-header{
+                width: 100%;
+                height: 35px;
+                color: #347ebc;
+                font-size: 1.5rem;
+                text-align: center;
+            }
+            .layout-item{
+                width: 100%;
+                display: flex;
+                margin: 10px 0;
+                height: 40px;
+                position: relative;
+                .layout-userlable{
+                    border-bottom: 1px solid #347ebc;
+                    height: 43px;
+                    width: 60px;
+                    line-height: 41px;
+                }
+                input{
+                    border-bottom: .0625rem solid #347ebc;
+                    height: 2.5625rem;
+                    width: 100%;
+                    text-indent: 1.125rem;
+                    outline: none;
+                }
+                .layout-code{
+                    width: 85px;
+                    height: 35px;
+                    position: absolute;
+                    display: flex;
+                    justify-content: space-around;
+                    right: 0rem;
+                    img{
+                        width: 80px;
+                        height: 35px;
+                        vertical-align: middle;
+                        border-style: none;
+                    }
+                }
+            }
+            .layout-remember{
+                display: flex;
+                margin: 10px 0;
+                height: 40px;
+                align-items: center;
+                .layout-remember-box{
+                    width: 200px;
+                    display: flex;
+                    height: 40px;
+                    align-items: center;
+                    justify-content: flex-start;
+                    input[type=checkbox],
+                    input[type=radio] {
+                        box-sizing: border-box;
+                        padding: 0;
+                    }
+                    .layout-text{
+                        margin-left: 10px;
+                        width: 100px;
+                    }
+                }
+                .layout-button{
+                    width: 100%;
+                    height: 40px;
+                    color: #fff;
+                    background-color: #347ebc;
+                }
+            }
+        }
+    }
+}
