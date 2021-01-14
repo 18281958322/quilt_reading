@@ -1,6 +1,6 @@
 <template>
   <div class="conteanr-cell">
-    <Home></Home>
+    <navbar/>
     <div class="index-cell">
       <div class="row">
         <div class="layout">

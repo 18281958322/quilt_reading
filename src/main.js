@@ -4,9 +4,16 @@ import router from './router/router'
 import store from './store'
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
+import navbar from './components/home/index';
+import sidebar from './components/sidebar/index';
+import './assets/css/global.css';
 
 Vue.use(ElementUI);
 Vue.config.productionTip = false
+
+// 注册全局组件
+Vue.component('navbar', navbar);
+Vue.component('sidebar', sidebar)
 
 new Vue({
   router,

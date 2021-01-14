@@ -1,0 +1,43 @@
+body,html{
+  padding: 0;
+  margin: 0;
+}
+p{
+  margin: 0;
+}
+#app {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 13px;
+  font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
+}
+
+/* 纵向侧边栏容器*/
+.sidebarContent {
+  width: 200px;
+  height: auto;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+  padding: 20px 0 0;
+  border-right: 1px #dadada solid;
+}
+
+/* 主题内容容器*/
+.main {
+  box-sizing: border-box;
+  flex-grow: 1;
+  padding: 30px 20px;
+  overflow: hidden;
+}
+
+/* 设置的字体样式 */
+/* .el-submenu__title{
+  font-size: 13px;
+}
+
+.el-input{
+  font-size: 13px;
+} */
