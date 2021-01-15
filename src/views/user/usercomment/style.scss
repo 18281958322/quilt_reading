@@ -24,7 +24,6 @@
             }
             .layout{
                 display: flex;
-                width: 100%;
                 padding: 0px 20px;
                 .layout-cell{
                     padding: 5px 0px;
@@ -38,6 +37,8 @@
             }
             .layout-data{
                 padding: 0 0 20px 20px;
+                display: flex;
+                justify-content: center;
             }
         }
     }

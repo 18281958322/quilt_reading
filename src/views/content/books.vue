@@ -1,16 +1,16 @@
 <template>
-  <div class="userlist">
+    <div class="books">
     <div class="user-cell">
       <el-breadcrumb separator-class="el-icon-arrow-right">
-        <el-breadcrumb-item :to="{ path: '/' }">用户</el-breadcrumb-item>
-        <el-breadcrumb-item>用户列表</el-breadcrumb-item>
+        <el-breadcrumb-item :to="{ path: '/' }">内容</el-breadcrumb-item>
+        <el-breadcrumb-item>听书</el-breadcrumb-item>
       </el-breadcrumb>
     </div>
     <div class="all">
       <div class="row">
         <div class="layout-row">
           <div class="layout-title">
-            <p>用户列表</p>
+            <p>听书</p>
           </div>
           <div class="layout">
             <div class="layout-cell" style="margin-right:5px;">
@@ -76,38 +76,127 @@
               <el-button type="danger" @click="toggleSelection([tableData[1], tableData[2]])">批量删除</el-button>
             </div>
           </div>
-          <div class="layout-data">
-            <el-pagination @size-change="handleSizeChange" @current-change="handleCurrentChange"
-              :current-page="currentPage4" :page-sizes="[100, 200, 300, 400]" :page-size="100"
-              layout="total, sizes, prev, pager, next, jumper" :total="400">
-            </el-pagination>
-          </div>
         </div>
       </div>
     </div>
   </div>
 </template>
 
-<script src="./script.js"></script>
+<script>
+export default {
+    data() {
+      return {
+        options: [{
+          value: '选项1',
+          label: '黄金糕'
+        }, {
+          value: '选项2',
+          label: '双皮奶'
+        }, {
+          value: '选项3',
+          label: '蚵仔煎'
+        }, {
+          value: '选项4',
+          label: '龙须面'
+        }, {
+          value: '选项5',
+          label: '北京烤鸭'
+        }],
+        value: '',
+        input: '',
+        tableData: [{
+          date: '2016-05-02',
+          name: '王小虎',
+          address: '上海市普陀区金沙江路 1518 弄'
+        }, {
+          date: '2016-05-04',
+          name: '王小虎',
+          address: '上海市普陀区金沙江路 1517 弄'
+        }, {
+          date: '2016-05-01',
+          name: '王小虎',
+          address: '上海市普陀区金沙江路 1519 弄'
+        }, {
+          date: '2016-05-03',
+          name: '王小虎',
+          address: '上海市普陀区金沙江路 1516 弄'
+        }],
+        multipleSelection: []
+      }
+    },
+    methods: {
+      toggleSelection(rows) {
+        if (rows) {
+          rows.forEach(row => {
+            this.$refs.multipleTable.toggleRowSelection(row);
+          });
+        } else {
+          this.$refs.multipleTable.clearSelection();
+        }
+      },
+      handleSelectionChange(val) {
+        this.multipleSelection = val;
+      }
+    }
+  }
+</script>
 
 <style lang="scss" scoped>
-  @import './style.scss';
+.books{
+    width: 86.8%;
+    background-color: #f5f6fa;
+    position: fixed;
+    top: 68px;
+    right: 0;
+    height: 100vh;
+    .user-cell{
+        text-indent: 20px;
+        padding: 10px 0;
+        border-bottom: 1px #dadada solid;
+    }
+    .all{
+        padding: 10px 10px;
+        .row{
+            background-color: #fff;
+            .layout-row{
+                .layout-title{
+                    font-size: 14px;
+                    text-indent: 20px;
+                    p{
+                        padding: 20px 0;
+                    }
+                }
+                .layout{
+                    display: flex;
+                    padding: 0px 20px;
+                    .layout-cell{
+                        padding: 5px 0px;
+                    }
+                    .layout-pull{
+                        padding: 5px 5px;
+                    }
+                }
+                .layout-data{
+                    padding: 0 0 20px 20px;
+                }
+            }
+        }
+    }
+}
 </style>
 
 <style>
-  .el-tabs {
-    width: 100%;
-  }
+.el-tabs{
+  width: 100%;
+}
 
-  .el-table {
-    font-size: 13px;
-  }
-
-  .el-tabs__item {
-    font-size: 13px;
-  }
-
-  .el-input {
-    font-size: 13px;
-  }
+.el-table{
+  font-size: 13px;
+}
+.el-tabs__item{
+  font-size: 13px;
+}
+.el-input{
+  font-size: 13px;
+}
 </style>

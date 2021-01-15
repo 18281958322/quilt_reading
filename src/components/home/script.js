@@ -19,7 +19,7 @@ export default {
   computed: {
     navActive() {
       return function(item) {
-        console.log(this.$route.path, item)
+        // console.log(this.$route.path, item)
         return this.$route.path === item.route
       }
     },

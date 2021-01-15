@@ -2,13 +2,8 @@
   <div class="operations">
     <navbar />
     <div class="sidebarContent">
-      <sidebar
-        :defaultActive="s1"
-        @subMenuOpen="subMenuOpens"
-        @subMenuClose="subMenuCloses"
-        @activeChange="activeChanges"
-        :treeData="sidebarData"
-      />
+      <sidebar :defaultActive="s1" @subMenuOpen="subMenuOpens" @subMenuClose="subMenuCloses"
+        @activeChange="activeChanges" :treeData="sidebarData" />
     </div>
     <div class="main">
       <el-breadcrumb separator-class="el-icon-arrow-right">
@@ -20,17 +15,15 @@
 </template>
 
 <script>
-export default {
-  name: "operations",
-  data() {
-    return {
-      sidebarData: [
-        {
+  export default {
+    name: "operations",
+    data() {
+      return {
+        sidebarData: [{
           title: "通用管理",
           key: "s1",
           icon: "el-icon-location",
-          children: [
-            {
+          children: [{
               title: "热搜热词",
               key: "s1-1",
               icon: false,
@@ -46,33 +39,32 @@ export default {
               // icon: 'el-icon-location',
             },
           ],
-        },
-      ],
-    };
-  },
-  methods: {
-    subMenuOpens(index, path) {
-      console.log('subMenuOpens', index, path)
+        }, ],
+      };
     },
-    subMenuCloses(index, path) {
-      console.log('subMenuCloses', index, path)
-    },
-    activeChanges(index, path) {
-      console.log('activeChanges', index, path)
+    methods: {
+      subMenuOpens(index, path) {
+        console.log('subMenuOpens', index, path)
+      },
+      subMenuCloses(index, path) {
+        console.log('subMenuCloses', index, path)
+      },
+      activeChanges(index, path) {
+        console.log('activeChanges', index, path)
+      }
     }
-  }
-};
+  };
 </script>
 
 <style lang='scss' scoped>
-.operations {
-  width: 100%;
-  height: 100%;
-  min-height: 100vh;
-  min-width: 100vw;
-  box-sizing: border-box;
-  padding: 61px 0 0;
-  display: flex;
-  flex-direction: row;
-}
+  .operations {
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    min-width: 100vw;
+    box-sizing: border-box;
+    padding: 61px 0 0;
+    display: flex;
+    flex-direction: row;
+  }
 </style>

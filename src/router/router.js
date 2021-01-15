@@ -59,6 +59,12 @@ const vueRouter =  new Router({
           name: 'comics',
           component: () => import('../views/content/comics/index.vue'),
         },
+        // 听书
+        {
+          path: '/books',
+          name: 'Books',
+          component: () => import('../views/content/books.vue'),
+        },
       ]
     },
     {// 运营

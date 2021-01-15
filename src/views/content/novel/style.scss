@@ -1,0 +1,36 @@
+.novel{
+    width: 86.8%;
+    background-color: #f5f6fa;
+    position: fixed;
+    top: 68px;
+    right: 0;
+    height: 100vh;
+    .user-cell{
+        text-indent: 20px;
+        padding: 10px 0;
+        border-bottom: 1px #dadada solid;
+    }
+    .all{
+        padding: 10px 10px;
+        .row{
+            background-color: #fff;
+            .layout-row{
+                .layout-title{
+                    font-size: 14px;
+                    text-indent: 20px;
+                    p{
+                        padding: 20px 0;
+                    }
+                }
+                .layout{
+                    display: flex;
+                    padding: 0px 20px;
+                    .list{
+                        display: flex;
+                        padding-bottom: 5px;
+                    }
+                }
+            }
+        }
+    }
+}

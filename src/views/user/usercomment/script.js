@@ -19,6 +19,7 @@ export default {
         label: '北京烤鸭'
       }],
       value: '',
+      currentPage4: 4,
       input: '',
       tableData: [{
         date: '2016-05-02',
@@ -42,6 +43,12 @@ export default {
   methods: {
     handleClick(tab, event) {
       console.log(tab, event);
+    },
+    handleSizeChange(val) {
+      console.log(`每页 ${val} 条`);
+    },
+    handleCurrentChange(val) {
+      console.log(`当前页: ${val}`);
     }
   }
 }

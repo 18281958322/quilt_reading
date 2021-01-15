@@ -12,9 +12,9 @@
           <div class="layout-title">
             <p>用户评论</p>
           </div>
-          <div class="layout" style="width：100%;">
-            <el-tabs v-model="activeName" @tab-click="handleClick">
-              <el-tab-pane label="用户管理" name="first">
+          <div class="layout">
+            <el-tabs v-model="activeName" style="width：1000px;" @tab-click="handleClick">
+              <el-tab-pane label="用户评论" name="first">
                 <div class="tabel">
                   <div class="idnex-box">
                     <el-select style="width: 148px;" v-model="value" placeholder="全部状态">
@@ -57,8 +57,14 @@
                   </el-table>
                 </div>
               </el-tab-pane>
-              <el-tab-pane label="配置管理" name="second">配置管理</el-tab-pane>
+              <el-tab-pane label="章节评论" name="second">章节评论</el-tab-pane>
             </el-tabs>
+          </div>
+          <div class="layout-data" style="margin-top:20px;">
+            <el-pagination @size-change="handleSizeChange" @current-change="handleCurrentChange"
+              :current-page="currentPage4" :page-sizes="[100, 200, 300, 400]" :page-size="100"
+              layout="total, sizes, prev, pager, next, jumper" :total="400">
+            </el-pagination>
           </div>
         </div>
       </div>
@@ -70,4 +76,22 @@
 
 <style lang="scss" scoped>
   @import './style.scss';
+</style>
+
+<style>
+  .el-tabs {
+    width: 100%;
+  }
+
+  .el-table {
+    font-size: 13px;
+  }
+
+  .el-tabs__item {
+    font-size: 13px;
+  }
+
+  .el-input {
+    font-size: 13px;
+  }
 </style>
