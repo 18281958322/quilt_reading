@@ -73,4 +73,14 @@
   .el-input {
     font-size: 13px;
   }
+  .el-input__inner{
+    height: 30px;
+    line-height: 30px;
+  }
+
+  .el-button--primary{
+    height: 30px;
+    font-size: 13px;
+    padding: 0 20px;
+  }
 </style>

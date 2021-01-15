@@ -72,9 +72,9 @@
                 </template>
               </el-table-column>
             </el-table>
-            <div style="margin-top: 20px">
+            <!-- <div style="margin-top: 20px">
               <el-button type="danger" @click="toggleSelection([tableData[1], tableData[2]])">批量删除</el-button>
-            </div>
+            </div> -->
           </div>
           <div class="layout-data">
             <el-pagination @size-change="handleSizeChange" @current-change="handleCurrentChange"
@@ -109,5 +109,16 @@
 
   .el-input {
     font-size: 13px;
+  }
+
+    .el-input__inner{
+    height: 30px;
+    line-height: 30px;
+  }
+
+  .el-button--primary{
+    height: 30px;
+    font-size: 13px;
+    padding: 0 20px;
   }
 </style>
