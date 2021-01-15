@@ -1,6 +1,5 @@
 <template>
   <div class="operations">
-    <navbar />
     <div class="sidebarContent">
       <sidebar :defaultActive="s1" @subMenuOpen="subMenuOpens" @subMenuClose="subMenuCloses"
         @activeChange="activeChanges" :treeData="sidebarData" />
@@ -39,7 +38,7 @@
               // icon: 'el-icon-location',
             },
           ],
-        }, ],
+        },],
       };
     },
     methods: {

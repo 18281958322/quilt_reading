@@ -1,6 +1,5 @@
 <template>
   <div class="data-cell">
-    <Home></Home>
   </div>
 </template>
 

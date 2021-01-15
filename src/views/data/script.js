@@ -1,11 +1,6 @@
-import Home from '@/components/home/index';
 export default {
     data(){
-        return{
-
-        }
+        return{}
     },
-    components: {
-        'Home': Home,
-    }
+    components: { }
 }

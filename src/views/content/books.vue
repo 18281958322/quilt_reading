@@ -143,12 +143,7 @@ export default {
 
 <style lang="scss" scoped>
 .books{
-    width: 86.8%;
     background-color: #f5f6fa;
-    position: fixed;
-    top: 68px;
-    right: 0;
-    height: 100vh;
     .user-cell{
         text-indent: 20px;
         padding: 10px 0;

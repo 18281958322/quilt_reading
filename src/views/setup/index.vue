@@ -1,6 +1,5 @@
 <template>
   <div class="setup">
-    <Home></Home>
   </div>
 </template>
 

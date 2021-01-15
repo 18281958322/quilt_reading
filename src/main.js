@@ -4,9 +4,9 @@ import router from './router/router'
 import store from './store'
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
-import navbar from './components/home/index';
+import navbar from './components/navbar/index';
 import sidebar from './components/sidebar/index';
-import './assets/css/global.css';
+import './assets/css/global.scss';
 
 Vue.use(ElementUI);
 Vue.config.productionTip = false

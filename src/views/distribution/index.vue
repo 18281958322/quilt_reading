@@ -1,6 +1,5 @@
 <template>
   <div class="distribution">
-    <Home></Home>
   </div>
 </template>
 
