@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <navbar v-if="navbarStatus" />
+    <crumbs v-if="crumbStatus"></crumbs>
     <router-view />
   </div>
 </template>
@@ -9,7 +10,7 @@ import { mapState } from 'vuex'
 export default {
   name: 'App',
   computed: {
-    ...mapState(['navbarStatus'])
+    ...mapState(['navbarStatus', 'crumbStatus'])
   }
 }
 </script>>

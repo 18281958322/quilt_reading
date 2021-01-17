@@ -5,7 +5,8 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    navbarStatus: true
+    navbarStatus: true, //导航栏状态
+    crumbStatus: true, //面包屑状态
   },
   mutations: {
     /**
@@ -14,6 +15,13 @@ export default new Vuex.Store({
      */
     setNavbarStatus(state, { val }) {
       state.navbarStatus = val
+    },
+    /**
+     * 更改面包屑状态
+     * @val { boolean } true=>显示，false=>隐藏 
+     */
+    setCrumbStatus(state, { val }) {
+      state.crumbStatus = val
     },
   },
   actions: {

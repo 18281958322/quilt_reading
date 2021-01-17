@@ -1,14 +1,8 @@
 <template>
   <div class="operations">
     <div class="sidebarContent">
-      <sidebar :defaultActive="s1" @subMenuOpen="subMenuOpens" @subMenuClose="subMenuCloses"
+      <sidebar :defaultActive="'s1-1'" @subMenuOpen="subMenuOpens" @subMenuClose="subMenuCloses"
         @activeChange="activeChanges" :treeData="sidebarData" />
-    </div>
-    <div class="main">
-      <el-breadcrumb separator-class="el-icon-arrow-right">
-        <el-breadcrumb-item :to="{ path: '/' }">用户</el-breadcrumb-item>
-        <el-breadcrumb-item>用户反馈</el-breadcrumb-item>
-      </el-breadcrumb>
     </div>
   </div>
 </template>

@@ -1,11 +1,5 @@
 <template>
   <div class="novel">
-    <div class="user-cell">
-      <el-breadcrumb separator-class="el-icon-arrow-right">
-        <el-breadcrumb-item :to="{ path: '/' }">内容</el-breadcrumb-item>
-        <el-breadcrumb-item>小说</el-breadcrumb-item>
-      </el-breadcrumb>
-    </div>
     <div class="all">
       <div class="row">
         <div class="layout-row">

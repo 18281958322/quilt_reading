@@ -26,9 +26,7 @@ export default {
       required: true,
     },
   },
-  created() {
-    // console.log(this.subVal);
-  },
+  created() {},
 };
 </script>
 

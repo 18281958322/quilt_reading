@@ -1,11 +1,5 @@
 <template>
     <div class="books">
-    <div class="user-cell">
-      <el-breadcrumb separator-class="el-icon-arrow-right">
-        <el-breadcrumb-item :to="{ path: '/' }">内容</el-breadcrumb-item>
-        <el-breadcrumb-item>听书</el-breadcrumb-item>
-      </el-breadcrumb>
-    </div>
     <div class="all">
       <div class="row">
         <div class="layout-row">
@@ -143,14 +137,9 @@ export default {
 
 <style lang="scss" scoped>
 .books{
-    background-color: #f5f6fa;
-    .user-cell{
-        text-indent: 20px;
-        padding: 10px 0;
-        border-bottom: 1px #dadada solid;
-    }
+  width: 100%;
     .all{
-        padding: 10px 10px;
+        padding: 10px 0;
         .row{
             background-color: #fff;
             .layout-row{

@@ -6,6 +6,7 @@ import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 import navbar from './components/navbar/index';
 import sidebar from './components/sidebar/index';
+import crumbs from './components/crumbs/index';
 import './assets/css/global.scss';
 
 Vue.use(ElementUI);
@@ -14,6 +15,7 @@ Vue.config.productionTip = false
 // 注册全局组件
 Vue.component('navbar', navbar);
 Vue.component('sidebar', sidebar)
+Vue.component('crumbs', crumbs)
 
 new Vue({
   router,

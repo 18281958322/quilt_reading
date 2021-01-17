@@ -1,11 +1,5 @@
 <template>
   <div class="usercomment">
-    <div class="usercomment-cell">
-      <el-breadcrumb separator-class="el-icon-arrow-right">
-        <el-breadcrumb-item :to="{ path: '/' }">用户</el-breadcrumb-item>
-        <el-breadcrumb-item>用户评论</el-breadcrumb-item>
-      </el-breadcrumb>
-    </div>
     <div class="all">
       <div class="row">
         <div class="layout-row">

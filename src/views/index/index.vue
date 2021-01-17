@@ -5,7 +5,9 @@
         @activeChange="activeChanges" :treeData="sidebarData" />
     </div>
     <div class="mainContent">
-      <router-view />
+      <transition name="translation" mode="out-in">
+        <router-view />
+      </transition>
     </div>
   </div>
 </template>

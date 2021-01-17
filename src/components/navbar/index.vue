@@ -1,5 +1,5 @@
 <template>
-  <div class="row-title">
+  <div class="navbar">
     <div class="row-cell">
       <div class="cell">
         <img src="../../assets/logo.png" alt="" />
@@ -22,6 +22,9 @@
 </template>
 
 <script>
+/**
+ * 导航栏组件
+ */
 export default {
   data() {
     return {
@@ -38,7 +41,6 @@ export default {
       ],
     };
   },
-  created() {},
   computed: {
     navActive() {
       return function (item) {
@@ -46,12 +48,11 @@ export default {
       };
     },
   },
-  methods: {},
 };
 </script>
 
 <style lang="scss" scoped>
-.row-title {
+.navbar {
   width: 100%;
   height: 60px;
   font-weight: bold;
