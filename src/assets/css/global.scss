@@ -45,20 +45,24 @@ p{
 
 .translation-enter {
   opacity: 0;
+  -ms-transform: translateX(-40px);
+  -ms-transform: translateX(-40px);
   transform: translateX(-40px);
 }
 
 .translation-enter-active {
-  transition: all .3s;
+  transition: all .2s;
 }
 
 .translation-enter-to {
   opacity: 1;
+  -ms-transform: translateX(0px);
+  -ms-transform: translateX(0px);
   transform: translateX(0px);
 }
 
 .translation-leave-active {
-  transition: all .3s;
+  transition: all .2s;
 }
 
 .translation-leave-to

@@ -1,7 +1,7 @@
 <template>
   <div class="crumbs" :style="`width: ${cw}`">
     <el-breadcrumb separator-class="el-icon-arrow-right">
-      <el-breadcrumb-item v-for="(item, index) in crumbsData" :key="index" :to="{ path: item.path }">{{item.text}}</el-breadcrumb-item>
+      <el-breadcrumb-item v-for="item in crumbsData" :key="item.path" :to="{ path: item.path }">{{item.text}}</el-breadcrumb-item>
     </el-breadcrumb>
   </div>
 </template>
@@ -28,44 +28,60 @@ export default {
   computed: {
     crumbsData() {
       return this.$route.matched.map(item => { return { text: item.meta.title, path: item.path || '/' } })
-    }
+    },
   }
 }
 </script>
 
 <style lang="scss">
   @keyframes fade-in {
-    from {
-      transform: translateY(20px);
-      opacity: 0;
+    0% {
+        opacity: 1;
+        -ms-transform: translateX(0) scale(0.8);
+        -moz-transform: translateX(0) scale(0.8);
+        -webkit-transform: translateX(0) scale(0.8);
+        transform: translateX(0) scale(0.8);
     }
-    to {
-      transform: translateY(0);
+    50% {
+      opacity: 0.1;
+      -ms-transform: translateX(100%) scale(1.2);
+      -moz-transform: translateX(100%) scale(1.2);
+      -webkit-transform: translateX(100%) scale(1.2);
+      transform: translateX(100%) scale(1.2);
+    }
+    100% {
       opacity: 1;
+      -ms-transform: translateX(0) scale(1);
+      -moz-transform: translateX(0) scale(1);
+      -webkit-transform: translateX(0) scale(1);
+      transform: translateX(0) scale(1);
     }
   }
 
   @-webkit-keyframes fade-in {
-    from {
-      transform: translateY(20px);
-      opacity: 0;
+    0% {
+        opacity: 0.3;
+        -ms-transform: translateX(0);
+        -moz-transform: translateX(0);
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
     }
-    to {
-      transform: translateY(0);
+    50% {
+      opacity: 0.6;
+      -ms-transform: translateX(100%);
+      -moz-transform: translateX(100%);
+      -webkit-transform: translateX(100%);
+      transform: translateX(100%);
+    }
+    100% {
       opacity: 1;
+      -ms-transform: translateX(0);
+      -moz-transform: translateX(0);
+      -webkit-transform: translateX(0);
+      transform: translateX(0);
     }
   }
 
-  @-moz-keyframes fade-in {
-    from {
-      transform: translateY(20px);
-      opacity: 0;
-    }
-    to {
-      transform: translateY(0);
-      opacity: 1;
-    }
-  }
   .crumbs {
     .el-breadcrumb {
       font-size: 13px;
@@ -76,14 +92,14 @@ export default {
       transform: translateY(-50%);
     }
     .el-breadcrumb__inner.is-link {
-      -webkit-animation: fade-in .2s;
-      animation: fade-in 0.2s;
-      animation-duration: .2s;
+      -webkit-animation: fade-in 0.3s ease;
+      animation: fade-in 0.3s ease;
+      -moz-animation: fade-in 0.3s ease;
     }
     .el-breadcrumb__item {
-      -webkit-animation: fade-in .2s;
-      animation: fade-in 0.2s;
-      animation-duration: .2s;
+      -webkit-animation: fade-in 0.3s ease;
+      animation: fade-in 0.3s ease;
+      -moz-animation: fade-in 0.3s ease;
     }
   }
 </style>
