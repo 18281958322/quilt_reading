@@ -1,7 +1,9 @@
 <template>
   <div class="crumbs" :style="`width: ${cw}`">
     <el-breadcrumb separator-class="el-icon-arrow-right">
-      <el-breadcrumb-item v-for="item in crumbsData" :key="item.path" :to="{ path: item.path }">{{item.text}}</el-breadcrumb-item>
+       <transition-group name="crumbAnimation">
+         <el-breadcrumb-item v-for="item in crumbsData" :key="item.path" :to="{ path: item.path }">{{item.text}}</el-breadcrumb-item>
+       </transition-group>
     </el-breadcrumb>
   </div>
 </template>
@@ -34,72 +36,64 @@ export default {
 </script>
 
 <style lang="scss">
-  @keyframes fade-in {
-    0% {
-        opacity: 1;
-        -ms-transform: translateX(0) scale(0.8);
-        -moz-transform: translateX(0) scale(0.8);
-        -webkit-transform: translateX(0) scale(0.8);
-        transform: translateX(0) scale(0.8);
-    }
-    50% {
-      opacity: 0.1;
-      -ms-transform: translateX(100%) scale(1.2);
-      -moz-transform: translateX(100%) scale(1.2);
-      -webkit-transform: translateX(100%) scale(1.2);
-      transform: translateX(100%) scale(1.2);
-    }
-    100% {
-      opacity: 1;
-      -ms-transform: translateX(0) scale(1);
-      -moz-transform: translateX(0) scale(1);
-      -webkit-transform: translateX(0) scale(1);
-      transform: translateX(0) scale(1);
-    }
+  .crumbAnimation-enter {
+    opacity: 0;
+    -ms-transform: translateX(-100%);
+    -ms-transform: translateX(-100%);
+    transform: translateX(-100%);
   }
 
-  @-webkit-keyframes fade-in {
-    0% {
-        opacity: 0.3;
-        -ms-transform: translateX(0);
-        -moz-transform: translateX(0);
-        -webkit-transform: translateX(0);
-        transform: translateX(0);
-    }
-    50% {
-      opacity: 0.6;
-      -ms-transform: translateX(100%);
-      -moz-transform: translateX(100%);
-      -webkit-transform: translateX(100%);
-      transform: translateX(100%);
-    }
-    100% {
-      opacity: 1;
-      -ms-transform: translateX(0);
-      -moz-transform: translateX(0);
-      -webkit-transform: translateX(0);
-      transform: translateX(0);
-    }
+  .crumbAnimation-enter-active {
+    transition: all 1s;
+  }
+
+  .crumbAnimation-enter-to {
+    opacity: 1;
+    -ms-transform: translateX(0px);
+    -ms-transform: translateX(0px);
+    transform: translateX(0px);
+  }
+
+  .crumbAnimation-leave {
+    position: absolute;
+    opacity: 1;
+  }
+
+  .crumbAnimation-leave-active {
+    transition: all .4s;
+  }
+
+  .crumbAnimation-leave-to
+  /* .slide-fade-leave-active for below version 2.1.8 */ {
+    position: absolute;
+    opacity: 0;
+    -ms-transform: translateX(100%);
+    -moz-transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
   }
 
   .crumbs {
     .el-breadcrumb {
-      font-size: 13px;
+      font-size: 12px;
     }
     .el-breadcrumb{
+      font-size: 13px;
       position: relative;
       top: 50%;
       transform: translateY(-50%);
-    }
-    .el-breadcrumb__inner.is-link {
-      -webkit-animation: fade-in 0.3s ease;
-      animation: fade-in 0.3s ease;
-      -moz-animation: fade-in 0.3s ease;
-    }
-    .el-breadcrumb__item {
-      -webkit-animation: fade-in 0.3s ease;
-      animation: fade-in 0.3s ease;
-      -moz-animation: fade-in 0.3s ease;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-align: start;
+      -ms-flex-align: start;
+      -webkit-align-items: flex-start;
+      align-items: flex-start;
+      -webkit-box-orient: unset;
+      -ms-flex-direction: column;
+      -webkit-flex-direction: column;
+      flex-direction: column;
     }
   }
 </style>
@@ -118,5 +112,6 @@ export default {
     overflow-x: auto;
     display: block !important;
     border-bottom: 1px #dadada solid;
+    background-color: #f5f6fa;
   }
 </style>
