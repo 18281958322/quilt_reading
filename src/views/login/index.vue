@@ -2,7 +2,7 @@
     <div class="login">
         <div class="login-all"></div>
         <div class="login-cell">
-            <p>管理系统</p>
+            <p>被窝读书系统</p>
         </div>
         <div class="login-pull">
             <div class="layout">

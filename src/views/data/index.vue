@@ -1,5 +1,12 @@
 <template>
-  <div class="data-cell">
+  <div class="conteanr-cell">
+    <div class="sidebarContent">
+      <sidebar :defaultActive="'s1'" @subMenuOpen="subMenuOpens" @subMenuClose="subMenuCloses"
+        @activeChange="activeChanges" :treeData="sidebarData" />
+    </div>
+    <div class="mainContent">
+      <router-view />
+    </div>
   </div>
 </template>
 

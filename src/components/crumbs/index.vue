@@ -92,14 +92,14 @@ export default {
       transform: translateY(-50%);
     }
     .el-breadcrumb__inner.is-link {
-      -webkit-animation: fade-in 0.3s ease;
-      animation: fade-in 0.3s ease;
-      -moz-animation: fade-in 0.3s ease;
+      -webkit-animation: fade-in 0.5s ease;
+      animation: fade-in 0.5s ease;
+      -moz-animation: fade-in 0.5s ease;
     }
     .el-breadcrumb__item {
-      -webkit-animation: fade-in 0.3s ease;
-      animation: fade-in 0.3s ease;
-      -moz-animation: fade-in 0.3s ease;
+      -webkit-animation: fade-in 0.5s ease;
+      animation: fade-in 0.5s ease;
+      -moz-animation: fade-in 0.5s ease;
     }
   }
 </style>
