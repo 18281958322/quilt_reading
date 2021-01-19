@@ -87,32 +87,3 @@
 <style lang="scss" scoped>
   @import './style.scss';
 </style>
-
-<style>
-  .el-tabs {
-    width: 100%;
-  }
-
-  .el-table {
-    font-size: 13px;
-  }
-
-  .el-tabs__item {
-    font-size: 13px;
-  }
-
-  .el-input {
-    font-size: 13px;
-  }
-
-    .el-input__inner{
-    height: 30px;
-    line-height: 30px;
-  }
-
-  .el-button--primary{
-    height: 30px;
-    font-size: 13px;
-    padding: 0 20px;
-  }
-</style>

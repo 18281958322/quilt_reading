@@ -131,25 +131,3 @@
 <style lang="scss" scoped>
   @import './style.scss';
 </style>
-
-<style>
-  .el-tabs {
-    width: 100%;
-  }
-
-  .el-table {
-    font-size: 13px;
-  }
-
-  .el-tabs__item {
-    font-size: 13px;
-  }
-
-  .el-input {
-    font-size: 13px;
-  }
-
-  .el-checkbox {
-    margin-right: 0;
-  }
-</style>

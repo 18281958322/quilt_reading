@@ -168,19 +168,3 @@ export default {
     }
 }
 </style>
-
-<style>
-.el-tabs{
-  width: 100%;
-}
-
-.el-table{
-  font-size: 13px;
-}
-.el-tabs__item{
-  font-size: 13px;
-}
-.el-input{
-  font-size: 13px;
-}
-</style>

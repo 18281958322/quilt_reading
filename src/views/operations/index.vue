@@ -60,7 +60,7 @@
     display: flex;
     flex-direction: row;
     .sidebarContent{
-      box-shadow: 2px 0 6px rgba(0, 21, 41, 0.35);
+      box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.12), 0 0 6px 0 rgba(0, 0, 0, 0.04);
     }
   }
 </style>
