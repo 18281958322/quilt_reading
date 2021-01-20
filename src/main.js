@@ -7,7 +7,9 @@ import 'element-ui/lib/theme-chalk/index.css';
 import navbar from './components/navbar/index';
 import sidebar from './components/sidebar/index';
 import crumbs from './components/crumbs/index';
+import topTabbar from './components/topTabbar/index';
 import './assets/css/global.scss';
+import './assets/font/iconfont.css';
 
 Vue.use(ElementUI);
 Vue.config.productionTip = false
@@ -16,6 +18,7 @@ Vue.config.productionTip = false
 Vue.component('navbar', navbar);
 Vue.component('sidebar', sidebar)
 Vue.component('crumbs', crumbs)
+Vue.component('topTabbar', topTabbar)
 
 new Vue({
   router,

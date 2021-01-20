@@ -1,22 +1,12 @@
 <template>
-  <div class="navbar">
-    <div class="row-cell">
-      <div class="cell">
-        <img src="../../assets/logo.png" alt="" />
-      </div>
-      <div class="cell-1">
-        <p>被窝读书</p>
-      </div>
+  <div class="navbar flex align-center">
+    <div class="row-cell flex align-center justify-center">
+      <img src="../../assets/logo.png" alt="" />
+      <span>被窝读书</span>
     </div>
-    <div class="layout">
-      <router-link
-        :class="['layout-cell', { active: navActive(nav) }]"
-        v-for="(nav, index) in list"
-        :key="index"
-        :to="nav.route"
-      >
-        <div class="box">{{ nav.title }}</div>
-      </router-link>
+    <div class="navbar-right flex1">
+      <sidebar ref="tabnbarMenu" :defaultActive="$route.meta.toplevel" :mode="'horizontal'" @subMenuOpen="subMenuOpens" @subMenuClose="subMenuCloses"
+        @activeChange="activeChanges" :treeData="sidebarData" />
     </div>
   </div>
 </template>
@@ -29,25 +19,127 @@ export default {
   data() {
     return {
       activeClass: 0,
-      list: [
-        { route: "/", title: "首页" },
-        { route: "/data", title: "数据" },
-        { route: "/user", title: "用户" },
-        { route: "/content", title: "内容" },
-        { route: "/operations", title: "运营" },
-        { route: "/distribution", title: "分销" },
-        { route: "/author", title: "作者" },
-        { route: "/setup", title: "设置" },
+      sidebarData: [
+        { 
+          key: "tl_home",
+          title: "首页",
+        },
+        { 
+          key: "tl_data",
+          title: "数据" 
+        },
+        { 
+          key: "tl_user",
+          title: "用户",
+        },
+        { 
+          key: "tl_content",
+          title: "内容",
+        },
+        { 
+          key: "tl_operations",
+          title: "运营",
+          children: [
+            {
+              key: "tl_op",
+              title: "通用管理",
+              children: [
+                {
+                  key: "tl_er",
+                  title: "App运营管理"
+                },
+                {
+                  key: "tl_ti",
+                  title: "公众号运营管理"
+                },
+              ]
+            },
+          ]
+        },
+        { 
+          key: "tl_distribution",
+          title: "分销" 
+        },
+        { 
+          key: "tl_author",
+          title: "作者" 
+        },
+        { 
+          key: "tl_setup",
+          title: "设置" 
+        },
       ],
     };
   },
   computed: {
     navActive() {
-      return function (item) {
-        return this.$route.path === item.route || (this.$route.meta.toplevel && this.$route.meta.toplevel === item.route);
-      };
+      return this.$route.meta.toplevel
     },
   },
+  watch: {
+    '$route'(to, from) {
+      this.$refs.tabnbarMenu.defaultActive = to.meta.toplevel
+      // console.log(this.$refs.tabnbarMenu)
+    }
+  },
+  methods: {
+    subMenuOpens(index, path) {
+      console.log('subMenuOpens', index, path)
+    },
+    subMenuCloses(index, path) {
+      console.log('subMenuCloses', index, path)
+    },
+    activeChanges(index, path) {
+
+      console.log(index, path)
+      switch(index) {
+        case 'tl_content': 
+          this.$router.push('/novel');
+          this.$store.commit('setSidebarData', { 
+            val: [ //修改侧边栏数据
+              {
+                title: "小说",
+                key: "/novel",
+                icon: "el-icon-user",
+              },
+              {
+                title: "漫画",
+                key: "/comics",
+                icon: "el-icon-chat-dot-square",
+              },
+              {
+                title: "听书",
+                key: "/books",
+                icon: "el-icon-edit-outline",
+              }
+            ]
+          }); 
+          this.$store.commit('setSideDefaultActive', { val: '/novel' }); break
+        case 'tl_user': 
+          this.$router.push('/userlist');
+          this.$store.commit('setSidebarData', { 
+            val: [ //修改侧边栏数据
+              {
+                title: "用户列表",
+                key: "/userlist",
+                icon: "el-icon-user",
+              },
+              {
+                title: "用户评论",
+                key: "/usercomment",
+                icon: "el-icon-chat-dot-square",
+              },
+              {
+                title: "用户反馈",
+                key: "/customerfeedback",
+                icon: "el-icon-edit-outline",
+              }
+            ]
+          });
+          this.$store.commit('setSideDefaultActive', { val: '/userlist' }); break
+      }
+    }
+  }
 };
 </script>
 
@@ -55,7 +147,6 @@ export default {
 .navbar {
   width: 100%;
   height: 60px;
-  font-weight: bold;
   position: fixed;
   top: 0;
   z-index: 999;
@@ -64,47 +155,20 @@ export default {
   background-color: #ffffff;
   border-bottom: solid 1px #e6e6e6;
   box-shadow: 0px 0px 10px #dadada;
-  a {
-    text-decoration: none;
-  }
   .row-cell {
     width: 200px;
-    display: flex;
-    float: left;
-    padding: 10px 0;
-    justify-content: center;
-    .cell {
+    img {
       width: 35px;
       height: 35px;
-      img {
-        width: 100%;
-        height: 100%;
-      }
+      margin-right: 12px;
     }
-    .cell-1 {
-      font-size: 14px;
-      p {
-        line-height: 35px;
-        color: #343434;
-      }
+    span {
+      font-size: 18px;
+      color: #343434;
     }
   }
-  .layout {
-    float: left;
-    display: flex;
-    .layout-cell {
-      font-size: 14px;
-      .box {
-        color: #343434;
-        line-height: 18px;
-        margin: 0px 20px;
-        padding: 20px 15px;
-        text-decoration: none;
-      }
-    }
-    .active {
-      border-bottom: 2px #00a5ff solid;
-    }
+  .navbar-right {
+
   }
 }
 </style>
