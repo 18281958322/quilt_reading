@@ -32,7 +32,7 @@
               // icon: 'el-icon-location',
             },
           ],
-        },],
+        }],
       };
     },
     methods: {

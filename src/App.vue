@@ -1,7 +1,5 @@
 <template>
   <div id="app">
-    <navbar v-if="navbarStatus" />
-    <crumbs v-if="crumbStatus"></crumbs>
     <router-view />
   </div>
 </template>
