@@ -15,7 +15,7 @@ Router.prototype.push = function push(location) {
  * @title { string } 当前路由中文名称（给面包屑展示用的）
  * @toplevel { string } 当前路由所属顶级模块
  */
-const vueRouter =  new Router({
+const vueRouter = new Router({
   mode: 'history',
   base: process.env.BASE_URL,
   routes: [

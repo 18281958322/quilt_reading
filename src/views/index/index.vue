@@ -2,7 +2,7 @@
   <div class="home_index">
     <navbar />
     <div class="sidebarContent">
-      <sidebar :defaultActive="sideDefaultActive" :collapse="sidebarCollapse" @subMenuOpen="subMenuOpens" @subMenuClose="subMenuCloses"
+      <sidebar ref="newSidebar" defaultActive="/userlist" :collapse="sidebarCollapse" @subMenuOpen="subMenuOpens" @subMenuClose="subMenuCloses"
         @activeChange="activeChanges" :treeData="sidebarData" />
     </div>
     <div class="mainContent flex flex-column transition" :style="{'paddingLeft': sidebarCollapse ? '64px' : '226px'}">
@@ -26,6 +26,11 @@ export default {
   },
   computed: {
     ...mapState(['sidebarCollapse', 'sidebarData', 'sideDefaultActive'])
+  },
+  watch: {
+    sideDefaultActive(newval, oldval) {
+      this.$refs.newSidebar.setAtindex(newval)
+    }
   },
   mounted() {
     this.activeChanges('/userlist')

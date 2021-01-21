@@ -11,7 +11,6 @@
 
 import { mapState } from "vuex";
 export default {
-  name: "sidebar",
   props: {
     treeData: {
       required: true,
@@ -47,9 +46,13 @@ export default {
       required: false,
       default: false,
       type: Boolean,
-    }
+    },
   },
   methods: {
+    // 修改默认选中(因为不能直接动态绑定，所以只能这样)
+    setAtindex(key) {
+      this.$refs.mySidebar.activeIndex = key;
+    },
     //sub-menu 展开的回调
     handleOpen(index, keyPath) {
       this.$emit("subMenuOpen", index, keyPath);
@@ -62,41 +65,46 @@ export default {
     menuChange(index, indexPath) {
       this.$emit("activeChange", index, indexPath);
     },
-    createSideBarMenuItem (createElement, sv){
-      const that = this
+    createSideBarMenuItem(createElement, sv) {
+      const that = this;
       if (sv.children && sv.children.length > 0) {
         return createElement(
-          'el-submenu', { props: { index: sv.key }, key: sv.key },
+          "el-submenu",
+          { props: { index: sv.key }, key: sv.key },
           [
             createElement(
-              'template', { slot: 'title' }, (function() {
-                let tmpChilds = []
+              "template",
+              { slot: "title" },
+              (function () {
+                let tmpChilds = [];
                 if (sv.icon) {
                   tmpChilds.push(
                     createElement("i", {
                       class: sv.icon,
-                    }),
-                  )
+                    })
+                  );
                 }
                 tmpChilds.push(
                   createElement("span", {
-                      domProps: {
-                        innerHTML: sv.title,
-                      },
+                    domProps: {
+                      innerHTML: sv.title,
+                    },
                   })
-                )
-                return tmpChilds
+                );
+                return tmpChilds;
               })()
             ),
-            ...(function() {
-              let tmpChilds2 = []
+            ...(function () {
+              let tmpChilds2 = [];
               for (let item of sv.children) {
-                tmpChilds2.push(that.createSideBarMenuItem(createElement, item))
+                tmpChilds2.push(
+                  that.createSideBarMenuItem(createElement, item)
+                );
               }
-              return tmpChilds2
-            })()
+              return tmpChilds2;
+            })(),
           ]
-        )
+        );
       } else {
         return createElement(
           "el-menu-item",
@@ -106,57 +114,60 @@ export default {
             },
             key: sv.key,
           },
-          (function() {
-            let tmpChilds = []
+          (function () {
+            let tmpChilds = [];
             if (sv.icon) {
               tmpChilds.push(
                 createElement("i", {
                   class: sv.icon,
-                }),
-              )
+                })
+              );
             }
             tmpChilds.push(
               createElement("span", {
-                  domProps: {
-                    innerHTML: sv.title,
-                  },
-                  slot: 'title'
+                domProps: {
+                  innerHTML: sv.title,
+                },
+                slot: "title",
               })
-            )
-            return tmpChilds
+            );
+            return tmpChilds;
           })()
-        )
+        );
       }
-    }
+    },
   },
-  render: function(createElement) {
+  render: function (createElement) {
     return createElement(
       "el-menu",
       {
         style: {
           border: "none",
         },
+        ref: 'mySidebar',
         props: {
-          router: false,
-          collapse: this.collapse,
-          backgroundColor: this.backgroundColor,
-          textColor: this.textColor,
-          activeTextColor: this.activeTextColor,
-          defaultActive: this.defaultActive,
-          mode: this.mode,
-          collapseTransition: true,
+          'router': false,
+          'collapse': this.collapse,
+          'background-color': this.backgroundColor,
+          'text-color': this.textColor,
+          'active-text-color': this.activeTextColor,
+          'default-active': this.defaultActive,
+          'mode': this.mode,
+          'collapse-transition': true,
         },
         on: {
           select: this.menuChange,
           open: this.handleOpen,
           close: this.handleClose,
         },
-        class: this.mode === 'vertical' ? ['el-menu-vertical-demo'] : []
+        class: this.mode === "vertical" ? ["el-menu-vertical-demo"] : [],
       },
-      this.treeData.map((item) => this.createSideBarMenuItem(createElement, item))
-    )
-  }
-}
+      this.treeData.map((item) =>
+        this.createSideBarMenuItem(createElement, item)
+      )
+    );
+  },
+};
 </script>
 
 <style>

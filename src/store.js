@@ -1,5 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import router from './router/router'
+import { Message } from 'element-ui'
 
 Vue.use(Vuex)
 
@@ -38,7 +40,23 @@ export default new Vuex.Store({
           if (state.tabBarList.filter(item => item.path === val.path).length <= 0) {
             state.tabBarList.push(val)
           }; break
-        case 'delete': state.tabBarList.splice(state.tabBarList.findIndex(item => item.path === val.path), 1); break
+        case 'delete':
+          let index = state.tabBarList.findIndex(item => item.path === val.path)
+          let brotherIndex = state.tabBarList.length <= 1 ? false : index - 1 < 0 ? index + 1 : index - 1
+          if (router.currentRoute.path === val.path) {
+            if (brotherIndex === false) {
+              Message({
+                showClose: true,
+                message: '请至少打开一个页面 ！',
+                type: 'warning',
+                duration: 2000,
+              })
+              return
+            }
+            router.push(state.tabBarList[brotherIndex].path)
+          }
+          state.tabBarList.splice(index, 1);
+        break
       }
     },
     /**
