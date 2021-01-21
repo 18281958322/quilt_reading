@@ -93,6 +93,36 @@
         // console.log(index, path);
         this.dfat = index
         switch (index) {
+          case "tl_home":
+            this.$router.push("/allindex");
+            this.$store.commit("setSidebarData", {
+              val: [
+                {
+                  title: "首页",
+                  key: "/allindex",
+                  icon: "el-icon-user"
+                }
+              ]
+            });
+            this.$store.commit("setSideDefaultActive", {
+              val: "/allindex"
+            });
+            break;
+          case "tl_data":
+            this.$router.push("/data");
+            this.$store.commit("setSidebarData", {
+               val: [
+                {
+                  title: "统计",
+                  key: "/data",
+                  icon: "el-icon-user"
+                }
+              ]
+            });
+            this.$store.commit("setSideDefaultActive", {
+              val: "/data"
+            });
+            break;
           case "tl_content":
             this.$router.push("/novel");
             this.$store.commit("setSidebarData", {

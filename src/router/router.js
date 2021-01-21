@@ -62,6 +62,18 @@ const vueRouter = new Router({
           component: () => import('../views/content/books.vue'),
           meta: { title: '听书', toplevel: 'tl_content' }
         },
+        { // 首页
+          path: '/allindex',
+          name: 'Allindex',
+          component: () => import('../views/index/allindex/index.vue'),
+          meta: { title: '首页', toplevel: 'tl_home' }
+        },
+        { //数据
+          path: '/data',
+          name: 'Data',
+          component: () => import('../views/data/index.vue'),
+          meta: { title: '统计', toplevel: 'tl_data' }
+        }
       ]
     },
     {// 登录

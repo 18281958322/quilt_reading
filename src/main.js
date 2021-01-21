@@ -10,6 +10,7 @@ import crumbs from './components/crumbs/index';
 import topTabbar from './components/topTabbar/index';
 import './assets/css/global.scss';
 import './assets/font/iconfont.css';
+import echarts from 'echarts';
 
 Vue.use(ElementUI);
 Vue.config.productionTip = false
@@ -19,6 +20,7 @@ Vue.component('navbar', navbar);
 Vue.component('sidebar', sidebar)
 Vue.component('crumbs', crumbs)
 Vue.component('topTabbar', topTabbar)
+Vue.prototype.$echarts = echarts;
 
 new Vue({
   router,
