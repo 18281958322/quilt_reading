@@ -23,7 +23,6 @@ const vueRouter = new Router({
       path: '/',
       name: 'index',
       component: () => import('../views/index/index.vue'),
-      // redirect: '/userlist',
       meta: { title: '首页' },
       children: [
         { // 用户列表
