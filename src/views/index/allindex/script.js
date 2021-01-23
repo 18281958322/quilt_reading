@@ -16,6 +16,9 @@ export default {
     getchartOne() {
       let myChart = this.$echarts.init(document.getElementById('chartOne'));
       myChart.setOption({
+        tooltip: {
+          trigger: 'axis'
+        },
         xAxis: {
           type: 'category',
           data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
@@ -25,7 +28,8 @@ export default {
         },
         series: [{
           data: [820, 932, 901, 934, 1290, 1330, 1320],
-          type: 'line'
+          type: 'line',
+          smooth: true
         }]
       })
     },
@@ -33,6 +37,9 @@ export default {
     getchartTwo() {
       let myChart = this.$echarts.init(document.getElementById('chartTwo'));
       myChart.setOption({
+        tooltip: {
+          trigger: 'axis'
+        },
         xAxis: {
           type: 'category',
           data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
@@ -42,7 +49,8 @@ export default {
         },
         series: [{
           data: [820, 932, 901, 934, 1290, 1330, 1320],
-          type: 'line'
+          type: 'line',
+          smooth: true
         }]
       })
     },
@@ -50,6 +58,9 @@ export default {
     getchartThree() {
       let myChart = this.$echarts.init(document.getElementById('chartThree'));
       myChart.setOption({
+        tooltip: {
+          trigger: 'axis'
+        },
         xAxis: {
           type: 'category',
           data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
@@ -59,7 +70,8 @@ export default {
         },
         series: [{
           data: [820, 932, 901, 934, 1290, 1330, 1320],
-          type: 'line'
+          type: 'line',
+          smooth: true
         }]
       })
     },
@@ -67,6 +79,9 @@ export default {
     getchartfuro() {
       let myChart = this.$echarts.init(document.getElementById('chartfour'));
       myChart.setOption({
+        tooltip: {
+          trigger: 'axis'
+        },
         xAxis: {
           type: 'category',
           data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
@@ -76,7 +91,8 @@ export default {
         },
         series: [{
           data: [820, 932, 901, 934, 1290, 1330, 1320],
-          type: 'line'
+          type: 'line',
+          smooth: true
         }]
       })
     },
@@ -84,16 +100,20 @@ export default {
     getchartFive() {
       let myChart = this.$echarts.init(document.getElementById('chartfivie'));
       myChart.setOption({
+        tooltip: {
+          trigger: 'axis'
+        },
         xAxis: {
           type: 'category',
-          data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+          data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri']
         },
         yAxis: {
           type: 'value'
         },
         series: [{
-          data: [820, 932, 901, 934, 1290, 1330, 1320],
-          type: 'line'
+          data: [120, 200, 150, 80, 70],
+          type: 'bar',
+          showBackground: true,
         }]
       })
     },
@@ -101,6 +121,9 @@ export default {
     getchartSix() {
       let myChart = this.$echarts.init(document.getElementById('chartsix'));
       myChart.setOption({
+        tooltip: {
+          trigger: 'axis'
+        },
         xAxis: {
           type: 'category',
           data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
@@ -110,7 +133,8 @@ export default {
         },
         series: [{
           data: [820, 932, 901, 934, 1290, 1330, 1320],
-          type: 'line'
+          type: 'line',
+          smooth: true
         }]
       })
     },

@@ -1,29 +1,24 @@
 .author{
-    width: 86.8%;
     .all{
         padding: 10px 0;
         .row{
             background-color: #fff;
-            .layout-row{
-                .layout-title{
-                    font-size: 14px;
-                    text-indent: 20px;
-                    p{
-                        padding: 20px 0;
-                    }
-                }
-                .layout{
+            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.12), 0 0 6px 0 rgba(0, 0, 0, 0.04);
+            .layout{
+                padding: 10px 1%;
+                .layout-float{
                     display: flex;
-                    padding: 0px 20px;
+                    justify-content: space-between;
                     .layout-cell{
-                        padding: 5px 0px;
-                    }
-                    .layout-pull{
-                        padding: 5px 5px;
+                        margin: 10px 0;
+                        display: flex;
+                        justify-content: space-between; 
                     }
                 }
-                .layout-data{
-                    padding: 0 0 20px 20px;
+                .layout-center-page{
+                    display: flex;
+                    padding: 20px 0;
+                    justify-content: center;
                 }
             }
         }

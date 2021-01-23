@@ -73,7 +73,13 @@ const vueRouter = new Router({
           name: 'Data',
           component: () => import('../views/data/index.vue'),
           meta: { title: '统计', toplevel: 'tl_data' }
-        }
+        },
+        { //作者
+          path: '/author',
+          name: 'Author',
+          component: () => import('../views/author/index.vue'),
+          meta: { title: '新闻公告', toplevel: 'tl_author' }
+        },
       ]
     },
     {// 登录

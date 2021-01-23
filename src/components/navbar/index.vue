@@ -96,13 +96,11 @@
           case "tl_home":
             this.$router.push("/allindex");
             this.$store.commit("setSidebarData", {
-              val: [
-                {
-                  title: "首页",
-                  key: "/allindex",
-                  icon: "el-icon-user"
-                }
-              ]
+              val: [{
+                title: "首页",
+                key: "/allindex",
+                icon: "el-icon-user"
+              }]
             });
             this.$store.commit("setSideDefaultActive", {
               val: "/allindex"
@@ -111,13 +109,11 @@
           case "tl_data":
             this.$router.push("/data");
             this.$store.commit("setSidebarData", {
-               val: [
-                {
-                  title: "统计",
-                  key: "/data",
-                  icon: "el-icon-user"
-                }
-              ]
+              val: [{
+                title: "统计",
+                key: "/data",
+                icon: "el-icon-user"
+              }]
             });
             this.$store.commit("setSideDefaultActive", {
               val: "/data"
@@ -173,6 +169,22 @@
             });
             this.$store.commit("setSideDefaultActive", {
               val: "/userlist"
+            });
+            break;
+          case "tl_author":
+            this.$router.push("/author");
+            this.$store.commit("setSidebarData", {
+              val: [
+                //修改侧边栏数据
+                {
+                  title: "新闻公告",
+                  key: "/author",
+                  icon: "el-icon-user",
+                },
+              ],
+            });
+            this.$store.commit("setSideDefaultActive", {
+              val: "/author"
             });
             break;
         }

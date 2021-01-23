@@ -120,7 +120,7 @@
                   <p>今日：</p>
                 </div>
                 <div class="cell-pull">
-                  <p class="size-color">2100</p>
+                  <p class="size-color">￥2100.05</p>
                 </div>
               </div>
               <div class="box-left">
@@ -128,7 +128,7 @@
                   <p>较昨日：</p>
                 </div>
                 <div class="cell-pull">
-                  <p>0.00%</p>
+                  <p>-20.00%</p>
                 </div>
               </div>
             </div>
@@ -270,10 +270,10 @@
             <div class="box-pull">
               <div class="box-left">
                 <div class="cell-pull">
-                  <p>今日：</p>
+                  <p>次日：</p>
                 </div>
                 <div class="cell-pull">
-                  <p class="size-color">2100</p>
+                  <p class="size-color">55.2%</p>
                 </div>
               </div>
               <div class="box-left">
@@ -281,7 +281,7 @@
                   <p>较昨日：</p>
                 </div>
                 <div class="cell-pull">
-                  <p>0.00%</p>
+                  <p>-8.65%</p>
                 </div>
               </div>
             </div>
