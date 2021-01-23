@@ -181,6 +181,26 @@
                   key: "/author",
                   icon: "el-icon-user",
                 },
+                {
+                  title: "作者管理",
+                  key: "/penster",
+                  icon: "el-icon-user"
+                },
+                {
+                  title: "作者审核",
+                  key: "/toexamine",
+                  icon: "el-icon-user"
+                },
+                {
+                  title: "稿酬",
+                  key: "/remuneration",
+                  icon: "el-icon-user"
+                },
+                {
+                  title: "责编",
+                  key: "/editorincharge",
+                  icon: "el-icon-user"
+                }
               ],
             });
             this.$store.commit("setSideDefaultActive", {

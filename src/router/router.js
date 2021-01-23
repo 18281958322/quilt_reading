@@ -80,6 +80,30 @@ const vueRouter = new Router({
           component: () => import('../views/author/index.vue'),
           meta: { title: '新闻公告', toplevel: 'tl_author' }
         },
+        { //作者管理
+          path: '/penster',
+          name: "Penster",
+          component: () => import('../views/author/penster/index.vue'),
+          meta: { title: '作者管理', toplevel: 'tl_author'}
+        },
+        { //作者审核
+          path: '/toexamine',
+          name: "Toexamine",
+          component: () => import('../views/author/toexamine/index.vue'),
+          meta: {title: '作者审核', toplevel: 'tl_author'}
+        },
+        { //责编
+          path: '/editorincharge',
+          name: "Editorincharge",
+          component: () => import('../views/author/editorincharge/index.vue'),
+          meta: {title: '责编',toplevel: 'tl_author'}
+        },
+        { //
+          path: '/remuneration',
+          name: "Remuneration",
+          component: () => import('../views/author/remuneration/index.vue'),
+          meta: { title: '稿酬',toplevel: 'tl_author'}
+        }
       ]
     },
     {// 登录
