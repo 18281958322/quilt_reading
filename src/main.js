@@ -11,9 +11,13 @@ import topTabbar from './components/topTabbar/index';
 import './assets/css/global.scss';
 import './assets/font/iconfont.css';
 import echarts from 'echarts';
+import server from './api/index'
 
 Vue.use(ElementUI);
 Vue.config.productionTip = false
+
+// 挂载到原型
+Vue.prototype.$server = server
 
 // 注册全局组件
 Vue.component('navbar', navbar);

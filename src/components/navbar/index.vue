@@ -20,7 +20,7 @@
       return {
         activeClass: 0,
         dfat: 'tl_user',
-        sidebarData: [{
+        sidebarData: [{ // key: 菜单唯一标识; title: 菜单显示名称; icon: 菜单显示图标; children: 下级菜单
             key: "tl_home",
             title: "首页",
           },
@@ -42,17 +42,7 @@
             children: [{
               key: "tl_op",
               title: "通用管理",
-              // children: [
-              //   {
-              //     key: "tl_er",
-              //     title: "App运营管理",
-              //   },
-              //   {
-              //     key: "tl_ti",
-              //     title: "公众号运营管理",
-              //   },
-              // ],
-            }, ],
+            }],
           },
           {
             key: "tl_distribution",
@@ -90,124 +80,24 @@
         console.log("subMenuCloses", index, path);
       },
       activeChanges(index, path) {
-        // console.log(index, path);
-        this.dfat = index
+        // 默认打开路由;同时也是侧边栏默认选中的key
+        let activePath = '';
+        // 记录顶级导航当前选中项
+        this.dfat = index;
+        // 修改侧边栏数据
+        this.$store.commit("setSidebarData", { val: index });
+        // 判断当前顶级导航所展示的侧边菜单和默认打开路由
         switch (index) {
-          case "tl_home":
-            this.$router.push("/allindex");
-            this.$store.commit("setSidebarData", {
-              val: [{
-                title: "首页",
-                key: "/allindex",
-                icon: "el-icon-user"
-              }]
-            });
-            this.$store.commit("setSideDefaultActive", {
-              val: "/allindex"
-            });
-            break;
-          case "tl_data":
-            this.$router.push("/data");
-            this.$store.commit("setSidebarData", {
-              val: [{
-                title: "统计",
-                key: "/data",
-                icon: "el-icon-user"
-              }]
-            });
-            this.$store.commit("setSideDefaultActive", {
-              val: "/data"
-            });
-            break;
-          case "tl_content":
-            this.$router.push("/novel");
-            this.$store.commit("setSidebarData", {
-              val: [
-                //修改侧边栏数据
-                {
-                  title: "小说",
-                  key: "/novel",
-                  icon: "el-icon-user",
-                },
-                {
-                  title: "漫画",
-                  key: "/comics",
-                  icon: "el-icon-chat-dot-square",
-                },
-                {
-                  title: "听书",
-                  key: "/books",
-                  icon: "el-icon-edit-outline",
-                },
-              ],
-            });
-            this.$store.commit("setSideDefaultActive", {
-              val: "/novel"
-            });
-            break;
-          case "tl_user":
-            this.$router.push("/userlist");
-            this.$store.commit("setSidebarData", {
-              val: [
-                //修改侧边栏数据
-                {
-                  title: "用户列表",
-                  key: "/userlist",
-                  icon: "el-icon-user",
-                },
-                {
-                  title: "用户评论",
-                  key: "/usercomment",
-                  icon: "el-icon-chat-dot-square",
-                },
-                {
-                  title: "用户反馈",
-                  key: "/customerfeedback",
-                  icon: "el-icon-edit-outline",
-                },
-              ],
-            });
-            this.$store.commit("setSideDefaultActive", {
-              val: "/userlist"
-            });
-            break;
-          case "tl_author":
-            this.$router.push("/author");
-            this.$store.commit("setSidebarData", {
-              val: [
-                //修改侧边栏数据
-                {
-                  title: "新闻公告",
-                  key: "/author",
-                  icon: "el-icon-user",
-                },
-                {
-                  title: "作者管理",
-                  key: "/penster",
-                  icon: "el-icon-user"
-                },
-                {
-                  title: "作者审核",
-                  key: "/toexamine",
-                  icon: "el-icon-user"
-                },
-                {
-                  title: "稿酬",
-                  key: "/remuneration",
-                  icon: "el-icon-user"
-                },
-                {
-                  title: "责编",
-                  key: "/editorincharge",
-                  icon: "el-icon-user"
-                }
-              ],
-            });
-            this.$store.commit("setSideDefaultActive", {
-              val: "/author"
-            });
-            break;
+          case "tl_home": activePath = '/allindex'; break
+          case "tl_data": activePath = '/data'; break
+          case "tl_content": activePath = '/novel'; break
+          case "tl_user": activePath = '/userlist'; break
+          case "tl_author": activePath = '/author'; break
         }
+        // 切换侧边栏选中项
+        this.$store.commit("setSideDefaultActive", { val: activePath })
+        // 默认页面打开
+        this.$router.push(activePath)
       },
     },
   };

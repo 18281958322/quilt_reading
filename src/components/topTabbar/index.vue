@@ -23,7 +23,7 @@
           };
         });
       },
-      ...mapState(["tabBarList"]),
+      ...mapState(["tabBarList", "sidebarAllDataActiv"]),
       tabActive() {
         return function (item) {
           return this.$route.path === item.path;
@@ -38,6 +38,10 @@
         });
       },
       switchActive(item) {
+        if (this.sidebarAllDataActiv !== item.meta.toplevel) {
+          this.$store.commit("setSidebarData", { val: item.meta.toplevel });
+        }
+        this.$store.commit("setSideDefaultActive", { val: item.path })
         this.$router.push(item.path);
       },
     },

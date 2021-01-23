@@ -2,7 +2,7 @@
   <div class="home_index">
     <navbar />
     <div class="sidebarContent">
-      <sidebar ref="newSidebar" defaultActive="/userlist" :collapse="sidebarCollapse" @subMenuOpen="subMenuOpens" @subMenuClose="subMenuCloses"
+      <sidebar ref="newSidebar" defaultActive="/allindex" :collapse="sidebarCollapse" @subMenuOpen="subMenuOpens" @subMenuClose="subMenuCloses"
         @activeChange="activeChanges" :treeData="sidebarData" />
     </div>
     <div class="mainContent flex flex-column transition" :style="{'paddingLeft': sidebarCollapse ? '64px' : '226px'}">
@@ -33,7 +33,8 @@ export default {
     }
   },
   mounted() {
-    this.activeChanges('/userlist')
+    this.$store.commit("setSidebarData", { val: 'tl_home' });
+    this.$router.push('/allindex')
   },
   methods: {
     subMenuOpens(index, path) {
