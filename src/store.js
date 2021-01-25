@@ -1,7 +1,9 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import router from './router/router'
-import { Message } from 'element-ui'
+import {
+  Message
+} from 'element-ui'
 
 Vue.use(Vuex)
 
@@ -60,21 +62,24 @@ export default new Vuex.Store({
           icon: "el-icon-edit-outline",
         },
       ],
-      tl_author: [// 作者
+      tl_author: [ // 作者
         {
           title: "新闻公告",
           key: "/author",
           icon: "el-icon-user",
         },
         {
-          title: "作者管理",
-          key: "/penster",
-          icon: "el-icon-user"
-        },
-        {
-          title: "作者审核",
-          key: "/toexamine",
-          icon: "el-icon-user"
+          title: "作者",
+          icon: "el-icon-user",
+          children: [{
+            title: "作者管理",
+            key: "/penster",
+            icon: "el-icon-user",
+          }, {
+            title: "作者审核",
+            key: "/toexamine",
+            icon: "el-icon-user"
+          }, ]
         },
         {
           title: "稿酬",
@@ -89,7 +94,7 @@ export default new Vuex.Store({
       ]
     },
     sidebarAllDataActiv: 'tl_home', // 侧边栏总目录当前选中对象
-    sidebarData: [],//侧边栏当前显示数据
+    sidebarData: [], //侧边栏当前显示数据
 
   },
   mutations: {
@@ -98,7 +103,10 @@ export default new Vuex.Store({
      * @val { object } 路由对象
      * @type { string } 操作类型
      */
-    setTabBarList(state, { val, type }) {
+    setTabBarList(state, {
+      val,
+      type
+    }) {
       if (type === 'add') {
         if (state.tabBarList.filter(item => item.path === val.path).length <= 0) {
           state.tabBarList.push(val)
@@ -116,7 +124,10 @@ export default new Vuex.Store({
             })
             return
           }
-          let { path, meta } = state.tabBarList[brotherIndex]
+          let {
+            path,
+            meta
+          } = state.tabBarList[brotherIndex]
           if (state.sidebarAllDataActiv !== meta.toplevel) {
             state.sidebarAllDataActiv = meta.toplevel
             state.sidebarData = state.sidebarAllDatas[meta.toplevel]
@@ -131,14 +142,18 @@ export default new Vuex.Store({
      * 更改侧边栏展开状态
      * @val { boolean } true=>收起，false=>展开
      */
-    setSidebarCollapse(state, { val }) {
+    setSidebarCollapse(state, {
+      val
+    }) {
       state.sidebarCollapse = val
     },
     /**
      * 更改侧边栏数据
      * @val { Object } 树形数组
      */
-    setSidebarData(state, { val }) {
+    setSidebarData(state, {
+      val
+    }) {
       state.sidebarAllDataActiv = val
       state.sidebarData = state.sidebarAllDatas[val]
     },
@@ -146,7 +161,9 @@ export default new Vuex.Store({
      * 更改侧边栏默认选中
      * @val { string } 菜单的唯一标识key
      */
-    setSideDefaultActive(state, { val }) {
+    setSideDefaultActive(state, {
+      val
+    }) {
       state.sideDefaultActive = val
     },
   },

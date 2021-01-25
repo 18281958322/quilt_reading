@@ -1,14 +1,6 @@
 <template>
   <div class="user-cell">
-    <div class="sidebarContent">
-      <sidebar :defaultActive="'/userlist'" @subMenuOpen="subMenuOpens" @subMenuClose="subMenuCloses"
-        @activeChange="activeChanges" :treeData="sidebarData" />
-    </div>
-    <div class="mainContent">
-      <transition name="translation" mode="out-in">
-        <router-view />
-      </transition>
-    </div>
+    
   </div>
 </template>
 
