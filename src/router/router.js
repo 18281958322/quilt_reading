@@ -92,6 +92,12 @@ const vueRouter = new Router({
           component: () => import('../views/author/toexamine/index.vue'),
           meta: {title: '作者审核', toplevel: 'tl_author'}
         },
+        { // 作品审核
+          path: '/works',
+          name: "Works",
+          component: () => import('../views/author/works/index.vue'),
+          meta: {title: '作品审核', toplevel: 'tl_author'}
+        },
         { //责编
           path: '/editorincharge',
           name: "Editorincharge",

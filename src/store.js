@@ -69,7 +69,7 @@ export default new Vuex.Store({
           icon: "el-icon-user",
         },
         {
-          title: "作者",
+          title: "作者列表",
           icon: "el-icon-user",
           children: [{
             title: "作者管理",
@@ -80,6 +80,15 @@ export default new Vuex.Store({
             key: "/toexamine",
             icon: "el-icon-user"
           }, ]
+        },
+        {
+          title: "作品列表",
+          icon: "el-icon-user",
+          children: [ {
+            title: "作品审核",
+            key: "/works",
+            icon: "el-icon-user"
+          }]
         },
         {
           title: "稿酬",
