@@ -102,6 +102,25 @@ export default new Vuex.Store({
           key: "/editorincharge",
           icon: "el-icon-user"
         }
+      ],
+      tl_setup: [
+        {
+          title: "基础信息",
+          key: "/distribution",
+          icon: "el-icon-user"
+        },
+        {
+          title: "客户信息",
+          icon: "el-icon-user"
+        },
+        {
+          title: "图片存储设置",
+          icon: "el-icon-user"
+        },
+        {
+          title: "短信服务",
+          icon: "el-icon-user"
+        }
       ]
     },
     sidebarAllDataActiv: 'tl_home', // 侧边栏总目录当前选中对象

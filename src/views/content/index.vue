@@ -1,6 +1,6 @@
 <template>
   <div class="content-cell">
-    
+    信息
   </div>
 </template>
 

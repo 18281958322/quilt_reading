@@ -104,11 +104,35 @@ const vueRouter = new Router({
           component: () => import('../views/author/editorincharge/index.vue'),
           meta: {title: '责编',toplevel: 'tl_author'}
         },
-        { //
+        { // 
           path: '/remuneration',
           name: "Remuneration",
           component: () => import('../views/author/remuneration/index.vue'),
           meta: { title: '稿酬',toplevel: 'tl_author'}
+        },
+        { // 基础信息
+          path: '/distribution',
+          name: "Distribution",
+          component: () => import('../views/distribution/index.vue'),
+          meta: { title: '基础信息', toplevel: 'tl_setup'}
+        },
+        { //客户信息
+          path: '/distribution',
+          name: "Distribution",
+          component: () => import('../views/distribution/index.vue'),
+          meta: { title: '客户信息', toplevel: 'tl_setup'}
+        },
+        { // 图片存储位置
+          path: '/distribution',
+          name: "Distribution",
+          component: () => import('../views/distribution/index.vue'),
+          meta: { title: '图片存储位置', toplevel: 'tl_setup'}
+        },
+        { // 短信服务
+          path: '/distribution',
+          name: "Distribution",
+          component: () => import('../views/distribution/index.vue'),
+          meta: { title: '短信服务', toplevel: 'tl_setup'}
         }
       ]
     },
