@@ -102,6 +102,148 @@ export default new Vuex.Store({
           key: "/editorincharge",
           icon: "el-icon-user"
         }
+      ],
+      tl_setup: [
+        {
+          title: "基础信息",
+          key: "/distribution",
+          icon: "el-icon-user"
+        },
+        {
+          title: "客户信息",
+          key: "/content",
+          icon: "el-icon-user"
+        },
+        {
+          title: "图片存储设置",
+          key: "/operations",
+          icon: "el-icon-user"
+        },
+        {
+          title: "短信服务",
+          key: "/setup",
+          icon: "el-icon-user"
+        }
+      ],
+      tl_distribution: [ // 分销
+        {
+          key: "tld_data",
+          title: "数据",
+          icon: 'el-icon-s-marketing',
+          children: [
+            {
+              key: "/ordersReceiveStatistics",
+              title: "订单统计",
+              icon: 'el-icon-s-marketing',
+            },
+            {
+              key: "/userStatistics",
+              title: "用户统计",
+              icon: 'el-icon-s-marketing'
+            },
+            {
+              key: "/platformStatistics",
+              title: "平台统计",
+              icon: 'el-icon-s-marketing'
+            },
+            {
+              key: "/contentStatistics",
+              title: "内容统计",
+              icon: 'el-icon-s-marketing'
+            },
+            {
+              key: "/BuckleQuantityStatistics",
+              title: "扣量统计",
+              icon: 'el-icon-s-marketing'
+            },
+            {
+              key: "/orderDetails",
+              title: "订单明细",
+              icon: 'el-icon-s-marketing'
+            },
+            {
+              key: "/fansDetails",
+              title: "粉丝明细",
+              icon: 'el-icon-s-marketing'
+            }
+          ]
+        },
+        {
+          key: "tld_spread",
+          title: "推广",
+          icon: 'el-icon-s-marketing',
+          children: [
+            {
+              key: "/ListOfWorks",
+              title: "作品列表",
+              icon: 'el-icon-s-marketing',
+            },
+            {
+              key: "/ToPromoteLinks",
+              title: "推广链接",
+              icon: 'el-icon-s-marketing'
+            },
+            {
+              key: "/CommonlyUsedLinks",
+              title: "常用链接",
+              icon: 'el-icon-s-marketing'
+            },
+            {
+              key: "/promotionActivity",
+              title: "促销活动",
+              icon: 'el-icon-s-marketing'
+            }
+          ]
+        },
+        {
+          key: "tld_channel",
+          title: "渠道",
+          icon: 'el-icon-s-marketing',
+          children: [
+            {
+              key: "/ChannelList",
+              title: "渠道列表",
+              icon: 'el-icon-s-marketing',
+            },
+            {
+              key: "/ChannelSettlementStatement",
+              title: "渠道结算单",
+              icon: 'el-icon-s-marketing'
+            },
+            {
+              key: "/ChannelsToPlayMoney",
+              title: "渠道打款",
+              icon: 'el-icon-s-marketing'
+            }
+          ]
+        },
+        {
+          key: "tld_manage",
+          title: "管理",
+          icon: 'el-icon-s-marketing',
+          children: [
+            {
+              key: "/BuckleAmount",
+              title: "扣量设置",
+              icon: 'el-icon-s-marketing',
+            },
+            {
+              key: "/AnnouncementOfTheManagement",
+              title: "公告管理",
+              icon: 'el-icon-s-marketing'
+            },
+            {
+              key: "/materialManagement",
+              title: "素材管理",
+              icon: 'el-icon-s-marketing'
+            },
+            {
+              key: "/EventPackageManagement",
+              title: "活动套餐管理",
+              icon: 'el-icon-s-marketing'
+            }
+          ]
+        },
       ]
     },
     sidebarAllDataActiv: 'tl_home', // 侧边栏总目录当前选中对象
