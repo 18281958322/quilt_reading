@@ -49,6 +49,12 @@ const vueRouter = new Router({
           component: () => import('../views/content/novel/index.vue'),
           meta: { title: '小说', toplevel: 'tl_content' }
         },
+        {// 新增小说
+          path: '/Newnovels',
+          name: 'Newnovels',
+          component: () => import('../views/content/novel/Newnovels/index.vue'),
+          meta: { title: '新增小说', toplevel: 'tl_content' }
+        },
         {// 漫画
           path: '/comics',
           name: 'comics',
