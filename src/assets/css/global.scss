@@ -1,9 +1,9 @@
-body,html{
+*{
   padding: 0;
   margin: 0;
 }
-p{
-  margin: 0;
+li {
+  list-style: none;
 }
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
