@@ -111,14 +111,17 @@ export default new Vuex.Store({
         },
         {
           title: "客户信息",
+          key: "/content",
           icon: "el-icon-user"
         },
         {
           title: "图片存储设置",
+          key: "/operations",
           icon: "el-icon-user"
         },
         {
           title: "短信服务",
+          key: "/setup",
           icon: "el-icon-user"
         }
       ]

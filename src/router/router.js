@@ -117,21 +117,21 @@ const vueRouter = new Router({
           meta: { title: '基础信息', toplevel: 'tl_setup'}
         },
         { //客户信息
-          path: '/distribution',
-          name: "Distribution",
-          component: () => import('../views/distribution/index.vue'),
+          path: '/content',
+          name: "Content",
+          component: () => import('../views/content/index.vue'),
           meta: { title: '客户信息', toplevel: 'tl_setup'}
         },
         { // 图片存储位置
-          path: '/distribution',
-          name: "Distribution",
-          component: () => import('../views/distribution/index.vue'),
+          path: '/operations',
+          name: "Operations",
+          component: () => import('../views/operations/index.vue'),
           meta: { title: '图片存储位置', toplevel: 'tl_setup'}
         },
         { // 短信服务
-          path: '/distribution',
-          name: "Distribution",
-          component: () => import('../views/distribution/index.vue'),
+          path: '/setup',
+          name: "Setup",
+          component: () => import('../views/setup/index.vue'),
           meta: { title: '短信服务', toplevel: 'tl_setup'}
         }
       ]
