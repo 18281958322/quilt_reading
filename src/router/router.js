@@ -116,12 +116,12 @@ const vueRouter = new Router({
           component: () => import('../views/author/remuneration/index.vue'),
           meta: { title: '稿酬',toplevel: 'tl_author'}
         },
-        { // 基础信息
-          path: '/distribution',
-          name: "Distribution",
-          component: () => import('../views/distribution/index.vue'),
-          meta: { title: '基础信息', toplevel: 'tl_setup'}
-        },
+        // { // 基础信息
+        //   path: '/distribution',
+        //   name: "Distribution",
+        //   component: () => import('../views/distribution/index.vue'),
+        //   meta: { title: '基础信息', toplevel: 'tl_setup'}
+        // },
         { //客户信息
           path: '/content',
           name: "Content",
