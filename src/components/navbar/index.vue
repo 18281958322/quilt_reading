@@ -94,7 +94,7 @@
           case "tl_user": activePath = '/userlist'; break
           case "tl_author": activePath = '/author'; break
           case "tl_distribution": activePath = '/ordersReceiveStatistics'; break
-          case "tl_setup": activePath = '/distribution'; break
+          case "tl_setup": activePath = '/basics'; break
         }
         // 切换侧边栏选中项
         this.$store.commit("setSideDefaultActive", { val: activePath })

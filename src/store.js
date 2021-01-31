@@ -106,7 +106,7 @@ export default new Vuex.Store({
       tl_setup: [
         {
           title: "基础信息",
-          key: "/distribution",
+          key: "/basics",
           icon: "el-icon-user"
         },
         {
