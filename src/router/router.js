@@ -200,6 +200,12 @@ const vueRouter = new Router({
           component: () => import('../views/distribution/tld_spread/ToPromoteLinks.vue'),
           meta: { title: '推广链接',toplevel: 'tl_distribution'}
         },
+        { // 分销=>推广=> 推广链接 => 订单明细
+          path: '/tpl_orderDetails',
+          name: "tpl_orderDetails",
+          component: () => import('../views/distribution/tld_spread/tpl_orderDetails.vue'),
+          meta: { title: '订单明细',toplevel: 'tl_distribution'}
+        },
         { // 分销=>推广=> 常用链接
           path: '/CommonlyUsedLinks',
           name: "CommonlyUsedLinks",
@@ -211,6 +217,12 @@ const vueRouter = new Router({
           name: "promotionActivity",
           component: () => import('../views/distribution/tld_spread/promotionActivity.vue'),
           meta: { title: '促销活动',toplevel: 'tl_distribution'}
+        },
+        { // 分销=>推广=> 促销活动
+          path: '/pa_createActivity',
+          name: "pa_createActivity",
+          component: () => import('../views/distribution/tld_spread/pa_createActivity.vue'),
+          meta: { title: '新增活动',toplevel: 'tl_distribution'}
         },
         { // 分销=>渠道=> 渠道列表
           path: '/ChannelList',

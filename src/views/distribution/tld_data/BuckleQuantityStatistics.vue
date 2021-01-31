@@ -32,14 +32,16 @@
       </li>
     </ul>
     <div style="margin: 20px 0" class="flex align-center justify-between">
-      <el-date-picker
-        v-model="value1"
-        type="daterange"
-        range-separator="至"
-        start-placeholder="开始日期"
-        end-placeholder="结束日期">
-      </el-date-picker>
-      <div style="margin-left: 10px" class="isbutton bt1">搜索</div>
+      <div class="flex align-center">
+        <el-date-picker
+          v-model="value1"
+          type="daterange"
+          range-separator="至"
+          start-placeholder="开始日期"
+          end-placeholder="结束日期">
+        </el-date-picker>
+        <div style="margin-left: 10px" class="isbutton bt1">搜索</div>
+      </div>
       <div class="exportBox flex align-center">
         <span class="el-icon-s-claim"></span>
         <span>导出</span>
