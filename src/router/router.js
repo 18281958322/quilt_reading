@@ -188,6 +188,12 @@ const vueRouter = new Router({
           component: () => import('../views/distribution/tld_spread/ListOfWorks.vue'),
           meta: { title: '作品列表',toplevel: 'tl_distribution'}
         },
+        { // 分销=>推广=> 作品列表 => 作品推广
+          path: '/WorkSpread',
+          name: "WorkSpread",
+          component: () => import('../views/distribution/tld_spread/WorkSpread.vue'),
+          meta: { title: '作品推广',toplevel: 'tl_distribution'},
+        },
         { // 分销=>推广=> 推广链接
           path: '/ToPromoteLinks',
           name: "ToPromoteLinks",
