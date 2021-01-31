@@ -109,6 +109,27 @@ li {
   -webkit-box-flex: 1; /* OLD - iOS 6-, Safari 3.1-6 */
   -moz-box-flex: 1; /* OLD - Firefox 19- */
 }
+.flex2{
+  -webkit-flex: 2; /* Chrome */
+  -ms-flex: 2; /* IE 10 */
+  flex: 2; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+  -webkit-box-flex: 2; /* OLD - iOS 6-, Safari 3.1-6 */
+  -moz-box-flex: 2; /* OLD - Firefox 19- */
+}
+.flex3{
+  -webkit-flex: 3; /* Chrome */
+  -ms-flex: 3; /* IE 10 */
+  flex: 3; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+  -webkit-box-flex: 3; /* OLD - iOS 6-, Safari 3.1-6 */
+  -moz-box-flex: 3; /* OLD - Firefox 19- */
+}
+.flex4{
+  -webkit-flex: 4; /* Chrome */
+  -ms-flex: 4; /* IE 10 */
+  flex: 4; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+  -webkit-box-flex: 4; /* OLD - iOS 6-, Safari 3.1-6 */
+  -moz-box-flex: 4; /* OLD - Firefox 19- */
+}
 /* 父元素-横向换行 */
 .flex-wrap{
   -webkit-flex-wrap: wrap;
