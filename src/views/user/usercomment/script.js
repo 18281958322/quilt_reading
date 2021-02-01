@@ -37,7 +37,9 @@ export default {
         date: '2016-05-03',
         name: '王小虎',
         address: '上海市普陀区金沙江路'
-      }]
+      }],
+      Ban: false,
+      Deletedata: false,
     }
   },
   methods: {
@@ -49,6 +51,21 @@ export default {
     },
     handleCurrentChange(val) {
       console.log(`当前页: ${val}`);
+    },
+    handleClose(done) {
+      this.$confirm('确认关闭？')
+        .then(_ => {
+          done();
+        })
+        .catch(_ => {});
+    },
+    // 封禁
+    BanClick() {
+      this.Ban = true;
+    },
+    // 删除
+    DeleteClick() {
+      this.Deletedata = true;
     }
   }
 }

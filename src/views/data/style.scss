@@ -9,32 +9,176 @@
       .layout {
         padding: 20px 0;
 
-        .layout-cell{
+        .layout-cell {
           padding: 10px 0;
 
-          .layout-pull{
+          .layout-pull {
             display: flex;
             padding: 0 10px;
             justify-content: space-between;
 
-            .pull-left{
+            .pull-left {
               display: flex;
 
-              .cell-color{
-                width: 3px;
-                padding: 10px 0;
-                background-color: #00a5ff;
+              .cell-pull {
+                .padd {
+                  padding: 6px 0;
+                  .cell-color {
+                    width: 3px;
+                    padding: 10px 0;
+                    background-color: #00a5ff;
+                  }
+                }
               }
 
-              p{
-                line-height: 20px;
+              p {
+                line-height: 34px;
                 padding: 0 10px;
               }
 
-              i{
-                line-height: 20px;
+              i {
+                line-height: 34px;
                 color: #7f7f7f;
               }
+            }
+
+            .pull-right {
+              display: flex;
+
+              .exportBox {
+
+                i {
+                  line-height: 34px;
+                  font-size: 18px;
+                  color: #00a5ff;
+                  margin-right: 2px;
+                }
+
+                span {
+                  color: #00a5ff;
+                }
+              }
+
+              i {
+                line-height: 34px;
+                margin-right: 10px;
+                color: #7f7f7f;
+              }
+            }
+          }
+
+          .layout-pull-item{
+            position: relative;
+            margin: 20px 0;
+            .row-img{
+              width: 300px;
+              height: 150px;
+              position: absolute;
+              top: 0;
+              z-index: 1;
+              right: 50px;
+              img{
+                width: 100%;
+                height: 100%;
+              }
+              .box-1{
+                position: absolute;
+                top: 16px;
+                right: 155px;
+                color: #fff;
+                z-index: 999;
+                font-size: 14px;
+              }
+
+              .box-2{
+                position: absolute;
+                top: 64px;
+                right: 170px;
+                color: #fff;
+                z-index: 999;
+                font-size: 14px;
+              }
+
+              .box-3{
+                position: absolute;
+                top: 114px;
+                right: 170px;
+                color: #fff;
+                z-index: 999;
+                font-size: 14px;
+              }
+
+              .a-1{
+                position: absolute;
+                top: 30px;
+                right: 26px;
+                font-size: 12px;
+                text-align: center;
+                width: 48px;
+                color: #7f7f7f;
+              }
+
+              .a-2{
+                position: absolute;
+                top: 86px;
+                right: 50px;
+                font-size: 12px;
+                text-align: center;
+                width: 48px;
+                color: #7f7f7f;
+              }
+              .a-3{
+                position: absolute;
+                top: 70px;
+                right: -33px;
+                font-size: 12px;
+                text-align: center;
+                width: 48px;
+                color: #7f7f7f;
+              }
+            }
+
+            .lay-text{
+              height: 50px;
+              width: 100%;
+              display: flex;
+
+              .res{
+                width: 200px;
+                line-height: 35px;
+
+                .box{
+                  line-height: 35px;
+                  display: flex;
+                  font-size: 12px;
+                  color: #7c7c7c;
+                  p{
+                    text-indent: 20px;
+                  }
+                  i{
+                    line-height: 35px;
+                    padding: 0 10px;
+                    color: #7f7f7f;
+                  }
+                }
+
+                .box-1{
+                  font-size: 14px;
+                  text-indent: 22px;
+                  font-weight: bold;
+                  line-height: 4px;
+                }
+              }
+            }
+          }
+
+          .layout-pull-data{
+            padding: 10px 10px;
+
+            .box-all{
+              padding: 10px 10px;
+              border-top: 1px #dadada solid;
+              border-bottom: 1px #dadada solid;
             }
           }
         }

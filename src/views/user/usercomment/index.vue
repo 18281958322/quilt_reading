@@ -40,8 +40,8 @@
                     </el-table-column>
                     <el-table-column align="center" label="操作">
                       <template slot-scope="scope">
-                        <el-button @click="handleClick(scope.row)" type="text" size="small">删除</el-button>
-                        <el-button type="text" size="small">封禁此用户</el-button>
+                        <el-button @click="DeleteClick(scope.row)" type="text" size="small">删除</el-button>
+                        <el-button @click="BanClick()" type="text" size="small">封禁</el-button>
                         <el-button type="text" size="small">通过</el-button>
                       </template>
                     </el-table-column>
@@ -81,18 +81,18 @@
                     </el-table-column>
                     <el-table-column align="center" prop="date" label="用户（UID）">
                     </el-table-column>
-                    <el-table-column align="center" prop="name" label="作品名">
+                    <el-table-column align="center" prop="name" label="作品">
                     </el-table-column>
-                    <el-table-column align="center" prop="name" label="章节名">
+                    <el-table-column align="center" prop="name" label="章节">
                     </el-table-column>
-                    <el-table-column align="center" prop="address" label="内容">
+                    <el-table-column align="center" prop="address" label="评论内容">
                     </el-table-column>
                     <el-table-column align="center" prop="date" label="评论时间">
                     </el-table-column>
                     <el-table-column align="center" label="操作">
                       <template slot-scope="scope">
-                        <el-button @click="handleClick(scope.row)" type="text" size="small">删除</el-button>
-                        <el-button type="text" size="small">封禁此用户</el-button>
+                        <el-button @click="DeleteClick(scope.row)" type="text" size="small">删除</el-button>
+                        <el-button type="text" @click="BanClick(scope.row)" size="small">封禁</el-button>
                         <el-button type="text" size="small">通过</el-button>
                       </template>
                     </el-table-column>
@@ -110,6 +110,22 @@
         </div>
       </div>
     </div>
+    <!-- 封禁 -->
+    <el-dialog title="封禁" :visible.sync="Ban" width="30%" :before-close="handleClose">
+      <span>确认封禁该用户？</span>
+      <span slot="footer" class="dialog-footer">
+        <el-button size="mini" @click="Ban = false">取 消</el-button>
+        <el-button size="mini" type="primary" @click="Ban = false">确 定</el-button>
+      </span>
+    </el-dialog>
+    <!-- 删除 -->
+    <el-dialog title="删除" :visible.sync="Deletedata" width="30%" :before-close="handleClose">
+      <span>确认删除该评论？</span>
+      <span slot="footer" class="dialog-footer">
+        <el-button size="mini" @click="Deletedata = false">取 消</el-button>
+        <el-button size="mini" type="primary" @click="Deletedata = false">确 定</el-button>
+      </span>
+    </el-dialog>
   </div>
 </template>
 

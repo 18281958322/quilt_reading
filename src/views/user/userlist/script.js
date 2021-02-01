@@ -37,10 +37,21 @@ export default {
         name: '王小虎',
         address: '上海市普陀区金沙江路 1516 弄'
       }],
-      multipleSelection: []
+      multipleSelection: [],
+      dialogVisible: false,
+      Recharge: false,
+      Del: false,
+      radio: '1',
     }
   },
   methods: {
+    handleClose(done) {
+      this.$confirm('确认关闭？')
+        .then(_ => {
+          done();
+        })
+        .catch(_ => {});
+    },
     toggleSelection(rows) {
       if (rows) {
         rows.forEach(row => {
@@ -58,6 +69,22 @@ export default {
     },
     handleCurrentChange(val) {
       console.log(`当前页: ${val}`);
+    },
+    // 开通会员
+    handleClick() {
+      this.dialogVisible = true;
+    },
+    // 充值
+    RechargeClick() {
+      this.Recharge = true;
+    },
+    // 删除
+    DelClick() {
+      this.Del = true;
+    },
+    // 编辑
+    editClick() {
+      this.$router.push('/edit');
     }
   }
 }
