@@ -70,6 +70,7 @@
               <p>Bucket 内网访问域名</p>
             </div>
           </div>
+          <el-divider></el-divider>
           <div class="layout-cell" style="margin-top:20px;">
             <el-button style="margin-left: 170px;" type="primary">保 存</el-button>
           </div>

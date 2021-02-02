@@ -1,11 +1,15 @@
 <template>
   <div class="listofNovels">
+    <div class="layout-right">
+      <el-button size="small" type="primary" @click="addNewnovels()">新增小说</el-button>
+    </div>
     <div class="list">
-      <el-checkbox-group v-model="checkboxGroup1" size="small">
-        <el-checkbox label="频道" border></el-checkbox>
-        <el-checkbox label="男频" border></el-checkbox>
-        <el-checkbox label="女频" border></el-checkbox>
-      </el-checkbox-group>
+      <el-link :underline="false" style="margin-right:10px;">频道</el-link>
+      <el-radio-group v-model="radio3" size="mini">
+        <el-radio-button style="margin-right:10px;border:1px solid #DCDFE6;" label="全部"></el-radio-button>
+        <el-radio-button style="margin-right:10px;border:1px solid #DCDFE6;" label="男频"></el-radio-button>
+        <el-radio-button style="margin-right:10px;border:1px solid #DCDFE6;" label="女频"></el-radio-button>
+      </el-radio-group>
     </div>
     <div class="list">
       <el-checkbox-group v-model="checkboxGroup1" size="small">
@@ -87,9 +91,6 @@
       </el-checkbox-group>
     </div>
     <el-divider></el-divider>
-    <div class="layout-right">
-      <el-button type="primary" @click="addNewnovels()">新增小说</el-button>
-    </div>
     <div class="list">
       <el-table ref="multipleTable" :data="tableData" tooltip-effect="dark" style="width: 100%"
         @selection-change="handleSelectionChange">
@@ -108,7 +109,7 @@
         <el-table-column label="操作" width="100">
           <template slot-scope="scope">
             <el-button @click="handleClick(scope.row)" type="text" size="small">删除</el-button>
-            <el-button type="text" size="small">编辑</el-button>
+            <el-button @click="editClick(scope.row)" type="text" size="small">编辑</el-button>
           </template>
         </el-table-column>
       </el-table>
@@ -126,7 +127,13 @@
   export default {
     data() {
       return {
-        fileList: [{name: 'food.jpeg', url: 'https://fuss10.elemecdn.com/3/63/4e7f3a15429bfda99bce42a18cdd1jpeg.jpeg?imageMogr2/thumbnail/360x360/format/webp/quality/100'}, {name: 'food2.jpeg', url: 'https://fuss10.elemecdn.com/3/63/4e7f3a15429bfda99bce42a18cdd1jpeg.jpeg?imageMogr2/thumbnail/360x360/format/webp/quality/100'}],
+        fileList: [{
+          name: 'food.jpeg',
+          url: 'https://fuss10.elemecdn.com/3/63/4e7f3a15429bfda99bce42a18cdd1jpeg.jpeg?imageMogr2/thumbnail/360x360/format/webp/quality/100'
+        }, {
+          name: 'food2.jpeg',
+          url: 'https://fuss10.elemecdn.com/3/63/4e7f3a15429bfda99bce42a18cdd1jpeg.jpeg?imageMogr2/thumbnail/360x360/format/webp/quality/100'
+        }],
         activeName: 'first',
         checkboxGroup1: [],
         tableData: [{
@@ -158,6 +165,7 @@
           name: '王小虎',
           address: '上海市普陀区金沙江路 1518 弄'
         }],
+        radio3: '全部',
         multipleSelection: [],
         currentPage4: 4,
         ruleForm: {
@@ -271,7 +279,11 @@
         this.$refs[formName].resetFields();
       },
       // 新增小说
-      addNewnovels(){
+      addNewnovels() {
+        this.$router.push('/Newnovels');
+      },
+      // 编辑
+      editClick(row) {
         this.$router.push('/Newnovels');
       }
     }
@@ -298,4 +310,8 @@
       padding-top: 15px;
     }
   }
+</style>
+
+<style>
+
 </style>

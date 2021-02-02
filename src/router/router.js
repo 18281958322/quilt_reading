@@ -214,13 +214,94 @@ const vueRouter = new Router({
             toplevel: 'tl_setup'
           }
         },
-        { // 短信服务
+        { // 接口密匙
           path: '/setup',
           name: "Setup",
           component: () => import('../views/setup/index.vue'),
           meta: {
-            title: '短信服务',
+            title: '接口密匙',
             toplevel: 'tl_setup'
+          }
+        },
+        { // App应用
+          path: '/appapplication',
+          name: "Appapplication",
+          component: () => import('../views/setup/app/appapplication/index.vue'),
+          meta: {
+            title: 'App应用',
+            toplevel: 'tl_app'
+          }
+        },
+        { // 功能设置
+          path: '/goon',
+          name: "Goon",
+          component: () => import('../views/setup/app/goon/index.vue'),
+          meta: {
+            title: '功能设置',
+            toplevel: 'tl_app'
+          }
+        },
+        { // 配置管理
+          path: '/sign',
+          name: "Sign",
+          component: () => import('../views/setup/account/sign/index.vue'),
+          meta: {
+            title: '配置管理',
+            toplevel: 'tl_account'
+          }
+        },
+        { // 签到设置
+          path: '/configure',
+          name: "Configure",
+          component: () => import('../views/setup/account/configure/index.vue'),
+          meta: {
+            title: '签到设置',
+            toplevel: 'tl_account'
+          }
+        },
+        { // 支付设置
+          path: '/payment',
+          name: "Payment",
+          component: () => import('../views/setup/account/payment/index.vue'),
+          meta: {
+            title: '支付设置',
+            toplevel: 'tl_account'
+          }
+        },
+        { // wap站支付设置
+          path: '/wap',
+          name: "Wap",
+          component: () => import('../views/setup/account/wap/index.vue'),
+          meta: {
+            title: 'wap站支付设置',
+            toplevel: 'tl_account'
+          }
+        },
+        { // 基础设置
+          path: '/basics_item',
+          name: "Basics",
+          component: () => import('../views/setup/pc/basics/index.vue'),
+          meta: {
+            title: '基础设置',
+            toplevel: 'tl_pc'
+          }
+        },
+        { // 第三方登录设置
+          path: '/threelogin',
+          name: "Threelogin",
+          component: () => import('../views/setup/pc/threelogin/index.vue'),
+          meta: {
+            title: '第三方登录设置',
+            toplevel: 'tl_pc'
+          }
+        },
+        { // 第三方支付设置
+          path: '/tripartitepayment',
+          name: "Tripartitepayment",
+          component: () => import('../views/setup/pc/tripartitepayment/index.vue'),
+          meta: {
+            title: '第三方支付设置',
+            toplevel: 'tl_pc'
           }
         },
         { // 分销=>数据=> 订单统计

@@ -10,11 +10,24 @@
                     display: flex;
                     justify-content: left;
                     padding: 10px 3%;
-                    .data-title{
-                        width: 150px;
-                        padding: 6px 0;
-                        text-align: right;
-                        margin-right: 20px;
+                    .layout-border{
+                        width: 100%;
+                        padding: 10px 10px;
+                        border: 1px solid #dadada;
+                        .bix{
+                            padding: 10px 0;
+                        }
+                        .box{
+                            display: flex;
+                            justify-content: left;
+                            p{
+                                color: #e7505a;
+                                line-height: 34px;
+                            }
+                            button{
+                                margin-left: 10px;
+                            }
+                        }
                     }
                 }
             }

@@ -26,6 +26,7 @@
             <el-form-item label="会员全站免费读" prop="delivery" label-width="135px">
               <el-switch v-model="ruleForm.delivery"></el-switch>
             </el-form-item>
+            <el-divider></el-divider>
             <div class="layout-cell">
               <el-button style="margin-left: 100px;" type="primary">保 存</el-button>
             </div>

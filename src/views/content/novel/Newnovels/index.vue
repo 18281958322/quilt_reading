@@ -3,7 +3,8 @@
     <div class="content">
       <div class="row">
         <div class="layout">
-          <el-form style="width:500px" :model="ruleForm" :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm">
+          <el-form style="width:500px" :model="ruleForm" :rules="rules" ref="ruleForm" label-width="100px"
+            class="demo-ruleForm">
             <div class="layout-cell">
               <div class="layout-item">
                 <div class="layout-color"></div>
@@ -12,7 +13,7 @@
                 </div>
               </div>
               <div class="layout-pull">
-                <el-form-item label="频道" prop="resource" label-width="120px">
+                <el-form-item label="读者性别" prop="resource" label-width="120px">
                   <el-radio-group v-model="ruleForm.resource">
                     <el-radio label="男频"></el-radio>
                     <el-radio label="女频"></el-radio>
@@ -28,11 +29,10 @@
                   <el-input v-model="ruleForm.name"></el-input>
                 </el-form-item>
                 <el-form-item label="作品封面" prop="name" label-width="120px">
-                  <el-upload class="upload-demo" action="https://jsonplaceholder.typicode.com/posts/"
-                    :on-preview="handlePreview" :on-remove="handleRemove" :before-remove="beforeRemove" multiple
-                    :limit="3" :on-exceed="handleExceed" :file-list="fileList">
-                    <el-button size="small" type="primary">点击上传</el-button>
-                    <div slot="tip" class="el-upload__tip">只能上传jpg/png文件，且不超过500kb</div>
+                  <el-upload class="avatar-uploader" action="https://jsonplaceholder.typicode.com/posts/"
+                    :show-file-list="false" :on-success="handleAvatarSuccess" :before-upload="beforeAvatarUpload">
+                    <img v-if="imageUrl" :src="imageUrl" class="avatar">
+                    <i v-else class="el-icon-plus avatar-uploader-icon"></i>
                   </el-upload>
                 </el-form-item>
                 <el-form-item label="作者" prop="name" label-width="120px">
@@ -58,10 +58,11 @@
               </div>
               <div class="layout-pull">
                 <el-form-item label="付费类型" prop="region" label-width="120px">
-                  <el-select v-model="ruleForm.region" placeholder="请选择活动区域">
-                    <el-option label="区域一" value="shanghai"></el-option>
-                    <el-option label="区域二" value="beijing"></el-option>
-                  </el-select>
+                  <el-radio-group v-model="ruleForm.resource">
+                    <el-radio label="部分章节免费"></el-radio>
+                    <el-radio label="全部章节付费"></el-radio>
+                    <el-radio label="全部章节免费"></el-radio>
+                  </el-radio-group>
                 </el-form-item>
                 <el-form-item label="免费章节数" prop="name" label-width="120px">
                   <el-input v-model="ruleForm.name"></el-input>
@@ -78,8 +79,16 @@
                 <el-form-item label="浏览数" prop="name" label-width="120px">
                   <el-input v-model="ruleForm.name"></el-input>
                 </el-form-item>
-                <el-form-item label="收藏数" prop="name" label-width="120px">
+                <el-form-item label="总收藏数" prop="name" label-width="120px">
                   <el-input v-model="ruleForm.name"></el-input>
+                </el-form-item>
+                <el-form-item label="活动性质" prop="type">
+                  <el-checkbox-group v-model="ruleForm.type">
+                    <el-checkbox label="新书" name="type"></el-checkbox>
+                    <el-checkbox label="爽文" name="type"></el-checkbox>
+                    <el-checkbox label="精选" name="type"></el-checkbox>
+                    <el-checkbox label="大神" name="type"></el-checkbox>
+                  </el-checkbox-group>
                 </el-form-item>
                 <el-form-item label="是否会员" prop="resource" label-width="120px">
                   <el-radio-group v-model="ruleForm.resource">
@@ -87,7 +96,7 @@
                     <el-radio label="会员作品"></el-radio>
                   </el-radio-group>
                 </el-form-item>
-                <el-form-item label="更新状态" prop="resource" label-width="120px">
+                <el-form-item label="连载状态" prop="resource" label-width="120px">
                   <el-radio-group v-model="ruleForm.resource">
                     <el-radio label="连载中"></el-radio>
                     <el-radio label="已完结"></el-radio>
@@ -105,14 +114,14 @@
               <div class="layout-item">
                 <div class="layout-color"></div>
                 <div class="layout-title">
-                  <p>功能属性</p>
+                  <p>其它</p>
                 </div>
               </div>
               <div class="layout-pull">
-                <el-form-item label="是否铭感" prop="resource" label-width="120px">
+                <el-form-item label="铭感状态" prop="resource" label-width="120px">
                   <el-radio-group v-model="ruleForm.resource">
-                    <el-radio label="不铭感作品"></el-radio>
-                    <el-radio label="铭感作品"></el-radio>
+                    <el-radio label="不铭感"></el-radio>
+                    <el-radio label="铭感"></el-radio>
                   </el-radio-group>
                 </el-form-item>
                 <el-form-item label="章节更新推送" prop="delivery" label-width="120px">
@@ -141,7 +150,6 @@
   export default {
     data() {
       return {
-          fileList: [{name: 'food.jpeg', url: 'https://fuss10.elemecdn.com/3/63/4e7f3a15429bfda99bce42a18cdd1jpeg.jpeg?imageMogr2/thumbnail/360x360/format/webp/quality/100'}, {name: 'food2.jpeg', url: 'https://fuss10.elemecdn.com/3/63/4e7f3a15429bfda99bce42a18cdd1jpeg.jpeg?imageMogr2/thumbnail/360x360/format/webp/quality/100'}],
         ruleForm: {
           name: '',
           region: '',
@@ -152,6 +160,7 @@
           resource: '',
           desc: ''
         },
+        imageUrl: '',
         rules: {
           name: [{
               required: true,
@@ -243,6 +252,21 @@
       beforeRemove(file, fileList) {
         return this.$confirm(`确定移除 ${ file.name }？`);
       },
+      handleAvatarSuccess(res, file) {
+        this.imageUrl = URL.createObjectURL(file.raw);
+      },
+      beforeAvatarUpload(file) {
+        const isJPG = file.type === 'image/jpeg';
+        const isLt2M = file.size / 1024 / 1024 < 2;
+
+        if (!isJPG) {
+          this.$message.error('上传头像图片只能是 JPG 格式!');
+        }
+        if (!isLt2M) {
+          this.$message.error('上传头像图片大小不能超过 2MB!');
+        }
+        return isJPG && isLt2M;
+      }
     }
   }
 </script>
@@ -285,5 +309,34 @@
         }
       }
     }
+  }
+</style>
+
+<style>
+  .avatar-uploader .el-upload {
+    border: 1px dashed #d9d9d9;
+    border-radius: 6px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .avatar-uploader .el-upload:hover {
+    border-color: #409EFF;
+  }
+
+  .avatar-uploader-icon {
+    font-size: 28px;
+    color: #8c939d;
+    width: 128px;
+    height: 128px;
+    line-height: 128px;
+    text-align: center;
+  }
+
+  .avatar {
+    width: 178px;
+    height: 178px;
+    display: block;
   }
 </style>

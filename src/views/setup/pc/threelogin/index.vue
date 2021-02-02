@@ -1,35 +1,29 @@
 <template>
-  <div class="content-cell">
+  <div class="threelogin">
     <div class="content">
       <div class="row">
         <div class="layout">
           <div class="layout-cell">
             <div class="data-title">
-              <p>QQ号</p>
+              <p>微信登录Appld</p>
             </div>
             <el-input style="width:268px;" v-model="input" placeholder="请输入内容"></el-input>
           </div>
           <div class="layout-cell">
             <div class="data-title">
-              <p>邮箱</p>
+              <p>微信登录AppSecret</p>
             </div>
             <el-input style="width:268px;" v-model="input" placeholder="请输入内容"></el-input>
           </div>
           <div class="layout-cell">
             <div class="data-title">
-              <p>电话</p>
+              <p>QQ登录Appld</p>
             </div>
             <el-input style="width:268px;" v-model="input" placeholder="请输入内容"></el-input>
           </div>
           <div class="layout-cell">
             <div class="data-title">
-              <p>公司名称</p>
-            </div>
-            <el-input style="width:268px;" v-model="input" placeholder="请输入内容"></el-input>
-          </div>
-          <div class="layout-cell">
-            <div class="data-title">
-              <p>微信</p>
+              <p>QQ登录AppSecret</p>
             </div>
             <el-input style="width:268px;" v-model="input" placeholder="请输入内容"></el-input>
           </div>
@@ -43,8 +37,45 @@
   </div>
 </template>
 
-<script src="./script.js"></script>
+<script>
+  export default {
+    data() {
+      return {
+        input: ''
+      }
+    },
+    methods: {
+
+    }
+  }
+</script>
 
 <style lang="scss" scoped>
-  @import './style.scss';
+  .threelogin {
+    .content {
+      padding: 10px 0;
+
+      .row {
+        background-color: #fff;
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.12), 0 0 6px 0 rgba(0, 0, 0, 0.04);
+
+        .layout {
+          padding: 20px 0;
+
+          .layout-cell {
+            display: flex;
+            justify-content: left;
+            padding: 10px 3%;
+
+            .data-title {
+              width: 120px;
+              padding: 6px 0;
+              text-align: right;
+              margin-right: 20px;
+            }
+          }
+        }
+      }
+    }
+  }
 </style>

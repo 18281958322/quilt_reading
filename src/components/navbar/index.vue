@@ -53,8 +53,21 @@
             title: "作者",
           },
           {
-            key: "tl_setup",
+            key: "tl_setup_item",
             title: "设置",
+            children: [{
+              key: "tl_setup",
+              title: "通用设置",
+            },{
+              key: "tl_app",
+              title: "APP设置",
+            },{
+              key: "tl_account",
+              title: "公众号设置",
+            },{
+              key: "tl_pc",
+              title: "PC设置",
+            },]
           },
         ],
       };
@@ -95,6 +108,9 @@
           case "tl_author": activePath = '/author'; break
           case "tl_distribution": activePath = '/ordersReceiveStatistics'; break
           case "tl_setup": activePath = '/basics'; break
+          case "tl_app": activePath = '/goon'; break
+          case "tl_account": activePath = '/sign'; break
+          case "tl_pc": activePath = '/basics_item'; break
         }
         // 切换侧边栏选中项
         this.$store.commit("setSideDefaultActive", { val: activePath })

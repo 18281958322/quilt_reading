@@ -132,7 +132,7 @@ export default new Vuex.Store({
           icon: "el-icon-user"
         },
         {
-          title: "短信服务",
+          title: "接口密匙",
           key: "/setup",
           icon: "el-icon-user"
         }
@@ -252,6 +252,57 @@ export default new Vuex.Store({
             }
           ]
         },
+      ],
+      tl_app: [ //app设置
+        {
+          title: "功能设置",
+          key: "/goon",
+          icon: "el-icon-user"
+        },
+        {
+          title: "App应用",
+          key: "/appapplication",
+          icon: "el-icon-user"
+        }
+      ],
+      tl_account: [ //公众号设置
+        {
+          title: "配置管理",
+          key: "/sign",
+          icon: "el-icon-user"
+        },
+        {
+          title: "签到设置",
+          key: "/configure",
+          icon: "el-icon-user"
+        },
+        {
+          title: "支付设置",
+          key: "/payment",
+          icon: "el-icon-user"
+        },
+        {
+          title: "wap站支付设置",
+          key: "/wap",
+          icon: "el-icon-user"
+        }
+      ],
+      tl_pc: [ //pc设置
+        {
+          title: "基础设置",
+          key: "/basics_item",
+          icon: "el-icon-user"
+        },
+        {
+          title: "第三方登录设置",
+          key: "/threelogin",
+          icon: "el-icon-user"
+        },
+        {
+          title: "第三方支付设置",
+          key: "/tripartitepayment",
+          icon: "el-icon-user"
+        }
       ]
     },
     sidebarAllDataActiv: 'tl_home', // 侧边栏总目录当前选中对象
