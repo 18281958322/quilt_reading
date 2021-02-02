@@ -53,8 +53,21 @@ export default new Vuex.Store({
         },
         {
           title: "用户评论",
-          key: "/usercomment",
+          key: "/User_comments",
           icon: "el-icon-chat-dot-square",
+          children: [{
+            title: "小说",
+            key: "/usercomment",
+            icon: "el-icon-user",
+          }, {
+            title: "漫画",
+            key: "/cartoon",
+            icon: "el-icon-user",
+          }, {
+            title: "听书",
+            key: "/books",
+            icon: "el-icon-user",
+          }]
         },
         {
           title: "用户反馈",
@@ -86,7 +99,7 @@ export default new Vuex.Store({
           title: "作品列表",
           key: "2",
           icon: "el-icon-user",
-          children: [ {
+          children: [{
             title: "作品审核",
             key: "/works",
             icon: "el-icon-user"
@@ -103,8 +116,7 @@ export default new Vuex.Store({
           icon: "el-icon-user"
         }
       ],
-      tl_setup: [
-        {
+      tl_setup: [{
           title: "基础信息",
           key: "/basics",
           icon: "el-icon-user"
@@ -130,8 +142,7 @@ export default new Vuex.Store({
           key: "tld_data",
           title: "数据",
           icon: 'el-icon-s-marketing',
-          children: [
-            {
+          children: [{
               key: "/ordersReceiveStatistics",
               title: "订单统计",
               icon: 'el-icon-s-marketing',
@@ -172,8 +183,7 @@ export default new Vuex.Store({
           key: "tld_spread",
           title: "推广",
           icon: 'el-icon-s-marketing',
-          children: [
-            {
+          children: [{
               key: "/ListOfWorks",
               title: "作品列表",
               icon: 'el-icon-s-marketing',
@@ -199,8 +209,7 @@ export default new Vuex.Store({
           key: "tld_channel",
           title: "渠道",
           icon: 'el-icon-s-marketing',
-          children: [
-            {
+          children: [{
               key: "/ChannelList",
               title: "渠道列表",
               icon: 'el-icon-s-marketing',
@@ -221,8 +230,7 @@ export default new Vuex.Store({
           key: "tld_manage",
           title: "管理",
           icon: 'el-icon-s-marketing',
-          children: [
-            {
+          children: [{
               key: "/BuckleAmount",
               title: "扣量设置",
               icon: 'el-icon-s-marketing',

@@ -43,12 +43,29 @@ const vueRouter = new Router({
             toplevel: 'tl_user'
           }
         },
-        { // 用户评论
+        { // 小说
           path: '/usercomment',
           name: 'usercomment',
           component: () => import('../views/user/usercomment/index.vue'),
           meta: {
-            title: '用户评论',
+            title: '小说',
+            toplevel: 'tl_user'
+          }
+        },
+        { // 漫画
+          path: '/cartoon',
+          name: 'Cartoon',
+          component: () => import('../views/user/cartoon/index.vue'),
+          meta: {
+            title: '漫画',
+            toplevel: 'tl_user'
+          }
+        },{ // 听书
+          path: '/books',
+          name: 'Books',
+          component: () => import('../views/user/books/index.vue'),
+          meta: {
+            title: '听书',
             toplevel: 'tl_user'
           }
         },

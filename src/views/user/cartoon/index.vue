@@ -1,5 +1,5 @@
 <template>
-  <div class="usercomment">
+  <div class="cartoon">
     <div class="all">
       <div class="row">
         <div class="layout-row">
@@ -26,7 +26,7 @@
                     </el-table-column>
                     <el-table-column align="center" prop="date" label="用户（UID）">
                     </el-table-column>
-                    <el-table-column align="center" prop="name" label="作品名">
+                    <el-table-column align="center" prop="name" label="作品">
                     </el-table-column>
                     <el-table-column align="center" prop="address" label="评论内容">
                     </el-table-column>
@@ -48,7 +48,7 @@
                   </el-pagination>
                 </div>
               </el-tab-pane>
-              <el-tab-pane label="章节评论" name="second">
+              <el-tab-pane label="弹幕列表" name="second">
                 <div class="tabel">
                   <div class="idnex-box">
                     <el-select style="width: 148px;" v-model="value" placeholder="全部状态">
@@ -71,7 +71,7 @@
                     </el-table-column>
                     <el-table-column align="center" prop="name" label="作品">
                     </el-table-column>
-                    <el-table-column align="center" prop="name" label="章节">
+                    <el-table-column align="center" prop="name" label="章节名">
                     </el-table-column>
                     <el-table-column align="center" prop="address" label="评论内容">
                     </el-table-column>
@@ -117,8 +117,112 @@
   </div>
 </template>
 
-<script src="./script.js"></script>
+<script>
+  export default {
+    data() {
+      return {
+        activeName: 'first',
+        options: [{
+          value: '选项1',
+          label: '黄金糕'
+        }, {
+          value: '选项2',
+          label: '双皮奶'
+        }, {
+          value: '选项3',
+          label: '蚵仔煎'
+        }, {
+          value: '选项4',
+          label: '龙须面'
+        }, {
+          value: '选项5',
+          label: '北京烤鸭'
+        }],
+        value: '',
+        currentPage4: 4,
+        input: '',
+        tableData: [{
+          date: '2016-05-02',
+          name: '王小虎',
+          address: '上海市普陀区金沙江路'
+        }, {
+          date: '2016-05-04',
+          name: '王小虎',
+          address: '上海市普陀区金沙江路'
+        }, {
+          date: '2016-05-01',
+          name: '王小虎',
+          address: '上海市普陀区金沙江路'
+        }, {
+          date: '2016-05-03',
+          name: '王小虎',
+          address: '上海市普陀区金沙江路'
+        }],
+        Ban: false,
+        Deletedata: false,
+      }
+    },
+    methods: {
+      handleClick(tab, event) {
+        console.log(tab, event);
+      },
+      handleSizeChange(val) {
+        console.log(`每页 ${val} 条`);
+      },
+      handleCurrentChange(val) {
+        console.log(`当前页: ${val}`);
+      },
+      handleClose(done) {
+        this.$confirm('确认关闭？')
+          .then(_ => {
+            done();
+          })
+          .catch(_ => {});
+      },
+      // 封禁
+      BanClick() {
+        this.Ban = true;
+      },
+      // 删除
+      DeleteClick() {
+        this.Deletedata = true;
+      }
+    }
+  }
+</script>
 
 <style lang="scss" scoped>
-  @import './style.scss';
+  .cartoon {
+    .all {
+      padding: 10px 0;
+
+      .row {
+        background-color: #fff;
+        padding: 10px 0;
+
+        .layout {
+          display: flex;
+          padding: 0px 20px;
+
+          .layout-cell {
+            padding: 5px 0px;
+          }
+
+          .layout-pull {
+            padding: 5px 5px;
+          }
+
+          .tabel {
+            display: flex;
+          }
+        }
+
+        .layout-data {
+          padding: 0 0 20px 20px;
+          display: flex;
+          justify-content: center;
+        }
+      }
+    }
+  }
 </style>
