@@ -39,10 +39,24 @@
           {
             key: "tl_operations",
             title: "运营",
-            children: [{
-              key: "tl_op",
-              title: "通用管理",
-            }],
+            children: [
+              {
+                key: "GeneralOperating",
+                title: "通用运营",
+              },
+              {
+                key: "AppOperating",
+                title: "App运营",
+              },
+              {
+                key: "OA_Operating",
+                title: "公众号运营",
+              },
+              {
+                key: "PC_Operating",
+                title: "PC运营",
+              }
+            ],
           },
           {
             key: "tl_distribution",
