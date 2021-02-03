@@ -6,10 +6,10 @@
           <div class="layout-float">
             <div class="layout-cell">
               <el-input v-model="input" placeholder="请输入内容"></el-input>
-              <el-button style="margin-left:10px;" type="primary">搜索</el-button>
+              <el-button size="medium" style="margin-left:10px;" type="primary">搜索</el-button>
             </div>
             <div class="layout-cell">
-              <el-button type="primary">新增公告</el-button>
+              <el-button  size="medium" type="primary">新增公告</el-button>
             </div>
           </div>
           <div class="layout-center">
@@ -18,13 +18,19 @@
               </el-table-column>
               <el-table-column prop="address" align="center" label="标题">
               </el-table-column>
+              <el-table-column prop="address" align="center" label="内容">
+              </el-table-column>
               <el-table-column prop="date" align="center" label="发布时间">
+              </el-table-column>
+              <el-table-column prop="date" align="center" label="展示顺序">
               </el-table-column>
               <el-table-column prop="name" align="center" label="状态">
               </el-table-column>
-              <el-table-column prop="name" label="操作" align="center" width="140">
+              <el-table-column prop="name" label="操作" align="center" width="200">
                 <template slot-scope="scope">
                   <el-button @click="handleClick(scope.row)" type="text" size="small">删除</el-button>
+                  <el-button type="text" size="small">排序</el-button>
+                  <el-button type="text" size="small">查看</el-button>
                   <el-button type="text" size="small">编辑</el-button>
                   <el-button type="text" size="small">下线</el-button>
                 </template>

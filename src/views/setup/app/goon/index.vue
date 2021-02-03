@@ -131,7 +131,10 @@
               </div>
               <div class="data-item">
                 <div class="cell-item">
-
+                  <div class="cell-flex">
+                    <el-switch style="margin-right: 10px" v-model="value1" inactive-text="月票开关">
+                    </el-switch>
+                  </div>
                 </div>
               </div>
             </div>
@@ -155,6 +158,21 @@
                     <el-switch style="margin-right: 10px" v-model="value1" inactive-text="打赏开关">
                     </el-switch>
                   </div>
+                  <el-form-item label="作品每月投票限制" prop="name" label-width="160px">
+                    <el-input style="width:268px;" v-model="ruleForm.name"></el-input>
+                  </el-form-item>
+                  <el-form-item label="月票货币兑换比例" prop="name" label-width="160px">
+                    <el-input style="width:268px;" v-model="ruleForm.name"></el-input>
+                  </el-form-item>
+                  <el-form-item label="月票选项" prop="name" label-width="160px">
+                    <div class="time-text">
+                      <p>选项名称为</p>
+                      <el-input style="width:60px;margin: 0 10px;" v-model="input"></el-input>
+                      <p>需投</p>
+                      <el-input style="width:60px;margin: 0 10px;" v-model="input"></el-input>
+                      <p>张月票</p>
+                    </div>
+                  </el-form-item>
                 </div>
               </div>
             </div>
@@ -174,7 +192,54 @@
               </div>
               <div class="data-item">
                 <div class="cell-item">
-
+                  <el-form-item label="看视频奖励" label-width="160px">
+                    <div class="time-text">
+                      <p>签到后看视频再奖励</p>
+                      <el-input style="width:60px;margin: 0 10px;" v-model="input"></el-input>
+                      <p>金币</p>
+                    </div>
+                  </el-form-item>
+                  <el-form-item label="连续签到奖励" label-width="160px">
+                    <div class="time-text">
+                      <p>连续签到</p>
+                      <el-input style="width:60px;margin: 0 10px;" v-model="input"></el-input>
+                      <p>天可获得</p>
+                      <el-input style="width:60px;margin: 0 10px;" v-model="input"></el-input>
+                      <p>金币</p>
+                    </div>
+                  </el-form-item>
+                  <el-form-item label="补签要求" prop="name" label-width="160px">
+                    <div class="time-text">
+                      <p>补充需消耗</p>
+                      <el-input style="width:60px;margin: 0 10px;" v-model="input"></el-input>
+                      <p>金币</p>
+                    </div>
+                  </el-form-item>
+                  <el-form-item label="看视频补签" label-width="160px">
+                    <el-switch style="margin-right: 10px" v-model="value1">
+                    </el-switch>
+                  </el-form-item>
+                  <el-form-item label="签到说明" label-width="160px">
+                    <el-input type="textarea" style="width:268px;" v-model="ruleForm.desc"></el-input>
+                  </el-form-item>
+                  <el-form-item label="高级选项" label-width="160px">
+                    <div class="caret-border" @click="dialogVisible = true">
+                      <i class="el-icon-caret-top"></i>
+                    </div>
+                    <el-dialog center title="签到奖励设置" :visible.sync="dialogVisible" width="70%"
+                      :before-close="handleClose">
+                      <div class="dialog-box">
+                        <div class="box" :class="isActive == index ?'item-box-active': ''"
+                          @click="monClick(list.value,index)" v-for="(list,index) in mon" :key="index">
+                          <div class="box-1">第{{list.item}}天</div>
+                          <div class="box-1">+{{list.value}}金币</div>
+                        </div>
+                      </div>
+                      <span slot="footer" class="dialog-footer">
+                        <el-button type="primary" @click="dialogVisible = false">设置奖励</el-button>
+                      </span>
+                    </el-dialog>
+                  </el-form-item>
                 </div>
               </div>
             </div>
@@ -194,7 +259,25 @@
               </div>
               <div class="data-item">
                 <div class="cell-item">
-
+                  <el-form-item label="倒计时时长（秒）" prop="name" label-width="160px">
+                    <el-input style="width:268px;" v-model="ruleForm.name"></el-input>
+                  </el-form-item>
+                  <el-form-item label="阅读倒计时奖励" prop="name" label-width="160px">
+                    <div class="time-text">
+                      <p>最低奖励</p>
+                      <el-input style="width:60px;margin: 0 10px;" v-model="input"></el-input>
+                      <p>金币，</p>
+                      <p>最高奖励</p>
+                      <el-input style="width:60px;margin: 0 10px;" v-model="input"></el-input>
+                      <p>金币</p>
+                    </div>
+                  </el-form-item>
+                  <el-form-item label="奖励上限时长（分钟）" prop="name" label-width="160px">
+                    <el-input style="width:268px;" v-model="ruleForm.name"></el-input>
+                  </el-form-item>
+                  <el-form-item label="好友分成比率" prop="name" label-width="160px">
+                    <el-input style="width:268px;" v-model="ruleForm.name"></el-input>
+                  </el-form-item>
                 </div>
               </div>
             </div>
@@ -214,7 +297,16 @@
               </div>
               <div class="data-item">
                 <div class="cell-item">
-
+                  <el-form-item label="新用户条件设置" prop="name" label-width="160px">
+                    <div class="time-text">
+                      <p>注册后</p>
+                      <el-input style="width:60px;margin: 0 10px;" v-model="input"></el-input>
+                      <p>天内得用户为新用户</p>
+                    </div>
+                  </el-form-item>
+                  <el-form-item label="新用户注册奖励" prop="name" label-width="160px">
+                    <el-input style="width:268px;" v-model="ruleForm.name"></el-input>
+                  </el-form-item>
                 </div>
               </div>
             </div>
@@ -234,7 +326,32 @@
               </div>
               <div class="data-item">
                 <div class="cell-item">
-
+                  <el-form-item label="每日提现次数限制" prop="name" label-width="160px">
+                    <el-switch style="margin-right: 10px" v-model="value1" inactive-text="打赏开关">
+                    </el-switch>
+                    <div class="time-text">
+                      <p>同一用户，一天可提现</p>
+                      <el-input style="width:60px;margin: 0 10px;" v-model="input"></el-input>
+                      <p>次</p>
+                    </div>
+                  </el-form-item>
+                  <el-form-item label="自动打款开关" label-width="160px">
+                    <el-switch style="margin-right: 10px" v-model="value1">
+                    </el-switch>
+                  </el-form-item>
+                  <el-form-item label="自动打款金额限制" prop="name" label-width="160px">
+                    <div class="time-text">
+                      <p>提现超过</p>
+                      <el-input style="width:60px;margin: 0 10px;" v-model="input"></el-input>
+                      <p>元，需要人工审核</p>
+                    </div>
+                  </el-form-item>
+                  <el-form-item label="提现规则" label-width="160px">
+                    <el-input type="textarea" style="width:268px;" v-model="ruleForm.name"></el-input>
+                  </el-form-item>
+                  <el-form-item label="支付宝绑定说明" label-width="160px">
+                    <el-input type="textarea" style="width:268px;" v-model="ruleForm.name"></el-input>
+                  </el-form-item>
                 </div>
               </div>
             </div>
@@ -328,6 +445,8 @@
   export default {
     data() {
       return {
+        dialogVisible: false,
+        isActive: -1,
         fileList: [{
             name: 'food.jpeg',
             url: 'https://fuss10.elemecdn.com/3/63/4e7f3a15429bfda99bce42a18cdd1jpeg.jpeg?imageMogr2/thumbnail/360x360/format/webp/quality/100'
@@ -400,7 +519,98 @@
           name: '',
           region: '',
           type: ''
-        }
+        },
+        mon: [{
+          item: "1",
+          value: "50"
+        }, {
+          item: "2",
+          value: "20"
+        }, {
+          item: "3",
+          value: "10"
+        }, {
+          item: "4",
+          value: "10"
+        }, {
+          item: "5",
+          value: "10"
+        }, {
+          item: "6",
+          value: "25"
+        }, {
+          item: "7",
+          value: "120"
+        }, {
+          item: "8",
+          value: "100"
+        }, {
+          item: "第9天",
+          value: "120"
+        }, {
+          item: "10",
+          value: "100"
+        }, {
+          item: "11",
+          value: "100"
+        }, {
+          item: "12",
+          value: "50"
+        }, {
+          item: "13",
+          value: "99"
+        }, {
+          item: "14",
+          value: "99"
+        }, {
+          item: "15",
+          value: "9"
+        }, {
+          item: "16",
+          value: "900"
+        }, {
+          item: "17",
+          value: "10"
+        }, {
+          item: "18",
+          value: "10"
+        }, {
+          item: "19",
+          value: "10"
+        }, {
+          item: "20",
+          value: "10"
+        }, {
+          item: "21",
+          value: "10"
+        }, {
+          item: "22",
+          value: "10"
+        }, {
+          item: "23",
+          value: "99"
+        }, {
+          item: "24",
+          value: "120"
+        }, {
+          item: "25",
+          value: "120"
+        }, {
+          item: "26",
+          value: "10"
+        }, {
+          item: "27",
+          value: "100"
+        }, {
+          item: "28",
+          value: "100"
+        }, {
+          item: "29",
+          value: "100"
+        }, {
+          item: "30",
+          value: "999"
+        }, ]
       }
     },
     methods: {
@@ -413,6 +623,13 @@
             return false;
           }
         });
+      },
+      handleClose(done) {
+        this.$confirm('确认关闭？')
+          .then(_ => {
+            done();
+          })
+          .catch(_ => {});
       },
       resetForm(formName) {
         this.$refs[formName].resetFields();
@@ -428,6 +645,11 @@
       },
       beforeRemove(file, fileList) {
         return this.$confirm(`确定移除 ${ file.name }？`);
+      },
+      // 选择金币
+      monClick(res, index) {
+        // console.log(index, res)
+        this.isActive = index;
       }
     }
   }
@@ -479,7 +701,6 @@
               .cell-item {
                 .time-text {
                   display: flex;
-                  padding: 5px 0;
 
                   p {
                     color: #606266;
@@ -487,9 +708,47 @@
                   }
                 }
 
+                .caret-border {
+                  width: 15px;
+                  height: 15px;
+                  border: 1px #dadada solid;
+                  text-align: center;
+                  line-height: 15px;
+                  margin: 10px 0;
+                }
+
                 .cell-flex {
                   display: flex;
                   padding-left: 160px;
+                }
+
+                .dialog-box {
+                  display: flex;
+                  flex-wrap: wrap;
+
+                  .box {
+                    padding: 5px;
+                    text-align: center;
+                    border: 1px #dadada solid;
+                    border-radius: 5px;
+                    font-size: 12px;
+                    line-height: 20px;
+                    width: 60px;
+                    cursor: pointer;
+                    margin: 10px;
+                  }
+
+                  .item-box-active {
+                    padding: 5px;
+                    text-align: center;
+                    border: 1px #1f9fff solid;
+                    border-radius: 5px;
+                    font-size: 12px;
+                    color: #1f9fff;
+                    line-height: 20px;
+                    width: 60px;
+                    margin: 10px;
+                  }
                 }
               }
             }
