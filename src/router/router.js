@@ -60,7 +60,7 @@ const vueRouter = new Router({
             title: '漫画',
             toplevel: 'tl_user'
           }
-        },{ // 听书
+        }, { // 听书
           path: '/books',
           name: 'Books',
           component: () => import('../views/user/books/index.vue'),
@@ -148,6 +148,24 @@ const vueRouter = new Router({
           component: () => import('../views/author/penster/index.vue'),
           meta: {
             title: '作者管理',
+            toplevel: 'tl_author'
+          }
+        },
+        { //新增作者
+          path: '/newauthor',
+          name: "Newauthor",
+          component: () => import('../views/author/penster/Newauthor/index.vue'),
+          meta: {
+            title: '新增作者',
+            toplevel: 'tl_author'
+          }
+        },
+        { //编辑章节
+          path: '/eide',
+          name: "Eide",
+          component: () => import('../views/author/penster/eide/index.vue'),
+          meta: {
+            title: '编辑章节',
             toplevel: 'tl_author'
           }
         },

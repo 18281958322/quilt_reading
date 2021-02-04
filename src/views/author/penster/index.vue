@@ -6,10 +6,10 @@
           <div class="layout-float">
             <div class="layout-cell">
               <el-input v-model="input" placeholder="作者ID/笔名/手机号"></el-input>
-              <el-button style="margin-left:10px;" type="primary">搜索</el-button>
+              <el-button style="margin-left:10px;" size="medium" type="primary">搜索</el-button>
             </div>
             <div class="layout-cell">
-              <el-button type="primary">新增作者</el-button>
+              <el-button size="medium" @click="NewauthorClick()" type="primary">新增作者</el-button>
             </div>
           </div>
           <div class="layout-center">
@@ -21,6 +21,8 @@
               <el-table-column prop="name" align="center" label="笔名">
               </el-table-column>
               <el-table-column prop="name" align="center" label="姓名">
+              </el-table-column>
+              <el-table-column prop="name" align="center" label="姓别">
               </el-table-column>
               <el-table-column prop="name" align="center" label="手机号">
               </el-table-column>
@@ -43,8 +45,8 @@
               <el-table-column prop="name" label="操作" align="center" width="120">
                 <template slot-scope="scope">
                   <el-button @click="handleClick(scope.row)" type="text" size="small">删除</el-button>
-                  <el-button type="text" size="small">编辑</el-button>
-                  <el-button type="text" size="small">下线</el-button>
+                  <el-button @click="eideClick(scope.row)" type="text" size="small">编辑</el-button>
+                  <el-button type="text" size="small">封禁</el-button>
                 </template>
               </el-table-column>
             </el-table>
@@ -58,6 +60,17 @@
         </div>
       </div>
     </div>
+    <!-- 删除 -->
+    <el-dialog title="提示" :visible.sync="detletSync" width="30%" :before-close="handleClose">
+      <div style="display: flex;">
+        <i class="el-icon-warning" style="color:#e6a23c;line-height: 19px;"></i>
+        <span style="margin-left:5px;">确定删除该作者吗？</span>
+      </div>
+      <span slot="footer" style="display: flex;justify-content:center;" class="dialog-footer">
+        <el-button size="mini" @click="detletSync = false">取 消</el-button>
+        <el-button size="mini" type="primary" @click="detletSync = false">确 定</el-button>
+      </span>
+    </el-dialog>
   </div>
 </template>
 
@@ -66,6 +79,7 @@
     data() {
       return {
         input: '',
+        detletSync: false,
         currentPage4: 4,
         tableData: [{
           date: '2016-05-02',
@@ -92,6 +106,25 @@
       },
       handleCurrentChange(val) {
         console.log(`当前页: ${val}`);
+      },
+      handleClose(done) {
+        this.$confirm('确认关闭？')
+          .then(_ => {
+            done();
+          })
+          .catch(_ => {});
+      },
+      // 新增作者
+      NewauthorClick() {
+        this.$router.push('/newauthor');
+      },
+      // 编辑
+      eideClick(row) {
+        this.$router.push('/eide');
+      },
+      // 删除
+      handleClick(row) {
+        this.detletSync = true;
       }
     }
   }

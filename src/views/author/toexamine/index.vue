@@ -17,7 +17,10 @@
             </div>
           </div>
           <div class="layout-center">
-            <el-table :data="tableData" style="width: 100%">
+            <el-table ref="multipleTable" tooltip-effect="dark" :data="tableData" style="width: 100%"
+              @selection-change="handleSelectionChange">
+              <el-table-column type="selection" width="55">
+              </el-table-column>
               <el-table-column align="center" type="index" label="序号" width="50">
               </el-table-column>
               <el-table-column prop="name" align="center" label="作家ID">
@@ -36,11 +39,20 @@
               </el-table-column>
               <el-table-column prop="name" label="操作" align="center" width="120">
                 <template slot-scope="scope">
-                  <el-button @click="handleClick(scope.row)" type="text" size="small">通过</el-button>
-                  <el-button type="text" size="small">驳回</el-button>
+                  <el-button @click="adoptClick(scope.row)" type="text" size="small">通过</el-button>
+                  <el-button @click="rejectClick(scope.row)" type="text" size="small">驳回</el-button>
                 </template>
               </el-table-column>
             </el-table>
+            <div style="margin-top: 20px">
+              <el-button @click="toggleSelection([tableData[0],tableData[1],tableData[2],tableData[3], 
+              tableData[4],tableData[5],tableData[6],tableData[7],tableData[8],
+              tableData[9]])">批量通过</el-button>
+
+              <el-button @click="toggleSelection([tableData[0],tableData[1],tableData[2],tableData[3], 
+              tableData[4],tableData[5],tableData[6],tableData[7],tableData[8],
+              tableData[9]])">批量驳回</el-button>
+            </div>
           </div>
           <div class="layout-center-page">
             <el-pagination @size-change="handleSizeChange" @current-change="handleCurrentChange"
@@ -51,6 +63,17 @@
         </div>
       </div>
     </div>
+    <!-- 选中/驳回 -->
+    <el-dialog title="提示" :visible.sync="statusSync" width="30%" :before-close="handleClose">
+      <div style="display: flex;">
+        <i class="el-icon-warning" style="color:#e6a23c;line-height: 19px;"></i>
+        <span style="margin-left:5px;">确定{{text}}该作者吗？</span>
+      </div>
+      <span slot="footer" style="display: flex;justify-content:center;" class="dialog-footer">
+        <el-button size="mini" @click="statusSync = false">取 消</el-button>
+        <el-button size="mini" type="primary" @click="statusSync = false">确 定</el-button>
+      </span>
+    </el-dialog>
   </div>
 </template>
 
@@ -59,6 +82,8 @@
     data() {
       return {
         input: '',
+        text: "通过/驳回",
+        statusSync: false,
         options: [{
           value: '选项1',
           label: '黄金糕'
@@ -78,21 +103,25 @@
         value: '',
         currentPage4: 4,
         tableData: [{
-          date: '2016-05-02',
           name: '王小虎',
-          address: '上海市普陀区金沙江路'
         }, {
-          date: '2016-05-04',
           name: '王小虎',
-          address: '上海市普陀区金沙江路'
         }, {
-          date: '2016-05-01',
           name: '王小虎',
-          address: '上海市普陀区金沙江路'
         }, {
-          date: '2016-05-03',
           name: '王小虎',
-          address: '上海市普陀区金沙江路'
+        }, {
+          name: '王小虎',
+        }, {
+          name: '王小虎',
+        }, {
+          name: '王小虎',
+        }, {
+          name: '王小虎',
+        }, {
+          name: '王小虎',
+        }, {
+          name: '王小虎',
         }]
       }
     },
@@ -102,6 +131,36 @@
       },
       handleCurrentChange(val) {
         console.log(`当前页: ${val}`);
+      },
+      handleSelectionChange(val) {
+
+        this.multipleSelection = val;
+      },
+      handleClose(done) {
+        this.$confirm('确认关闭？')
+          .then(_ => {
+            done();
+          })
+          .catch(_ => {});
+      },
+      // 批量选中
+      toggleSelection(rows) {
+        if (rows) {
+          rows.forEach(row => {
+            this.$refs.multipleTable.toggleRowSelection(row);
+            this.statusSync = true;
+          });
+        } else {
+          this.$refs.multipleTable.clearSelection();
+        }
+      },
+      // 通过
+      adoptClick(row){
+        this.statusSync = true;
+      },
+      // 驳回
+      rejectClick(row){
+        this.statusSync = true;
       }
     }
   }
