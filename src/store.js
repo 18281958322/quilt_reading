@@ -303,6 +303,519 @@ export default new Vuex.Store({
           key: "/tripartitepayment",
           icon: "el-icon-user"
         }
+      ],
+      GeneralOperating: [ //通用运营
+        {
+          title: "热搜热词",
+          key: "/GOHotHotWords",
+          icon: "el-icon-s-marketing"
+        },
+        {
+          title: "排行榜",
+          key: "/GO_rankingList",
+          icon: "el-icon-s-marketing"
+        },
+      ],
+      AppOperating: [ //App运营
+        {
+          title: "应用",
+          key: "/AoUse",
+          icon: "el-icon-s-marketing",
+          children: [
+            {
+              title: "启动页",
+              key: "/BootPage",
+            },
+            {
+              title: "广告位",
+              key: "/AdvertisingPosition",
+            },
+            {
+              title: "首页频道",
+              key: "/HomePageChannel",
+            },
+            {
+              title: "Banner列表",
+              key: "/BannerList",
+            },
+            {
+              title: "图文导航",
+              key: "/ImgTextNavigation",
+            },
+            {
+              title: "推荐位",
+              key: "/FeaturedFirst",
+            },
+            {
+              title: "重点推荐作品",
+              key: "/highlyRecommended",
+            },
+            {
+              title: "公告管理",
+              key: "/AnnouncementManagement",
+            },
+            {
+              title: "常见问题",
+              key: "/commonProblem",
+            },
+            {
+              title: "版本控制",
+              key: "/versionControl",
+            },
+          ]
+        },
+        {
+          title: "充值",
+          key: "/recharge",
+          icon: "el-icon-s-marketing",
+          children: [
+            {
+              title: "充值套餐",
+              key: "/RechargeCombo",
+            },
+            {
+              title: "充值通道",
+              key: "/RechargeHatchway",
+            },
+          ]
+        },
+        {
+          title: "提现",
+          key: "/withdrawDeposit",
+          icon: "el-icon-s-marketing",
+          children: [
+            {
+              title: "提现项",
+              key: "/withdrawItems",
+            },
+            {
+              title: "提现审核",
+              key: "/withdrawAudit",
+            },
+          ]
+        },
+        {
+          title: "任务",
+          key: "/Task",
+          icon: "el-icon-s-marketing",
+          children: [
+            {
+              title: "福利任务",
+              key: "/welfareTask",
+            },
+            {
+              title: "转盘活动",
+              key: "/RotaryActivities",
+            },
+          ]
+        },
+        {
+          title: "消息推送",
+          key: "/PushNotification",
+          icon: "el-icon-s-marketing",
+        },
+        {
+          title: "打赏礼物",
+          key: "/ExceptionalGifts",
+          icon: "el-icon-s-marketing",
+        },
+        // {
+        //   title: "分销推广",
+        //   key: "/DistributionToPromote",
+        //   icon: "el-icon-s-marketing",
+        //   children: [
+        //     {
+        //       title: "分销作品列表",
+        //       key: "/welfareTask",
+        //     },
+        //     {
+        //       title: "推广链接",
+        //       key: "/ToPromoteLinks",
+        //     },
+        //     {
+        //       title: "推广素材",
+        //       key: "/PromotionalMaterial",
+        //     },
+        //   ]
+        // },
+        // {
+        //   title: "分销渠道",
+        //   key: "/channelOfDistribution",
+        //   icon: "el-icon-s-marketing",
+        //   children: [
+        //     {
+        //       title: "渠道列表",
+        //       key: "/ChannelList",
+        //     },
+        //     {
+        //       title: "渠道结算单",
+        //       key: "/ChannelSettlementStatement",
+        //     },
+        //     {
+        //       title: "渠道打款",
+        //       key: "/ChannelsToPlayMoney",
+        //     },
+        //   ]
+        // },
+        // {
+        //   title: "分销管理",
+        //   key: "/DistributionManagement",
+        //   icon: "el-icon-s-marketing",
+        //   children: [
+        //     {
+        //       title: "扣量设置",
+        //       key: "/BuckleAmount",
+        //     },
+        //     {
+        //       title: "公告管理",
+        //       key: "/AnnouncementOfTheManagement",
+        //     },
+        //     {
+        //       title: "推广域名",
+        //       key: "/ExtendDomainName",
+        //     },
+        //   ]
+        // },
+        {
+          key: "tld_spread",
+          title: "分销推广",
+          icon: 'el-icon-s-marketing',
+          children: [{
+              key: "/ListOfWorks",
+              title: "作品列表",
+            },
+            {
+              key: "/ToPromoteLinks",
+              title: "推广链接",
+            },
+            {
+              key: "/CommonlyUsedLinks",
+              title: "常用链接",
+            },
+            {
+              key: "/promotionActivity",
+              title: "促销活动",
+            }
+          ]
+        },
+        {
+          key: "tld_channel",
+          title: "分销渠道",
+          icon: 'el-icon-s-marketing',
+          children: [{
+              key: "/ChannelList",
+              title: "渠道列表",
+            },
+            {
+              key: "/ChannelSettlementStatement",
+              title: "渠道结算单",
+            },
+            {
+              key: "/ChannelsToPlayMoney",
+              title: "渠道打款",
+            }
+          ]
+        },
+        {
+          key: "tld_manage",
+          title: "分销管理",
+          icon: 'el-icon-s-marketing',
+          children: [{
+              key: "/BuckleAmount",
+              title: "扣量设置",
+            },
+            {
+              key: "/AnnouncementOfTheManagement",
+              title: "公告管理",
+            },
+            {
+              key: "/materialManagement",
+              title: "素材管理",
+            },
+            {
+              key: "/EventPackageManagement",
+              title: "活动套餐管理",
+            }
+          ]
+        },
+      ],
+      OA_Operating: [ //公众号运营
+        {
+          title: "应用",
+          key: "/OAOUse",
+          icon: "el-icon-s-marketing",
+          children: [
+            {
+              title: "广告位",
+              key: "/OAOU_AdvertisingPosition",
+            },
+            {
+              title: "首页频道",
+              key: "/OAOU_HomePageChannel",
+            },
+            {
+              title: "Banner列表",
+              key: "/OAOU_BannerList",
+            },
+            {
+              title: "图文导航",
+              key: "/OAOU_ImgTextNavigation",
+            },
+            {
+              title: "推荐位",
+              key: "/OAOU_FeaturedFirst",
+            },
+            {
+              title: "重点推荐作品",
+              key: "/OAOU_highlyRecommended",
+            },
+            {
+              title: "公告管理",
+              key: "/OAOU_AnnouncementOfTheManagement",
+            },
+          ]
+        },
+        {
+          title: "公众号管理",
+          key: "/OA_Manager",
+          icon: "el-icon-s-marketing",
+          children: [
+            {
+              title: "自定义菜单",
+              key: "/OAM_customizeMenus",
+            },
+            {
+              title: "自动回复",
+              key: "/OAM_autoResponse",
+            },
+            {
+              title: "群发消息",
+              key: "/OAM_GroupSentMessage",
+            },
+            {
+              title: "生成代码",
+              key: "/OAM_generatingCode ",
+            },
+            {
+              title: "智能推送",
+              key: "/OAM_IntelligentPush",
+            },
+          ]
+        },
+        {
+          title: "充值",
+          key: "/OAO_recharge",
+          icon: "el-icon-s-marketing",
+        },
+        // {
+        //   title: "分销推广",
+        //   key: "/OAO_DistributionToPromote",
+        //   icon: "el-icon-s-marketing",
+        //   children: [
+        //     {
+        //       title: "作品推广",
+        //       key: "/OAOD_welfareTask",
+        //     },
+        //     {
+        //       title: "推广链接",
+        //       key: "/OAOD_ToPromoteLinks",
+        //     },
+        //     {
+        //       title: "常用链接",
+        //       key: "/OAOD_CommonlyUsedLinks",
+        //     },
+        //     {
+        //       title: "促销活动",
+        //       key: "/OAOD_promotionActivity",
+        //     },
+        //   ]
+        // },
+        // {
+        //   title: "分销渠道",
+        //   key: "/OAO_channelOfDistribution",
+        //   icon: "el-icon-s-marketing",
+        //   children: [
+        //     {
+        //       title: "渠道列表",
+        //       key: "/OAOC_ChannelList",
+        //     },
+        //     {
+        //       title: "渠道结算单",
+        //       key: "/OAOC_ChannelSettlementStatement",
+        //     },
+        //     {
+        //       title: "渠道打款",
+        //       key: "/OAOC_ChannelsToPlayMoney",
+        //     },
+        //   ]
+        // },
+        // {
+        //   title: "分销管理",
+        //   key: "/OAO_DistributionManagement",
+        //   icon: "el-icon-s-marketing",
+        //   children: [
+        //     {
+        //       title: "扣量设置",
+        //       key: "/OAOD_BuckleAmount",
+        //     },
+        //     {
+        //       title: "公告管理",
+        //       key: "/OAOD_AnnouncementOfTheManagement",
+        //     },
+        //     {
+        //       title: "素材管理",
+        //       key: "/OAOD_materialManagement",
+        //     },
+        //     {
+        //       title: "活动套餐管理",
+        //       key: "/OAOD_EventPackageManagement",
+        //     },
+        //   ]
+        // }
+        {
+          key: "tld_spread",
+          title: "分销推广",
+          icon: 'el-icon-s-marketing',
+          children: [{
+              key: "/ListOfWorks",
+              title: "作品列表",
+            },
+            {
+              key: "/ToPromoteLinks",
+              title: "推广链接",
+            },
+            {
+              key: "/CommonlyUsedLinks",
+              title: "常用链接",
+            },
+            {
+              key: "/promotionActivity",
+              title: "促销活动",
+            }
+          ]
+        },
+        {
+          key: "tld_channel",
+          title: "分销渠道",
+          icon: 'el-icon-s-marketing',
+          children: [{
+              key: "/ChannelList",
+              title: "渠道列表",
+            },
+            {
+              key: "/ChannelSettlementStatement",
+              title: "渠道结算单",
+            },
+            {
+              key: "/ChannelsToPlayMoney",
+              title: "渠道打款",
+            }
+          ]
+        },
+        {
+          key: "tld_manage",
+          title: "分销管理",
+          icon: 'el-icon-s-marketing',
+          children: [{
+              key: "/BuckleAmount",
+              title: "扣量设置",
+            },
+            {
+              key: "/AnnouncementOfTheManagement",
+              title: "公告管理",
+            },
+            {
+              key: "/materialManagement",
+              title: "素材管理",
+            },
+            {
+              key: "/EventPackageManagement",
+              title: "活动套餐管理",
+            }
+          ]
+        },
+      ],
+      PC_Operating: [ // PC运营
+        // {
+        //   title: "应用",
+        //   key: "/PCOUse",
+        //   icon: "el-icon-s-marketing",
+        //   children: [
+        //     {
+        //       title: "广告位",
+        //       key: "/PCOU_AdvertisingPosition",
+        //     },
+        //     {
+        //       title: "Banner列表",
+        //       key: "/PCOU_BannerList",
+        //     },
+        //     {
+        //       title: "公告管理",
+        //       key: "/PCOU_AnnouncementOfTheManagement",
+        //     },
+        //     {
+        //       title: "推荐位",
+        //       key: "/PCOU_FeaturedFirst",
+        //     },
+        //     {
+        //       title: "友情链接",
+        //       key: "/PCOU_highlyRecommended",
+        //     },
+        //     {
+        //       title: "底部导航",
+        //       key: "/PCOU_bottomNavigation",
+        //     },
+        //   ]
+        // },
+        {
+          title: "应用",
+          key: "/OAOUse",
+          icon: "el-icon-s-marketing",
+          children: [
+            {
+              title: "广告位",
+              key: "/OAOU_AdvertisingPosition",
+            },
+            {
+              title: "首页频道",
+              key: "/OAOU_HomePageChannel",
+            },
+            {
+              title: "Banner列表",
+              key: "/OAOU_BannerList",
+            },
+            {
+              title: "图文导航",
+              key: "/OAOU_ImgTextNavigation",
+            },
+            {
+              title: "推荐位",
+              key: "/OAOU_FeaturedFirst",
+            },
+            {
+              title: "重点推荐作品",
+              key: "/OAOU_highlyRecommended",
+            },
+            {
+              title: "公告管理",
+              key: "/OAOU_AnnouncementOfTheManagement",
+            },
+            {
+              title: "底部导航",
+              key: "/PCOU_bottomNavigation",
+            },
+          ]
+        },
+        {
+          title: "引导客户端",
+          key: "/PCOBootstrapClient",
+          icon: "el-icon-s-marketing",
+        },
+        {
+          title: "TDK设置",
+          key: "/PCOTDKSet",
+          icon: "el-icon-s-marketing",
+        },
       ]
     },
     sidebarAllDataActiv: 'tl_home', // 侧边栏总目录当前选中对象

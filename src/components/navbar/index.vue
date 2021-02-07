@@ -58,10 +58,10 @@
               }
             ],
           },
-          {
-            key: "tl_distribution",
-            title: "分销",
-          },
+          // {
+          //   key: "tl_distribution",
+          //   title: "分销",
+          // },
           {
             key: "tl_author",
             title: "作者",
@@ -120,11 +120,15 @@
           case "tl_content": activePath = '/novel'; break
           case "tl_user": activePath = '/userlist'; break
           case "tl_author": activePath = '/author'; break
-          case "tl_distribution": activePath = '/ordersReceiveStatistics'; break
+          // case "tl_distribution": activePath = '/ordersReceiveStatistics'; break
           case "tl_setup": activePath = '/basics'; break
           case "tl_app": activePath = '/goon'; break
           case "tl_account": activePath = '/sign'; break
           case "tl_pc": activePath = '/basics_item'; break
+          case "GeneralOperating": activePath = '/GOHotHotWords'; break
+          case "AppOperating": activePath = '/BootPage'; break
+          case "OA_Operating": activePath = '/OAOU_AdvertisingPosition'; break
+          case "PC_Operating": activePath = '/PCOU_bottomNavigation'; break
         }
         // 切换侧边栏选中项
         this.$store.commit("setSideDefaultActive", { val: activePath })

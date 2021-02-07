@@ -58,8 +58,9 @@ li {
 
 .translation-enter {
   opacity: 0;
+  -webkit-transform: translateX(-40px);
   -ms-transform: translateX(-40px);
-  -ms-transform: translateX(-40px);
+  -moz-transform: translateX(-40px);
   transform: translateX(-40px);
 }
 
@@ -69,8 +70,9 @@ li {
 
 .translation-enter-to {
   opacity: 1;
+  -webkit-transform: translateX(-40px);
   -ms-transform: translateX(0px);
-  -ms-transform: translateX(0px);
+  -moz-transform: translateX(0px);
   transform: translateX(0px);
 }
 
@@ -350,4 +352,10 @@ li {
   border: 1px solid #F4667C;
   color: #ffffff;
   background-color: #F4667C;
+}
+
+.bt8.isbutton {
+  border: 1px solid #337ab7;
+  color: #ffffff;
+  background-color: #337ab7;
 }
