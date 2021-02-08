@@ -5,7 +5,7 @@
         <div class="layout">
           <div class="layout-float">
             <div class="layout-cell">
-              <el-button type="primary">新增责编</el-button>
+              <el-button size="mini" @click="NewresClick()" type="primary">新增责编</el-button>
             </div>
           </div>
           <div class="layout-center">
@@ -25,7 +25,7 @@
               <el-table-column prop="name" label="操作" align="center" width="140">
                 <template slot-scope="scope">
                   <el-button @click="handleClick(scope.row)" type="text" size="small">删除</el-button>
-                  <el-button type="text" size="small">编辑</el-button>
+                  <el-button @click="eideClick(scope.row)" type="text" size="small">编辑</el-button>
                 </template>
               </el-table-column>
             </el-table>
@@ -39,6 +39,53 @@
         </div>
       </div>
     </div>
+    <!-- 删除 -->
+    <el-dialog title="删除责编" :visible.sync="detletSync" width="30%" :before-close="handleClose">
+      <div style="display: flex;">
+        <i class="el-icon-warning" style="color:#e6a23c;line-height: 19px;"></i>
+        <span style="margin-left:5px;">确定删除该责编吗？</span>
+      </div>
+      <span slot="footer" style="display: flex;justify-content:center;" class="dialog-footer">
+        <el-button size="mini" @click="detletSync = false">取 消</el-button>
+        <el-button size="mini" type="primary" @click="detletSync = false">确 定</el-button>
+      </span>
+    </el-dialog>
+    <!-- 新增责编 -->
+    <el-dialog title="新增责编" :visible.sync="newres" width="30%" :before-close="handleClose">
+      <el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm">
+        <el-form-item label="姓名" prop="name" label-width="100px">
+          <el-input style="width:244px;" v-model="ruleForm.name"></el-input>
+        </el-form-item>
+        <el-form-item label="账号" prop="name" label-width="100px">
+          <el-input style="width:244px;" v-model="ruleForm.name"></el-input>
+        </el-form-item>
+        <el-form-item label="描述" prop="name" label-width="100px">
+          <el-input style="width:244px;" v-model="ruleForm.name"></el-input>
+        </el-form-item>
+      </el-form>
+      <span slot="footer" style="display: flex;justify-content:center;" class="dialog-footer">
+        <el-button size="mini" @click="newres = false">取 消</el-button>
+        <el-button size="mini" type="primary" @click="newres = false">确 定</el-button>
+      </span>
+    </el-dialog>
+    <!-- 编辑 -->
+    <el-dialog title="新增责编" :visible.sync="eidesync" width="30%" :before-close="handleClose">
+      <el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm">
+        <el-form-item label="姓名" prop="name" label-width="100px">
+          <el-input style="width:244px;" v-model="ruleForm.name"></el-input>
+        </el-form-item>
+        <el-form-item label="账号" prop="name" label-width="100px">
+          <el-input style="width:244px;" v-model="ruleForm.name"></el-input>
+        </el-form-item>
+        <el-form-item label="描述" prop="name" label-width="100px">
+          <el-input style="width:244px;" v-model="ruleForm.name"></el-input>
+        </el-form-item>
+      </el-form>
+      <span slot="footer" style="display: flex;justify-content:center;" class="dialog-footer">
+        <el-button size="mini" @click="eidesync = false">取 消</el-button>
+        <el-button size="mini" type="primary" @click="eidesync = false">确 定</el-button>
+      </span>
+    </el-dialog>
   </div>
 </template>
 
@@ -47,7 +94,27 @@
     data() {
       return {
         input: '',
+        newres: false,
+        eidesync: false,
+        detletSync: false,
         currentPage4: 4,
+        ruleForm: {
+          name: ''
+        },
+        rules: {
+          name: [{
+              required: true,
+              message: '请输入活动名称',
+              trigger: 'blur'
+            },
+            {
+              min: 3,
+              max: 5,
+              message: '长度在 3 到 5 个字符',
+              trigger: 'blur'
+            }
+          ],
+        },
         tableData: [{
           date: '2016-05-02',
           name: '王小虎',
@@ -73,6 +140,38 @@
       },
       handleCurrentChange(val) {
         console.log(`当前页: ${val}`);
+      },
+       handleClose(done) {
+        this.$confirm('确认关闭？')
+          .then(_ => {
+            done();
+          })
+          .catch(_ => {});
+      },
+      submitForm(formName) {
+        this.$refs[formName].validate((valid) => {
+          if (valid) {
+            alert('submit!');
+          } else {
+            console.log('error submit!!');
+            return false;
+          }
+        });
+      },
+      resetForm(formName) {
+        this.$refs[formName].resetFields();
+      },
+      // 新增责编
+      NewresClick() {
+        this.newres = true;
+      },
+      // 编辑
+      eideClick(row){
+        this.eidesync = true;
+      },
+      // 删除
+      handleClick(row){
+        this.detletSync = true;
       }
     }
   }

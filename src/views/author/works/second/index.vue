@@ -1,12 +1,12 @@
 <template>
   <div class="second">
     <div class="layout">
-      <el-select style="width:128px;" v-model="value" placeholder="请选择">
+      <el-select style="width:128px;" v-model="value" placeholder="全部状态">
         <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value">
         </el-option>
       </el-select>
       <el-input style="width:168px;margin:0 10px;" v-model="input" placeholder="作品名/作家ID/笔名"></el-input>
-      <el-button type="primary">搜索</el-button>
+      <el-button size="mini" type="primary">搜索</el-button>
     </div>
     <div class="layout">
       <el-table :data="tableData" style="width: 100%">

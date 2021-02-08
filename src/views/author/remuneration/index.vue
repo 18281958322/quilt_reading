@@ -8,7 +8,7 @@
             </el-option>
           </el-select>
           <el-input style="width:128px;margin-left:10px;" v-model="input" placeholder="书籍ID/书籍名称"></el-input>
-          <el-button style="margin:0 10px;" type="primary">搜索</el-button>
+          <el-button style="margin:0 10px;" size="mini" type="primary">搜索</el-button>
           <el-link underline type="primary">或</el-link>
           <el-select style="width:128px;margin:0 10px;" v-model="value" placeholder="自然月">
             <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value">
@@ -17,7 +17,7 @@
           <el-date-picker style="width:128px;" v-model="value1" type="date" placeholder="选择日期">
           </el-date-picker>
           <el-input style="width:128px;margin:0 10px;" v-model="input" placeholder="书籍ID/书籍名称"></el-input>
-          <el-button type="primary">搜索</el-button>
+          <el-button size="mini" type="primary">搜索</el-button>
         </div>
         <div class="layout-div">
           <div class="layout-cell">
@@ -55,8 +55,6 @@
         </div>
         <div class="layout-item">
           <el-table :data="tableData" style="width: 100%">
-            <el-table-column type="index" label="序号" align="center" width="50">
-            </el-table-column>
             <el-table-column prop="date" label="书籍ID" align="center" width="140">
             </el-table-column>
             <el-table-column prop="name" label="书籍名称" align="center" width="140">
@@ -87,7 +85,7 @@
             </el-table-column>
             <el-table-column fixed="right" label="操作" width="70" align="center">
               <template slot-scope="scope">
-                <el-button @click="handleClick(scope.row)" type="text" size="small">查看</el-button>
+                <el-button @click="paymentClick(scope.row)" type="text" size="small">确认支付</el-button>
               </template>
             </el-table-column>
           </el-table>
@@ -100,6 +98,26 @@
         </div>
       </div>
     </div>
+    <!-- 确认支付 -->
+    <el-dialog title="提示" :visible.sync="dialogVisible" width="30%" :before-close="handleClose">
+      <el-form ref="form" :model="form" label-width="80px">
+        <el-form-item label="书籍名称：" label-width="120px">
+          <p>天幻战纪</p>
+        </el-form-item>
+        <el-form-item label="税前合计：（元）" label-width="120px">
+          <p>1260</p>
+        </el-form-item>
+        <el-form-item label="税金合计：（元）" label-width="120px">
+          <el-input v-model="form.name"></el-input>
+        </el-form-item>
+        <el-form-item label="实发合计：（元）" label-width="120px">
+          <el-input v-model="form.name"></el-input>
+        </el-form-item>
+      </el-form>
+      <span slot="footer" class="dialog-footer" style="display: flex;justify-content:center;">
+        <el-button size="mini" type="primary" @click="dialogVisible = false">确 定</el-button>
+      </span>
+    </el-dialog>
   </div>
 </template>
 
@@ -108,6 +126,7 @@
     data() {
       return {
         currentPage4: 4,
+        dialogVisible: false,
         options: [{
           value: '选项1',
           label: '黄金糕'
@@ -124,6 +143,9 @@
           value: '选项5',
           label: '北京烤鸭'
         }],
+        form:{
+          name: ''
+        },
         value: '',
         value1: '',
         input: '',
@@ -147,11 +169,21 @@
       }
     },
     methods: {
+      handleClose(done) {
+        this.$confirm('确认关闭？')
+          .then(_ => {
+            done();
+          })
+          .catch(_ => {});
+      },
       handleSizeChange(val) {
         console.log(`每页 ${val} 条`);
       },
       handleCurrentChange(val) {
         console.log(`当前页: ${val}`);
+      },
+      paymentClick(row) {
+        this.dialogVisible = true;
       }
     }
   }
@@ -202,4 +234,10 @@
       }
     }
   }
+</style>
+
+<style>
+.el-form-item{
+  margin-bottom: 0;
+}
 </style>
