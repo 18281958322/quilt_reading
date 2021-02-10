@@ -1,5 +1,5 @@
 <template>
-  <div class="books">
+  <div class="listofNovels">
     <div class="layout-right">
       <el-button size="small" type="primary" @click="addNewnovels()" style="margin-left:10px;">新增小说</el-button>
       <el-button size="small" type="primary" @click="chapter()">批量购买章节折扣</el-button>
@@ -308,7 +308,7 @@
         this.$router.push('/Newnovels');
       },
       // 章节管理
-      chapterClick(row) {
+      chapterClick(row){
         this.$router.push('/chapter');
       }
     }
@@ -316,7 +316,7 @@
 </script>
 
 <style lang="scss" scoped>
-  .books {
+  .listofNovels {
     .list {
       display: flex;
       padding-bottom: 10px;

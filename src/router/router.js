@@ -63,7 +63,7 @@ const vueRouter = new Router({
         }, { // 听书
           path: '/books',
           name: 'Books',
-          component: () => import('../views/user/books/index.vue'),
+          component: () => import('../views/content/books/index.vue'),
           meta: {
             title: '听书',
             toplevel: 'tl_user'
@@ -134,11 +134,110 @@ const vueRouter = new Router({
           }
         },
         { //数据
-          path: '/data',
+          path: '/user_data',
           name: 'Data',
           component: () => import('../views/data/index.vue'),
           meta: {
             title: '统计',
+            toplevel: 'tl_data'
+          }
+        },
+        { // 统计-用户
+          path: '/user_data',
+          name: 'User',
+          component: () => import('../views/data/user_data/index.vue'),
+          meta: {
+            title: '用户统计',
+            toplevel: 'tl_data'
+          }
+        },
+        { // 统计-内容
+          path: '/content_data',
+          name: 'Content',
+          component: () => import('../views/data/content_data/index.vue'),
+          meta: {
+            title: '内容统计',
+            toplevel: 'tl_data'
+          }
+        },
+        { // 统计-订单-app
+          path: '/app_data',
+          name: 'App',
+          component: () => import('../views/data/order_data/app_data/index.vue'),
+          meta: {
+            title: 'app',
+            toplevel: 'tl_data'
+          }
+        },
+        { // 统计-订单-公众号
+          path: '/official_data',
+          name: 'Official',
+          component: () => import('../views/data/order_data/official_data/index.vue'),
+          meta: {
+            title: '公众号',
+            toplevel: 'tl_data'
+          }
+        },
+        { // 统计-订单-pc
+          path: '/pc_data',
+          name: 'Pc',
+          component: () => import('../views/data/order_data/pc_data/index.vue'),
+          meta: {
+            title: 'pc',
+            toplevel: 'tl_data'
+          }
+        },
+        { // 统计-分销
+          path: '/distribution_data',
+          name: 'Distribution',
+          component: () => import('../views/data/distribution_data/index.vue'),
+          meta: {
+            title: '分销统计',
+            toplevel: 'tl_data'
+          }
+        },
+        { // 统计-提现
+          path: '/withdrawal_data',
+          name: 'Withdrawal',
+          component: () => import('../views/data/withdrawal_data/index.vue'),
+          meta: {
+            title: '提现统计',
+            toplevel: 'tl_data'
+          }
+        },
+        { // 记录-订单明细
+          path: '/order_record',
+          name: 'Order',
+          component: () => import('../views/data/record_data/order_record/index.vue'),
+          meta: {
+            title: '订单明细',
+            toplevel: 'tl_data'
+          }
+        },
+        { // 记录-消费明细
+          path: '/consumption_record',
+          name: 'Consumption',
+          component: () => import('../views/data/record_data/consumption_record/index.vue'),
+          meta: {
+            title: '消费明细',
+            toplevel: 'tl_data'
+          }
+        },
+        { // 记录-扣量明细
+          path: '/Deduction_record',
+          name: 'Deduction',
+          component: () => import('../views/data/record_data/Deduction_record/index.vue'),
+          meta: {
+            title: '扣量明细',
+            toplevel: 'tl_data'
+          }
+        },
+        { // 记录-阅读明细
+          path: '/read_record',
+          name: 'Read',
+          component: () => import('../views/data/record_data/read_record/index.vue'),
+          meta: {
+            title: '阅读明细',
             toplevel: 'tl_data'
           }
         },

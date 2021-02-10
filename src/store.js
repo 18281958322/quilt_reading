@@ -23,8 +23,64 @@ export default new Vuex.Store({
       tl_data: [ // 数据
         {
           title: "统计",
-          key: "/data",
-          icon: "el-icon-user"
+          key: "/data_data",
+          icon: "el-icon-user",
+          children: [{
+            title: "用户统计",
+            key: "/user_data",
+            icon: "el-icon-user",
+          }, {
+            title: "内容统计",
+            key: "/content_data",
+            icon: "el-icon-user",
+          }, {
+            title: "订单统计",
+            key: "/order_data",
+            icon: "el-icon-user",
+            children: [{
+              title: "app",
+              key: "/app_data",
+              icon: "el-icon-user",
+            }, {
+              title: "公众号",
+              key: "/official_data",
+              icon: "el-icon-user",
+            }, {
+              title: "pc",
+              key: "/pc_data",
+              icon: "el-icon-user",
+            }]
+          }, {
+            title: "提现统计",
+            key: "/withdrawal_data",
+            icon: "el-icon-user",
+          }, {
+            title: "分销统计",
+            key: "/distribution_data",
+            icon: "el-icon-user",
+          }, ]
+        },
+        {
+          title: "记录",
+          key: "/record_data",
+          icon: "el-icon-user",
+          children: [{
+            title: "订单明细",
+            key: "/order_record",
+            icon: "el-icon-user",
+          }, {
+            title: "消费明细",
+            key: "/consumption_record",
+            icon: "el-icon-user",
+          }, {
+            title: "扣量明细",
+            key: "/Deduction_record",
+            icon: "el-icon-user",
+          }, {
+            title: "阅读明细",
+            key: "/read_record",
+            icon: "el-icon-user",
+          }, ]
         }
       ],
       tl_content: [ // 内容
@@ -321,8 +377,7 @@ export default new Vuex.Store({
           title: "应用",
           key: "/AoUse",
           icon: "el-icon-s-marketing",
-          children: [
-            {
+          children: [{
               title: "启动页",
               key: "/BootPage",
             },
@@ -368,8 +423,7 @@ export default new Vuex.Store({
           title: "充值",
           key: "/recharge",
           icon: "el-icon-s-marketing",
-          children: [
-            {
+          children: [{
               title: "充值套餐",
               key: "/RechargeCombo",
             },
@@ -383,8 +437,7 @@ export default new Vuex.Store({
           title: "提现",
           key: "/withdrawDeposit",
           icon: "el-icon-s-marketing",
-          children: [
-            {
+          children: [{
               title: "提现项",
               key: "/withdrawItems",
             },
@@ -398,8 +451,7 @@ export default new Vuex.Store({
           title: "任务",
           key: "/Task",
           icon: "el-icon-s-marketing",
-          children: [
-            {
+          children: [{
               title: "福利任务",
               key: "/welfareTask",
             },
@@ -482,8 +534,7 @@ export default new Vuex.Store({
           title: "应用",
           key: "/OAOUse",
           icon: "el-icon-s-marketing",
-          children: [
-            {
+          children: [{
               title: "广告位",
               key: "/OAOU_AdvertisingPosition",
             },
@@ -517,8 +568,7 @@ export default new Vuex.Store({
           title: "公众号管理",
           key: "/OA_Manager",
           icon: "el-icon-s-marketing",
-          children: [
-            {
+          children: [{
               title: "自定义菜单",
               key: "/OAM_customizeMenus",
             },
@@ -608,8 +658,7 @@ export default new Vuex.Store({
           title: "应用",
           key: "/PCOUse",
           icon: "el-icon-s-marketing",
-          children: [
-            {
+          children: [{
               title: "广告位",
               key: "/PCOU_AdvertisingPosition",
             },
