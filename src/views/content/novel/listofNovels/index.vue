@@ -1,94 +1,96 @@
 <template>
   <div class="listofNovels">
     <div class="layout-right">
-      <el-button size="small" type="primary" @click="addNewnovels()">新增小说</el-button>
+      <el-button size="small" type="primary" @click="addNewnovels()" style="margin-left:10px;">新增小说</el-button>
+      <el-button size="small" type="primary" @click="chapter()">批量购买章节折扣</el-button>
     </div>
     <div class="list">
-      <el-link :underline="false" style="margin-right:10px;">频道</el-link>
-      <el-radio-group v-model="radio3" size="mini">
-        <el-radio-button style="margin-right:10px;border:1px solid #DCDFE6;" label="全部"></el-radio-button>
-        <el-radio-button style="margin-right:10px;border:1px solid #DCDFE6;" label="男频"></el-radio-button>
-        <el-radio-button style="margin-right:10px;border:1px solid #DCDFE6;" label="女频"></el-radio-button>
+      <el-link :underline="false" style="margin-right:10px;">类别</el-link>
+      <el-radio-group v-model="radio10" size="mini">
+        <el-radio-button style="margin-right:10px;" label="全部"></el-radio-button>
+        <el-radio-button style="margin-right:10px;border-left:1px solid #DCDFE6;" label="男生"></el-radio-button>
+        <el-radio-button style="margin-right:10px;border-left:1px solid #DCDFE6;" label="女生"></el-radio-button>
+        <el-radio-button style="margin-right:10px;border-left:1px solid #DCDFE6;" label="出版物"></el-radio-button>
       </el-radio-group>
     </div>
     <div class="list">
-      <el-checkbox-group v-model="checkboxGroup1" size="small">
-        <el-checkbox label="分类" border></el-checkbox>
-        <el-checkbox label="全部" border></el-checkbox>
-        <el-checkbox label="玄幻奇幻" border></el-checkbox>
-        <el-checkbox label="军事历史" border></el-checkbox>
-        <el-checkbox label="穿越" border></el-checkbox>
-        <el-checkbox label="言情" border></el-checkbox>
-      </el-checkbox-group>
+      <el-link :underline="false" style="margin-right:10px;">频道</el-link>
+      <el-radio-group v-model="radio1" size="mini">
+        <el-radio-button style="margin-right:10px;" label="全部"></el-radio-button>
+        <el-radio-button style="margin-right:10px;border-left:1px solid #DCDFE6;" label="男频"></el-radio-button>
+        <el-radio-button style="margin-right:10px;border-left:1px solid #DCDFE6;" label="女频"></el-radio-button>
+      </el-radio-group>
     </div>
     <div class="list">
-      <el-checkbox-group v-model="checkboxGroup1" size="small">
-        <el-checkbox label="连载" border></el-checkbox>
-        <el-checkbox label="全部" border></el-checkbox>
-        <el-checkbox label="连载中" border></el-checkbox>
-        <el-checkbox label="已完结" border></el-checkbox>
-      </el-checkbox-group>
+      <el-link :underline="false" style="margin-right:10px;">分类</el-link>
+      <el-radio-group v-model="radio2" size="mini">
+        <el-radio-button style="margin-right:10px;" label="全部"></el-radio-button>
+        <el-radio-button style="margin-right:10px;border-left:1px solid #DCDFE6;" label="玄幻奇幻"></el-radio-button>
+        <el-radio-button style="margin-right:10px;border-left:1px solid #DCDFE6;" label="军事历史"></el-radio-button>
+        <el-radio-button style="margin-right:10px;border-left:1px solid #DCDFE6;" label="穿越"></el-radio-button>
+        <el-radio-button style="margin-right:10px;border-left:1px solid #DCDFE6;" label="言情"></el-radio-button>
+      </el-radio-group>
     </div>
     <div class="list">
-      <el-checkbox-group v-model="checkboxGroup1" size="small">
-        <el-checkbox label="上线" border></el-checkbox>
-        <el-checkbox label="全部" border></el-checkbox>
-        <el-checkbox label="以上线" border></el-checkbox>
-        <el-checkbox label="以下线" border></el-checkbox>
-      </el-checkbox-group>
+      <el-link :underline="false" style="margin-right:10px;">连载</el-link>
+      <el-radio-group v-model="radio3" size="mini">
+        <el-radio-button style="margin-right:10px;" label="全部"></el-radio-button>
+        <el-radio-button style="margin-right:10px;border-left:1px solid #DCDFE6;" label="连载中"></el-radio-button>
+        <el-radio-button style="margin-right:10px;border-left:1px solid #DCDFE6;" label="已完结"></el-radio-button>
+      </el-radio-group>
     </div>
     <div class="list">
-      <el-checkbox-group v-model="checkboxGroup1" size="small">
-        <el-checkbox label="铭感" border></el-checkbox>
-        <el-checkbox label="全部" border></el-checkbox>
-        <el-checkbox label="铭感" border></el-checkbox>
-        <el-checkbox label="不铭感" border></el-checkbox>
-      </el-checkbox-group>
+      <el-link :underline="false" style="margin-right:10px;">上线</el-link>
+      <el-radio-group v-model="radio4" size="mini">
+        <el-radio-button style="margin-right:10px;" label="全部"></el-radio-button>
+        <el-radio-button style="margin-right:10px;border-left:1px solid #DCDFE6;" label="以上线"></el-radio-button>
+        <el-radio-button style="margin-right:10px;border-left:1px solid #DCDFE6;" label="以下线"></el-radio-button>
+      </el-radio-group>
     </div>
     <div class="list">
-      <el-checkbox-group v-model="checkboxGroup1" size="small">
-        <el-checkbox label="属性" border></el-checkbox>
-        <el-checkbox label="全部" border></el-checkbox>
-        <el-checkbox label="新书" border></el-checkbox>
-        <el-checkbox label="爽文" border></el-checkbox>
-        <el-checkbox label="精选" border></el-checkbox>
-        <el-checkbox label="大神" border></el-checkbox>
-      </el-checkbox-group>
+      <el-link :underline="false" style="margin-right:10px;">铭感</el-link>
+      <el-radio-group v-model="radio5" size="mini">
+        <el-radio-button style="margin-right:10px;" label="全部"></el-radio-button>
+        <el-radio-button style="margin-right:10px;border-left:1px solid #DCDFE6;" label="铭感"></el-radio-button>
+        <el-radio-button style="margin-right:10px;border-left:1px solid #DCDFE6;" label="不铭感"></el-radio-button>
+      </el-radio-group>
     </div>
     <div class="list">
-      <el-checkbox-group v-model="checkboxGroup1" size="small">
-        <el-checkbox label="会员" border></el-checkbox>
-        <el-checkbox label="全部" border></el-checkbox>
-        <el-checkbox label="会员" border></el-checkbox>
-        <el-checkbox label="非会员" border></el-checkbox>
-      </el-checkbox-group>
+      <el-link :underline="false" style="margin-right:10px;">属性</el-link>
+      <el-radio-group v-model="radio6" size="mini">
+        <el-radio-button style="margin-right:10px;" label="全部"></el-radio-button>
+        <el-radio-button style="margin-right:10px;border-left:1px solid #DCDFE6;" label="新书"></el-radio-button>
+        <el-radio-button style="margin-right:10px;border-left:1px solid #DCDFE6;" label="爽文"></el-radio-button>
+        <el-radio-button style="margin-right:10px;border-left:1px solid #DCDFE6;" label="精选"></el-radio-button>
+        <el-radio-button style="margin-right:10px;border-left:1px solid #DCDFE6;" label="大神"></el-radio-button>
+      </el-radio-group>
     </div>
     <div class="list">
-      <el-checkbox-group v-model="checkboxGroup1" size="small">
-        <el-checkbox label="资费" border></el-checkbox>
-        <el-checkbox label="全部" border></el-checkbox>
-        <el-checkbox label="免费" border></el-checkbox>
-        <el-checkbox label="付费" border></el-checkbox>
-      </el-checkbox-group>
+      <el-link :underline="false" style="margin-right:10px;">会员</el-link>
+      <el-radio-group v-model="radio7" size="mini">
+        <el-radio-button style="margin-right:10px;" label="全部"></el-radio-button>
+        <el-radio-button style="margin-right:10px;border-left:1px solid #DCDFE6;" label="会员"></el-radio-button>
+        <el-radio-button style="margin-right:10px;border-left:1px solid #DCDFE6;" label="非会员"></el-radio-button>
+      </el-radio-group>
     </div>
     <div class="list">
-      <el-checkbox-group v-model="checkboxGroup1" size="small">
-        <el-checkbox label="20万字以下" border></el-checkbox>
-        <el-checkbox label="20-30万字" border></el-checkbox>
-        <el-checkbox label="30-50万字" border></el-checkbox>
-        <el-checkbox label="50-100万字" border></el-checkbox>
-        <el-checkbox label="100-200万字" border></el-checkbox>
-        <el-checkbox label="200以上" border></el-checkbox>
-      </el-checkbox-group>
+      <el-link :underline="false" style="margin-right:10px;">资费</el-link>
+      <el-radio-group v-model="radio8" size="mini">
+        <el-radio-button style="margin-right:10px;" label="全部"></el-radio-button>
+        <el-radio-button style="margin-right:10px;border-left:1px solid #DCDFE6;" label="免费"></el-radio-button>
+        <el-radio-button style="margin-right:10px;border-left:1px solid #DCDFE6;" label="付费"></el-radio-button>
+      </el-radio-group>
     </div>
     <div class="list">
-      <el-checkbox-group v-model="checkboxGroup1" size="small">
-        <el-checkbox label="排序" border></el-checkbox>
-        <el-checkbox label="最近更新" border></el-checkbox>
-        <el-checkbox label="最多浏览" border></el-checkbox>
-        <el-checkbox label="最多收藏" border></el-checkbox>
-        <el-checkbox label="最多字数" border></el-checkbox>
-      </el-checkbox-group>
+      <el-link :underline="false" style="margin-right:10px;">字数</el-link>
+      <el-radio-group v-model="radio9" size="mini">
+        <el-radio-button style="margin-right:10px;" label="20万字以下"></el-radio-button>
+        <el-radio-button style="margin-right:10px;border-left:1px solid #DCDFE6;" label="20-30万字"></el-radio-button>
+        <el-radio-button style="margin-right:10px;border-left:1px solid #DCDFE6;" label="30-50万字"></el-radio-button>
+        <el-radio-button style="margin-right:10px;border-left:1px solid #DCDFE6;" label="50-100万字"></el-radio-button>
+        <el-radio-button style="margin-right:10px;border-left:1px solid #DCDFE6;" label="100-200万字"></el-radio-button>
+        <el-radio-button style="margin-right:10px;border-left:1px solid #DCDFE6;" label="200以上"></el-radio-button>
+      </el-radio-group>
     </div>
     <el-divider></el-divider>
     <div class="list">
@@ -96,23 +98,33 @@
         @selection-change="handleSelectionChange">
         <el-table-column type="selection" width="55">
         </el-table-column>
-        <el-table-column prop="name" label="封面">
+        <el-table-column prop="name" align="center" label="封面">
         </el-table-column>
-        <el-table-column prop="name" label="类型/名称">
+        <el-table-column prop="name" align="center" label="类型/名称">
         </el-table-column>
-        <el-table-column prop="name" label="频道">
+        <el-table-column prop="name" align="center" label="频道">
         </el-table-column>
-        <el-table-column prop="name" label="来源">
+        <el-table-column prop="name" align="center" label="来源">
         </el-table-column>
-        <el-table-column prop="name" label="章节价格">
+        <el-table-column prop="name" align="center" label="章节价格">
         </el-table-column>
-        <el-table-column label="操作" width="100">
+        <el-table-column label="操作" align="center" width="180">
           <template slot-scope="scope">
-            <el-button @click="handleClick(scope.row)" type="text" size="small">删除</el-button>
+            <el-button @click="chapterClick(scope.row)" type="text" size="small">章节管理</el-button>
             <el-button @click="editClick(scope.row)" type="text" size="small">编辑</el-button>
+            <el-button @click="handleClick(scope.row)" type="text" size="small">下线</el-button>
+            <el-button @click="editClick(scope.row)" type="text" size="small">删除</el-button>
           </template>
         </el-table-column>
       </el-table>
+    </div>
+    <div style="margin-top: 20px">
+      <el-button @click="toggleSelection([tableData[1], tableData[2]])">批量设置价格</el-button>
+      <el-button @click="toggleSelection()">设置会员</el-button>
+      <el-button @click="toggleSelection()">取消会员</el-button>
+      <el-button @click="toggleSelection()">批量上架</el-button>
+      <el-button @click="toggleSelection()">批量下架</el-button>
+      <el-button @click="toggleSelection()">批量删除</el-button>
     </div>
     <div class="layout-centent">
       <el-pagination @size-change="handleSizeChange" @current-change="handleCurrentChange" :current-page="currentPage4"
@@ -165,7 +177,16 @@
           name: '王小虎',
           address: '上海市普陀区金沙江路 1518 弄'
         }],
+        radio1: '全部',
+        radio2: '全部',
         radio3: '全部',
+        radio4: '全部',
+        radio5: '全部',
+        radio6: '全部',
+        radio7: '全部',
+        radio8: '全部',
+        radio9: '20万字以下',
+        radio10: '全部',
         multipleSelection: [],
         currentPage4: 4,
         ruleForm: {
@@ -285,6 +306,11 @@
       // 编辑
       editClick(row) {
         this.$router.push('/Newnovels');
+      },
+      // 章节管理
+      chapterClick(row){
+        
+
       }
     }
   }
@@ -294,7 +320,7 @@
   .listofNovels {
     .list {
       display: flex;
-      padding-bottom: 5px;
+      padding-bottom: 10px;
     }
 
     .layout-right {
@@ -313,5 +339,11 @@
 </style>
 
 <style>
+  .el-radio-button:first-child .el-radio-button__inner {
+    border-radius: 0;
+  }
 
+  .el-radio-button:last-child .el-radio-button__inner {
+    border-radius: 0;
+  }
 </style>
