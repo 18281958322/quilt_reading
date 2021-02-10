@@ -116,7 +116,7 @@
         // 判断当前顶级导航所展示的侧边菜单和默认打开路由
         switch (index) {
           case "tl_home": activePath = '/allindex'; break
-          case "tl_data": activePath = '/data'; break
+          case "tl_data": activePath = '/user_data'; break
           case "tl_content": activePath = '/novel'; break
           case "tl_user": activePath = '/userlist'; break
           case "tl_author": activePath = '/author'; break
@@ -129,6 +129,8 @@
           case "AppOperating": activePath = '/BootPage'; break
           case "OA_Operating": activePath = '/OAOU_AdvertisingPosition'; break
           case "PC_Operating": activePath = '/PCOU_bottomNavigation'; break
+          case "data_data": activePath = '/PCOU_bottomNavigation'; break
+          case "data_record": activePath = '/PCOU_bottomNavigation'; break
         }
         // 切换侧边栏选中项
         this.$store.commit("setSideDefaultActive", { val: activePath })
