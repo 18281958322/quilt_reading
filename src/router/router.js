@@ -63,7 +63,7 @@ const vueRouter = new Router({
         }, { // 听书
           path: '/books',
           name: 'Books',
-          component: () => import('../views/user/books/index.vue'),
+          component: () => import('../views/content/books/index.vue'),
           meta: {
             title: '听书',
             toplevel: 'tl_user'
