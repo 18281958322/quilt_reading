@@ -2,8 +2,12 @@
   <div class="OAM_GroupSentMessage">
     <div class="pagetitle">群发消息</div>
     <div class="setOAM_GroupSentMessage_header">
-        <div>1. 仅 48 小时内和公众号有过交互 (点击菜单, 回复等) 的粉丝才能收到</div>
-        <div>2. <a href="http://www.oicqzone.com/tool/emoji/">点击查看特殊符号；</a></div>
+      <div>
+        1. 仅 48 小时内和公众号有过交互 (点击菜单, 回复等) 的粉丝才能收到
+      </div>
+      <div>
+        2. <a href="http://www.oicqzone.com/tool/emoji/">点击查看特殊符号；</a>
+      </div>
     </div>
     <el-tabs v-model="activeName">
       <el-tab-pane label="文本消息" name="first">
@@ -36,7 +40,10 @@
             ></el-input>
             <div style="margin: 0 0 0 10px" class="isbutton bt1">搜索</div>
           </div>
-          <div @click="openPage('/addOAM_GroupSentMessage')" class="isbutton bt1">
+          <div
+            @click="openPage('/addOAM_GroupSentMessage')"
+            class="isbutton bt1"
+          >
             新增消息
           </div>
         </div>
@@ -113,7 +120,10 @@
             ></el-input>
             <div style="margin: 0 0 0 10px" class="isbutton bt1">搜索</div>
           </div>
-          <div @click="openPage('/addOAM_GroupSentMessage')" class="isbutton bt1">
+          <div
+            @click="openPage('/addOAM_GroupSentMessage')"
+            class="isbutton bt1"
+          >
             新增消息
           </div>
         </div>

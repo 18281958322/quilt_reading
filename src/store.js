@@ -419,125 +419,63 @@ export default new Vuex.Store({
           key: "/ExceptionalGifts",
           icon: "el-icon-s-marketing",
         },
-        // {
-        //   title: "分销推广",
-        //   key: "/DistributionToPromote",
-        //   icon: "el-icon-s-marketing",
-        //   children: [
-        //     {
-        //       title: "分销作品列表",
-        //       key: "/welfareTask",
-        //     },
-        //     {
-        //       title: "推广链接",
-        //       key: "/ToPromoteLinks",
-        //     },
-        //     {
-        //       title: "推广素材",
-        //       key: "/PromotionalMaterial",
-        //     },
-        //   ]
-        // },
-        // {
-        //   title: "分销渠道",
-        //   key: "/channelOfDistribution",
-        //   icon: "el-icon-s-marketing",
-        //   children: [
-        //     {
-        //       title: "渠道列表",
-        //       key: "/ChannelList",
-        //     },
-        //     {
-        //       title: "渠道结算单",
-        //       key: "/ChannelSettlementStatement",
-        //     },
-        //     {
-        //       title: "渠道打款",
-        //       key: "/ChannelsToPlayMoney",
-        //     },
-        //   ]
-        // },
-        // {
-        //   title: "分销管理",
-        //   key: "/DistributionManagement",
-        //   icon: "el-icon-s-marketing",
-        //   children: [
-        //     {
-        //       title: "扣量设置",
-        //       key: "/BuckleAmount",
-        //     },
-        //     {
-        //       title: "公告管理",
-        //       key: "/AnnouncementOfTheManagement",
-        //     },
-        //     {
-        //       title: "推广域名",
-        //       key: "/ExtendDomainName",
-        //     },
-        //   ]
-        // },
         {
-          key: "tld_spread",
           title: "分销推广",
-          icon: 'el-icon-s-marketing',
-          children: [{
-              key: "/ListOfWorks",
-              title: "作品列表",
+          key: "/OAO_DistributionToPromote",
+          icon: "el-icon-s-marketing",
+          children: [
+            {
+              title: "分销作品列表",
+              key: "/OAOD_productions",
             },
             {
-              key: "/ToPromoteLinks",
               title: "推广链接",
+              key: "/OAOD_ToPromoteLinks",
             },
             {
-              key: "/CommonlyUsedLinks",
-              title: "常用链接",
+              title: "推广素材",
+              key: "/OAOD_material",
             },
-            {
-              key: "/promotionActivity",
-              title: "促销活动",
-            }
           ]
         },
         {
-          key: "tld_channel",
           title: "分销渠道",
-          icon: 'el-icon-s-marketing',
-          children: [{
-              key: "/ChannelList",
+          key: "/OAO_channelOfDistribution",
+          icon: "el-icon-s-marketing",
+          children: [
+            {
               title: "渠道列表",
+              key: "/OAOC_ChannelList",
             },
             {
-              key: "/ChannelSettlementStatement",
               title: "渠道结算单",
+              key: "/OAOC_ChannelSettlementStatement",
             },
             {
-              key: "/ChannelsToPlayMoney",
               title: "渠道打款",
-            }
+              key: "/OAOC_ChannelsToPlayMoney",
+            },
           ]
         },
         {
-          key: "tld_manage",
           title: "分销管理",
-          icon: 'el-icon-s-marketing',
-          children: [{
-              key: "/BuckleAmount",
+          key: "/OAO_DistributionManagement",
+          icon: "el-icon-s-marketing",
+          children: [
+            {
               title: "扣量设置",
+              key: "/OAOD_BuckleAmount",
             },
             {
-              key: "/AnnouncementOfTheManagement",
               title: "公告管理",
+              key: "/OAOD_AnnouncementOfTheManagement",
             },
             {
-              key: "/materialManagement",
-              title: "素材管理",
+              title: "推广域名",
+              key: "/OAOD_ExtendDomainName",
             },
-            {
-              key: "/EventPackageManagement",
-              title: "活动套餐管理",
-            }
           ]
-        },
+        }
       ],
       OA_Operating: [ //公众号运营
         {
@@ -607,198 +545,89 @@ export default new Vuex.Store({
           key: "/OAO_recharge",
           icon: "el-icon-s-marketing",
         },
-        // {
-        //   title: "分销推广",
-        //   key: "/OAO_DistributionToPromote",
-        //   icon: "el-icon-s-marketing",
-        //   children: [
-        //     {
-        //       title: "作品推广",
-        //       key: "/OAOD_welfareTask",
-        //     },
-        //     {
-        //       title: "推广链接",
-        //       key: "/OAOD_ToPromoteLinks",
-        //     },
-        //     {
-        //       title: "常用链接",
-        //       key: "/OAOD_CommonlyUsedLinks",
-        //     },
-        //     {
-        //       title: "促销活动",
-        //       key: "/OAOD_promotionActivity",
-        //     },
-        //   ]
-        // },
-        // {
-        //   title: "分销渠道",
-        //   key: "/OAO_channelOfDistribution",
-        //   icon: "el-icon-s-marketing",
-        //   children: [
-        //     {
-        //       title: "渠道列表",
-        //       key: "/OAOC_ChannelList",
-        //     },
-        //     {
-        //       title: "渠道结算单",
-        //       key: "/OAOC_ChannelSettlementStatement",
-        //     },
-        //     {
-        //       title: "渠道打款",
-        //       key: "/OAOC_ChannelsToPlayMoney",
-        //     },
-        //   ]
-        // },
-        // {
-        //   title: "分销管理",
-        //   key: "/OAO_DistributionManagement",
-        //   icon: "el-icon-s-marketing",
-        //   children: [
-        //     {
-        //       title: "扣量设置",
-        //       key: "/OAOD_BuckleAmount",
-        //     },
-        //     {
-        //       title: "公告管理",
-        //       key: "/OAOD_AnnouncementOfTheManagement",
-        //     },
-        //     {
-        //       title: "素材管理",
-        //       key: "/OAOD_materialManagement",
-        //     },
-        //     {
-        //       title: "活动套餐管理",
-        //       key: "/OAOD_EventPackageManagement",
-        //     },
-        //   ]
-        // }
         {
-          key: "tld_spread",
           title: "分销推广",
-          icon: 'el-icon-s-marketing',
-          children: [{
-              key: "/ListOfWorks",
-              title: "作品列表",
+          key: "/OAO_DistributionToPromote",
+          icon: "el-icon-s-marketing",
+          children: [
+            {
+              title: "分销作品列表",
+              key: "/OAOD_productions",
             },
             {
-              key: "/ToPromoteLinks",
               title: "推广链接",
+              key: "/OAOD_ToPromoteLinks",
             },
             {
-              key: "/CommonlyUsedLinks",
-              title: "常用链接",
+              title: "推广素材",
+              key: "/OAOD_material",
             },
-            {
-              key: "/promotionActivity",
-              title: "促销活动",
-            }
           ]
         },
         {
-          key: "tld_channel",
           title: "分销渠道",
-          icon: 'el-icon-s-marketing',
-          children: [{
-              key: "/ChannelList",
+          key: "/OAO_channelOfDistribution",
+          icon: "el-icon-s-marketing",
+          children: [
+            {
               title: "渠道列表",
+              key: "/OAOC_ChannelList",
             },
             {
-              key: "/ChannelSettlementStatement",
               title: "渠道结算单",
+              key: "/OAOC_ChannelSettlementStatement",
             },
             {
-              key: "/ChannelsToPlayMoney",
               title: "渠道打款",
-            }
+              key: "/OAOC_ChannelsToPlayMoney",
+            },
           ]
         },
         {
-          key: "tld_manage",
           title: "分销管理",
-          icon: 'el-icon-s-marketing',
-          children: [{
-              key: "/BuckleAmount",
+          key: "/OAO_DistributionManagement",
+          icon: "el-icon-s-marketing",
+          children: [
+            {
               title: "扣量设置",
+              key: "/OAOD_BuckleAmount",
             },
             {
-              key: "/AnnouncementOfTheManagement",
               title: "公告管理",
+              key: "/OAOD_AnnouncementOfTheManagement",
             },
             {
-              key: "/materialManagement",
-              title: "素材管理",
+              title: "推广域名",
+              key: "/OAOD_ExtendDomainName",
             },
-            {
-              key: "/EventPackageManagement",
-              title: "活动套餐管理",
-            }
           ]
-        },
+        }
       ],
       PC_Operating: [ // PC运营
-        // {
-        //   title: "应用",
-        //   key: "/PCOUse",
-        //   icon: "el-icon-s-marketing",
-        //   children: [
-        //     {
-        //       title: "广告位",
-        //       key: "/PCOU_AdvertisingPosition",
-        //     },
-        //     {
-        //       title: "Banner列表",
-        //       key: "/PCOU_BannerList",
-        //     },
-        //     {
-        //       title: "公告管理",
-        //       key: "/PCOU_AnnouncementOfTheManagement",
-        //     },
-        //     {
-        //       title: "推荐位",
-        //       key: "/PCOU_FeaturedFirst",
-        //     },
-        //     {
-        //       title: "友情链接",
-        //       key: "/PCOU_highlyRecommended",
-        //     },
-        //     {
-        //       title: "底部导航",
-        //       key: "/PCOU_bottomNavigation",
-        //     },
-        //   ]
-        // },
         {
           title: "应用",
-          key: "/OAOUse",
+          key: "/PCOUse",
           icon: "el-icon-s-marketing",
           children: [
             {
               title: "广告位",
-              key: "/OAOU_AdvertisingPosition",
-            },
-            {
-              title: "首页频道",
-              key: "/OAOU_HomePageChannel",
+              key: "/PCOU_AdvertisingPosition",
             },
             {
               title: "Banner列表",
-              key: "/OAOU_BannerList",
-            },
-            {
-              title: "图文导航",
-              key: "/OAOU_ImgTextNavigation",
-            },
-            {
-              title: "推荐位",
-              key: "/OAOU_FeaturedFirst",
-            },
-            {
-              title: "重点推荐作品",
-              key: "/OAOU_highlyRecommended",
+              key: "/PCOU_BannerList",
             },
             {
               title: "公告管理",
-              key: "/OAOU_AnnouncementOfTheManagement",
+              key: "/PCOU_AnnouncementOfTheManagement",
+            },
+            {
+              title: "推荐位",
+              key: "/PCOU_FeaturedFirst",
+            },
+            {
+              title: "友情链接",
+              key: "/PCOU_highlyRecommended",
             },
             {
               title: "底部导航",

@@ -128,7 +128,9 @@
           case "GeneralOperating": activePath = '/GOHotHotWords'; break
           case "AppOperating": activePath = '/BootPage'; break
           case "OA_Operating": activePath = '/OAOU_AdvertisingPosition'; break
-          case "PC_Operating": activePath = '/PCOU_bottomNavigation'; break
+          case "PC_Operating": activePath = '/PCOU_AdvertisingPosition'; break
+          case "data_data": activePath = '/PCOU_bottomNavigation'; break
+          case "data_record": activePath = '/PCOU_bottomNavigation'; break
         }
         // 切换侧边栏选中项
         this.$store.commit("setSideDefaultActive", { val: activePath })

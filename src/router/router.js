@@ -1357,6 +1357,294 @@ const vueRouter = new Router({
             toplevel: 'OA_Operating'
           }
         },
+        { //运营=>公众号运营=>分销推广=>分销作品列表
+          path: '/OAOD_productions',
+          name: "OAOD_productions",
+          component: () => import('../views/operations/OA_Operating/OAOD_productions.vue'),
+          meta: {
+            title: '分销作品列表',
+            toplevel: 'OA_Operating'
+          }
+        },
+        { //运营=>公众号运营=>分销推广=>分销作品列表=>作品推广
+          path: '/OA_workSpread',
+          name: "OA_workSpread",
+          component: () => import('../views/operations/OA_Operating/OA_workSpread.vue'),
+          meta: {
+            title: '作品推广',
+            toplevel: 'OA_Operating'
+          }
+        },
+        { //运营=>公众号运营=>分销推广=>推广链接
+          path: '/OAOD_ToPromoteLinks',
+          name: "OAOD_ToPromoteLinks",
+          component: () => import('../views/operations/OA_Operating/OAOD_ToPromoteLinks.vue'),
+          meta: {
+            title: '推广链接',
+            toplevel: 'OA_Operating'
+          }
+        },
+        { //运营=>公众号运营=>分销推广=>推广链接=>订单明细
+          path: '/OAOD_orderDetails',
+          name: "OAOD_orderDetails",
+          component: () => import('../views/operations/OA_Operating/OAOD_orderDetails.vue'),
+          meta: {
+            title: '订单明细',
+            toplevel: 'OA_Operating'
+          }
+        },
+        { //运营=>公众号运营=>分销推广=>推广链接=>粉丝列表
+          path: '/OAOD_fansList',
+          name: "OAOD_fansList",
+          component: () => import('../views/operations/OA_Operating/OAOD_fansList.vue'),
+          meta: {
+            title: '粉丝列表',
+            toplevel: 'OA_Operating'
+          }
+        },
+        { //运营=>公众号运营=>分销推广=>推广素材
+          path: '/OAOD_material',
+          name: "OAOD_material",
+          component: () => import('../views/operations/OA_Operating/OAOD_material.vue'),
+          meta: {
+            title: '推广素材',
+            toplevel: 'OA_Operating'
+          }
+        },
+        { //运营=>公众号运营=>渠道列表
+          path: '/OAOC_ChannelList',
+          name: "OAOC_ChannelList",
+          component: () => import('../views/operations/OA_Operating/OAOC_ChannelList.vue'),
+          meta: {
+            title: '渠道列表',
+            toplevel: 'OA_Operating'
+          }
+        },
+        { //运营=>公众号运营=>渠道列表=>新增渠道
+          path: '/addOAOC_Channe',
+          name: "addOAOC_Channe",
+          component: () => import('../views/operations/OA_Operating/addOAOC_Channe.vue'),
+          meta: {
+            title: '新增渠道',
+            toplevel: 'OA_Operating'
+          }
+        },
+        { //运营=>公众号运营=>渠道列表=>编辑渠道
+          path: '/setOAOC_Channe',
+          name: "setOAOC_Channe",
+          component: () => import('../views/operations/OA_Operating/setOAOC_Channe.vue'),
+          meta: {
+            title: '编辑渠道',
+            toplevel: 'OA_Operating'
+          }
+        },
+        { //运营=>公众号运营=>渠道列表=>数据统计
+          path: '/OAOC_dataStatistics',
+          name: "OAOC_dataStatistics",
+          component: () => import('../views/operations/OA_Operating/OAOC_dataStatistics.vue'),
+          meta: {
+            title: '数据统计',
+            toplevel: 'OA_Operating'
+          }
+        },
+        { //运营=>公众号运营=>渠道结算单
+          path: '/OAOC_ChannelSettlementStatement',
+          name: "OAOC_ChannelSettlementStatement",
+          component: () => import('../views/operations/OA_Operating/OAOC_ChannelSettlementStatement.vue'),
+          meta: {
+            title: '渠道结算单',
+            toplevel: 'OA_Operating'
+          }
+        },
+        { //运营=>公众号运营=>渠道打款
+          path: '/OAOC_ChannelsToPlayMoney',
+          name: "OAOC_ChannelsToPlayMoney",
+          component: () => import('../views/operations/OA_Operating/OAOC_ChannelsToPlayMoney.vue'),
+          meta: {
+            title: '渠道打款',
+            toplevel: 'OA_Operating'
+          }
+        },
+        { //运营=>公众号运营=>扣量设置
+          path: '/OAOD_BuckleAmount',
+          name: "OAOD_BuckleAmount",
+          component: () => import('../views/operations/OA_Operating/OAOD_BuckleAmount.vue'),
+          meta: {
+            title: '扣量设置',
+            toplevel: 'OA_Operating'
+          }
+        },
+        { //运营=>公众号运营=>公告管理
+          path: '/OAOD_AnnouncementOfTheManagement',
+          name: "OAOD_AnnouncementOfTheManagement",
+          component: () => import('../views/operations/OA_Operating/OAOD_AnnouncementOfTheManagement.vue'),
+          meta: {
+            title: '公告管理',
+            toplevel: 'OA_Operating'
+          }
+        },
+        { //运营=>公众号运营=>公告管理=>新增公告
+          path: '/addOAOD_Announcement',
+          name: "addOAOD_Announcement",
+          component: () => import('../views/operations/OA_Operating/addOAOD_Announcement.vue'),
+          meta: {
+            title: '新增公告',
+            toplevel: 'OA_Operating'
+          }
+        },
+        { //运营=>公众号运营=>公告管理=>编辑公告
+          path: '/setOAOD_Announcement',
+          name: "setOAOD_Announcement",
+          component: () => import('../views/operations/OA_Operating/setOAOD_Announcement.vue'),
+          meta: {
+            title: '编辑公告',
+            toplevel: 'OA_Operating'
+          }
+        },
+        { //运营=>公众号运营=>推广域名
+          path: '/OAOD_ExtendDomainName',
+          name: "OAOD_ExtendDomainName",
+          component: () => import('../views/operations/OA_Operating/OAOD_ExtendDomainName.vue'),
+          meta: {
+            title: '推广域名',
+            toplevel: 'OA_Operating'
+          }
+        },
+        { //运营=>PC运营=>应用=>广告位
+          path: '/PCOU_AdvertisingPosition',
+          name: "PCOU_AdvertisingPosition",
+          component: () => import('../views/operations/PC_Operating/PCOU_AdvertisingPosition.vue'),
+          meta: {
+            title: '广告位',
+            toplevel: 'PC_Operating'
+          }
+        },
+        { //运营=>PC运营=>应用=>广告位=>广告列表
+          path: '/PCOU_AdvertisingPositionList',
+          name: "PCOU_AdvertisingPositionList",
+          component: () => import('../views/operations/PC_Operating/PCOU_AdvertisingPositionList.vue'),
+          meta: {
+            title: '广告列表',
+            toplevel: 'PC_Operating'
+          }
+        },
+        { //运营=>PC运营=>应用=>广告位=>广告列表=>新增广告
+          path: '/addAdvertising_PCOU',
+          name: "addAdvertising_PCOU",
+          component: () => import('../views/operations/PC_Operating/addAdvertising_PCOU.vue'),
+          meta: {
+            title: '新增广告',
+            toplevel: 'PC_Operating'
+          }
+        },
+        { //运营=>PC运营=>应用=>广告位=>广告列表=>编辑广告
+          path: '/setAdvertising_PCOU',
+          name: "setAdvertising_PCOU",
+          component: () => import('../views/operations/PC_Operating/setAdvertising_PCOU.vue'),
+          meta: {
+            title: '编辑广告',
+            toplevel: 'PC_Operating'
+          }
+        },
+        { //运营=>PC运营=>应用=>banner列表
+          path: '/PCOU_BannerList',
+          name: "PCOU_BannerList",
+          component: () => import('../views/operations/PC_Operating/PCOU_BannerList.vue'),
+          meta: {
+            title: 'banner列表',
+            toplevel: 'PC_Operating'
+          }
+        },
+        { //运营=>PC运营=>应用=>banner列表=>编辑banner
+          path: '/setPCOU_BannerList',
+          name: "setPCOU_BannerList",
+          component: () => import('../views/operations/PC_Operating/setPCOU_BannerList.vue'),
+          meta: {
+            title: '编辑banner',
+            toplevel: 'PC_Operating'
+          }
+        },
+        { //运营=>PC运营=>应用=>banner列表=>新增banner
+          path: '/addPCOU_BannerList',
+          name: "addPCOU_BannerList",
+          component: () => import('../views/operations/PC_Operating/addPCOU_BannerList.vue'),
+          meta: {
+            title: '新增banner',
+            toplevel: 'PC_Operating'
+          }
+        },
+        { //运营=>PC运营=>应用=>公告管理
+          path: '/PCOU_AnnouncementOfTheManagement',
+          name: "PCOU_AnnouncementOfTheManagement",
+          component: () => import('../views/operations/PC_Operating/PCOU_AnnouncementOfTheManagement.vue'),
+          meta: {
+            title: '公告管理',
+            toplevel: 'PC_Operating'
+          }
+        },
+        { //运营=>PC运营=>应用=>公告管理=>新增公告
+          path: '/addPCOU_Announcement',
+          name: "addPCOU_Announcement",
+          component: () => import('../views/operations/PC_Operating/addPCOU_Announcement.vue'),
+          meta: {
+            title: '新增公告',
+            toplevel: 'PC_Operating'
+          }
+        },
+        { //运营=>PC运营=>应用=>公告管理=>编辑公告
+          path: '/setPCOU_Announcement',
+          name: "setPCOU_Announcement",
+          component: () => import('../views/operations/PC_Operating/setPCOU_Announcement.vue'),
+          meta: {
+            title: '编辑公告',
+            toplevel: 'PC_Operating'
+          }
+        },
+        { //运营=>PC运营=>应用=>公告管理=>推荐位
+          path: '/PCOU_FeaturedFirst',
+          name: "PCOU_FeaturedFirst",
+          component: () => import('../views/operations/PC_Operating/PCOU_FeaturedFirst.vue'),
+          meta: {
+            title: '推荐位',
+            toplevel: 'PC_Operating'
+          }
+        },
+        { //运营=>PC运营=>应用=>公告管理=>推荐位=>新增首页推荐位
+          path: '/addPCOUFeaturedFirst_sy',
+          name: "addPCOUFeaturedFirst_sy",
+          component: () => import('../views/operations/PC_Operating/addPCOUFeaturedFirst_sy.vue'),
+          meta: {
+            title: '新增推荐位',
+            toplevel: 'PC_Operating'
+          }
+        },
+        { //运营=>PC运营=>应用=>公告管理=>推荐位=>编辑首页推荐位
+          path: '/setPCOUFeaturedFirst_sy',
+          name: "setPCOUFeaturedFirst_sy",
+          component: () => import('../views/operations/PC_Operating/setPCOUFeaturedFirst_sy.vue'),
+          meta: {
+            title: '编辑推荐位',
+            toplevel: 'PC_Operating'
+          }
+        },
+        { //运营=>PC运营=>应用=>公告管理=>推荐位=>推荐作品
+          path: '/PCOU_RecommendedWork',
+          name: "PCOU_RecommendedWork",
+          component: () => import('../views/operations/PC_Operating/PCOU_RecommendedWork.vue'),
+          meta: {
+            title: '推荐作品',
+            toplevel: 'PC_Operating'
+          }
+        },
+        { //运营=>PC运营=>应用=>友情链接
+          path: '/PCOU_highlyRecommended',
+          name: "PCOU_highlyRecommended",
+          component: () => import('../views/operations/PC_Operating/PCOU_highlyRecommended.vue'),
+          meta: {
+            title: '友情链接',
+            toplevel: 'PC_Operating'
+          }
+        },
         { //运营=>PC运营=>应用=>底部导航
           path: '/PCOU_bottomNavigation',
           name: "PCOU_bottomNavigation",
