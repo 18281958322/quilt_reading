@@ -1,11 +1,11 @@
 <template>
   <div class="classification">
     <div class="layout-search">
-      <el-select v-model="value" placeholder="请选择" style="width:148px;">
+      <el-select v-model="value" placeholder="全部读者性别" style="width:148px;">
         <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value"></el-option>
       </el-select>
       <el-input style="width:148px;margin-left:10px;" v-model="input" placeholder="请输入内容"></el-input>
-      <el-button type="primary" style="margin-left:10px;">搜索</el-button>
+      <el-button type="primary" size="mini" style="margin-left:10px;">搜索</el-button>
     </div>
     <div class="layout">
       <el-table :data="tableData" style="width: 100%">
@@ -13,7 +13,7 @@
         </el-table-column>
         <el-table-column prop="date" align="center" label="分类名">
         </el-table-column>
-        <el-table-column prop="name" align="center" label="所属频道">
+        <el-table-column prop="name" align="center" label="大类别">
         </el-table-column>
         <el-table-column prop="name" align="center" label="分类展示顺序">
         </el-table-column>
@@ -23,7 +23,7 @@
           <template slot-scope="scope">
             <el-button @click="handleClick(scope.row)" type="text" size="small">排序</el-button>
             <el-button type="text" size="small">编辑</el-button>
-            <el-button type="text" size="small">查看小说</el-button>
+            <el-button type="text" size="small">分类小说</el-button>
             <el-button type="text" size="small">删除</el-button>
           </template>
         </el-table-column>

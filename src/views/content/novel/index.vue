@@ -11,8 +11,14 @@
               <el-tab-pane label="小说分类" name="second">
                 <Classification></Classification>
               </el-tab-pane>
+              <el-tab-pane label="大类别" name="majorall">
+                <Major></Major>
+              </el-tab-pane>
               <el-tab-pane label="上传状态" name="third">
                 <Uploadstatus></Uploadstatus>
+              </el-tab-pane>
+              <el-tab-pane label="限免小说" name="limitedall">
+                <Limited></Limited>
               </el-tab-pane>
             </el-tabs>
           </div>

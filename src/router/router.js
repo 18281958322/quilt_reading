@@ -96,6 +96,15 @@ const vueRouter = new Router({
             toplevel: 'tl_content'
           }
         },
+        { // 章节管理
+          path: '/chapter',
+          name: 'chapter',
+          component: () => import('../views/content/novel/listofNovels/chapter/index.vue'),
+          meta: {
+            title: '章节管理',
+            toplevel: 'tl_content'
+          }
+        },
         { // 漫画
           path: '/comics',
           name: 'comics',

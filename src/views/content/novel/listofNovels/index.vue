@@ -309,8 +309,7 @@
       },
       // 章节管理
       chapterClick(row){
-        
-
+        this.$router.push('/chapter');
       }
     }
   }

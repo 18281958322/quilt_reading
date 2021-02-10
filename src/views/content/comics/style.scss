@@ -1,31 +1,19 @@
 .comics{
-    width: 100%;
-    .all{
-        padding: 10px 0;
-        .row{
-            background-color: #fff;
-            .layout-row{
-                .layout-title{
-                    font-size: 14px;
-                    text-indent: 20px;
-                    p{
-                        padding: 20px 0;
-                    }
-                }
-                .layout{
-                    display: flex;
-                    padding: 0px 20px;
-                    .layout-cell{
-                        padding: 5px 0px;
-                    }
-                    .layout-pull{
-                        padding: 5px 5px;
-                    }
-                }
-                .layout-data{
-                    padding: 0 0 20px 20px;
-                }
-            }
-        }
-    }
+    .list {
+        display: flex;
+        padding-bottom: 10px;
+      }
+  
+      .layout-right {
+        display: flex;
+        flex-direction: row-reverse;
+        margin-right: 20px;
+      }
+  
+      .layout-centent {
+        display: flex;
+        justify-content: center;
+        padding-bottom: 20px;
+        padding-top: 15px;
+      }
 }
