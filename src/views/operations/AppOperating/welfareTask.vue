@@ -529,6 +529,7 @@ export default {
     border: 1px solid rgba(221, 221, 221, 1);
     width: 100%;
     position: relative;
+    margin: 10px 0 20px;
     padding: 12px;
     border-radius: 4px;
     & > div {

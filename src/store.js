@@ -694,11 +694,22 @@ export default new Vuex.Store({
           key: "/PCOTDKSet",
           icon: "el-icon-s-marketing",
         },
-      ]
+      ],
+      tl_MemberSystem: [ // 系统成员
+        {
+          title: "角色管理",
+          key: "/roleMangement",
+          icon: "el-icon-user",
+        },
+        {
+          title: "系统成员",
+          key: "/MemberSystem",
+          icon: "el-icon-edit-outline",
+        },
+      ],
     },
     sidebarAllDataActiv: 'tl_home', // 侧边栏总目录当前选中对象
     sidebarData: [], //侧边栏当前显示数据
-
   },
   mutations: {
     /**

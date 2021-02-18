@@ -7,7 +7,7 @@
     <div class="navbar-right flex1">
       <sidebar
         ref="tabbarMenu"
-        defaultActive="tl_user"
+        defaultActive="tl_home"
         :mode="'horizontal'"
         @subMenuOpen="subMenuOpens"
         @subMenuClose="subMenuCloses"
@@ -16,18 +16,31 @@
       />
     </div>
     <div style="height: 100%" class="navRight flex align-center justify-center">
-      <div class="navRight_item flex flex-column justify-center align-center">
+      <div
+        style="cursor: pointer"
+        @click="activeChanges('tl_MemberSystem')"
+        :class="[
+          'navRight_item',
+          'flex',
+          'flex-column',
+          'justify-center',
+          'align-center',
+          $store.state.sidebarAllDataActiv === 'tl_MemberSystem'
+            ? 'active'
+            : '',
+        ]"
+      >
         <i class="el-icon-user"></i>
         <p>系统成员</p>
       </div>
       <el-dropdown style="margin: 0 30px 0 0">
         <div class="flex align-end">
           <div
-            style="margin:0;cursor:pointer"
+            style="margin: 0; cursor: pointer"
             class="navRight_item flex flex-column justify-center align-center"
           >
             <i class="el-icon-user"></i>
-            <p>系统成员</p>
+            <p>admin</p>
           </div>
           <i class="el-icon-arrow-down"></i>
         </div>
@@ -196,6 +209,9 @@ export default {
         case "data_record":
           activePath = "/PCOU_bottomNavigation";
           break;
+        case "tl_MemberSystem":
+          activePath = "/roleMangement";
+          break;
       }
       // 切换侧边栏选中项
       this.$store.commit("setSideDefaultActive", { val: activePath });
@@ -223,12 +239,26 @@ export default {
     height: 80%;
     text-align: center;
     i {
-      color: #333;
       font-size: 20px;
     }
     p {
-      color: #333;
       font-size: 12px;
+    }
+  }
+  .navRight_item.active {
+    i {
+      color: #409eff;
+    }
+    p {
+      color: #409eff;
+    }
+  }
+  .navRight_item:not(.active) {
+    i {
+      color: #333;
+    }
+    p {
+      color: #333;
     }
   }
   .row-cell {

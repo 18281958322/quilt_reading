@@ -1771,6 +1771,33 @@ const vueRouter = new Router({
             toplevel: 'PC_Operating'
           }
         },
+        { //系统成员=>角色管理
+          path: '/roleMangement',
+          name: "roleMangement",
+          component: () => import('../views/MemberSystem/roleMangement.vue'),
+          meta: {
+            title: '角色管理',
+            toplevel: 'tl_MemberSystem'
+          }
+        },
+        { //系统成员=>角色管理=>授权
+          path: '/authorization',
+          name: "authorization",
+          component: () => import('../views/MemberSystem/authorization.vue'),
+          meta: {
+            title: '授权',
+            toplevel: 'tl_MemberSystem'
+          }
+        },
+        { //系统成员=>系统成员
+          path: '/MemberSystem',
+          name: "MemberSystem",
+          component: () => import('../views/MemberSystem/MemberSystem.vue'),
+          meta: {
+            title: '系统成员',
+            toplevel: 'tl_MemberSystem'
+          }
+        },
       ]
     },
     { // 登录
